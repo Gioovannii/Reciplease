@@ -36,7 +36,11 @@ final class AddIngredientsController: UIViewController {
         coreDataManager?.deleteAllIngredients()
         ingredientsTableView.reloadData()
     }
+    @IBAction func searchRecipesButton(_ sender: UIButton) {
+    }
 }
+
+// MARK: - UITableView DataSource
 
 extension AddIngredientsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
