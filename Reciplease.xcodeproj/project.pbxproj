@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1A485224F76588008562FA /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A485124F76588008562FA /* RecipeTableViewController.swift */; };
+		7B43982424FCD3E3003753A6 /* Network Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982324FCD3E3003753A6 /* Network Service.swift */; };
 		7B47601B24F35B7700B51168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47601A24F35B7700B51168 /* AppDelegate.swift */; };
 		7B47601D24F35B7700B51168 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47601C24F35B7700B51168 /* SceneDelegate.swift */; };
 		7B47601F24F35B7700B51168 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47601E24F35B7700B51168 /* TabBarController.swift */; };
@@ -16,9 +18,12 @@
 		7B47602A24F35B7800B51168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B47602824F35B7800B51168 /* LaunchScreen.storyboard */; };
 		7B47603524F35B7800B51168 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47603424F35B7800B51168 /* RecipleaseTests.swift */; };
 		7B47604324F3970300B51168 /* AddIngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47604224F3970300B51168 /* AddIngredientsController.swift */; };
+		7B59A68E24FBB16C00839A3B /* EdanamJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */; };
+		7B59A69024FBE68E00839A3B /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68F24FBE68E00839A3B /* IngredientService.swift */; };
+		7B5A881124F8A9A0003B3892 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A881024F8A9A0003B3892 /* K.swift */; };
 		7B5EC18924F4B0AB0095BAA8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5EC18824F4B0AB0095BAA8 /* CoreDataStack.swift */; };
 		7B5EC18B24F4B1140095BAA8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5EC18A24F4B1140095BAA8 /* CoreDataManager.swift */; };
-		7B5FED9824F66FD300FE75AF /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5FED9724F66FD300FE75AF /* RecipeTableViewCell.swift */; };
+		7B5FED9824F66FD300FE75AF /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5FED9724F66FD300FE75AF /* RecipeCell.swift */; };
 		A5057F3848C13099F11CBE3F /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BE8D08DA33B27C76A653D9 /* Pods_Reciplease.framework */; };
 		A9F76F55373BE41625F228B1 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB2373167201F50F9311092 /* Pods_RecipleaseTests.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +42,8 @@
 		08D0EC2AA01CEF8776F10F83 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		16BE8D08DA33B27C76A653D9 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B5899A2F1EE2FB3AC4B5BBD /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
+		7B1A485124F76588008562FA /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
+		7B43982324FCD3E3003753A6 /* Network Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Service.swift"; sourceTree = "<group>"; };
 		7B47601724F35B7700B51168 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B47601A24F35B7700B51168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B47601C24F35B7700B51168 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,9 +57,12 @@
 		7B47603424F35B7800B51168 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		7B47603624F35B7800B51168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B47604224F3970300B51168 /* AddIngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsController.swift; sourceTree = "<group>"; };
+		7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamJSON.swift; sourceTree = "<group>"; };
+		7B59A68F24FBE68E00839A3B /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
+		7B5A881024F8A9A0003B3892 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		7B5EC18824F4B0AB0095BAA8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7B5EC18A24F4B1140095BAA8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		7B5FED9724F66FD300FE75AF /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		7B5FED9724F66FD300FE75AF /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		8BE0AC394AE7E3ADF58228CA /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		8CB2373167201F50F9311092 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB423D5861F061D8B5779C9D /* Pods-RecipleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +97,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B43982224FC909F003753A6 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				7B47602324F35B7700B51168 /* Reciplease.xcdatamodeld */,
+				7B5EC18824F4B0AB0095BAA8 /* CoreDataStack.swift */,
+				7B5EC18A24F4B1140095BAA8 /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		7B47600E24F35B7700B51168 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +134,7 @@
 				7B5EC18724F4B0730095BAA8 /* Model */,
 				7B47604124F35DBD00B51168 /* View */,
 				7B47604024F35DB000B51168 /* Controller */,
-				7B47602324F35B7700B51168 /* Reciplease.xcdatamodeld */,
+				7B5A881024F8A9A0003B3892 /* K.swift */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -134,7 +154,6 @@
 				7B47602B24F35B7800B51168 /* Info.plist */,
 				7B47601A24F35B7700B51168 /* AppDelegate.swift */,
 				7B47601C24F35B7700B51168 /* SceneDelegate.swift */,
-				7B47602624F35B7800B51168 /* Assets.xcassets */,
 			);
 			path = "Supported Files";
 			sourceTree = "<group>";
@@ -144,6 +163,7 @@
 			children = (
 				7B47601E24F35B7700B51168 /* TabBarController.swift */,
 				7B47604224F3970300B51168 /* AddIngredientsController.swift */,
+				7B1A485124F76588008562FA /* RecipeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,9 +171,10 @@
 		7B47604124F35DBD00B51168 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7B47602624F35B7800B51168 /* Assets.xcassets */,
 				7B47602024F35B7700B51168 /* Main.storyboard */,
 				7B47602824F35B7800B51168 /* LaunchScreen.storyboard */,
-				7B5FED9724F66FD300FE75AF /* RecipeTableViewCell.swift */,
+				7B5FED9724F66FD300FE75AF /* RecipeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,8 +182,10 @@
 		7B5EC18724F4B0730095BAA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B5EC18824F4B0AB0095BAA8 /* CoreDataStack.swift */,
-				7B5EC18A24F4B1140095BAA8 /* CoreDataManager.swift */,
+				7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */,
+				7B59A68F24FBE68E00839A3B /* IngredientService.swift */,
+				7B43982224FC909F003753A6 /* Core Data */,
+				7B43982324FCD3E3003753A6 /* Network Service.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,13 +370,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B47602524F35B7700B51168 /* Reciplease.xcdatamodeld in Sources */,
+				7B5A881124F8A9A0003B3892 /* K.swift in Sources */,
+				7B43982424FCD3E3003753A6 /* Network Service.swift in Sources */,
 				7B47601F24F35B7700B51168 /* TabBarController.swift in Sources */,
 				7B47601B24F35B7700B51168 /* AppDelegate.swift in Sources */,
+				7B59A69024FBE68E00839A3B /* IngredientService.swift in Sources */,
 				7B5EC18924F4B0AB0095BAA8 /* CoreDataStack.swift in Sources */,
 				7B47604324F3970300B51168 /* AddIngredientsController.swift in Sources */,
+				7B1A485224F76588008562FA /* RecipeTableViewController.swift in Sources */,
 				7B5EC18B24F4B1140095BAA8 /* CoreDataManager.swift in Sources */,
 				7B47601D24F35B7700B51168 /* SceneDelegate.swift in Sources */,
-				7B5FED9824F66FD300FE75AF /* RecipeTableViewCell.swift in Sources */,
+				7B59A68E24FBB16C00839A3B /* EdanamJSON.swift in Sources */,
+				7B5FED9824F66FD300FE75AF /* RecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -499,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -517,6 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
 				INFOPLIST_FILE = "Reciplease/Supported Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,6 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
 				INFOPLIST_FILE = "Reciplease/Supported Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
 				INFOPLIST_FILE = RecipleaseTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,7 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
 				INFOPLIST_FILE = RecipleaseTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

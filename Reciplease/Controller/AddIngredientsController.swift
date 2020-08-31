@@ -7,51 +7,62 @@
 //
 
 import UIKit
+import Alamofire 
 
 final class AddIngredientsController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var service = IngredientService()
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
     
-    private var coreDataManager: CoreDataManager?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let coredataStack = appDelegate.coreDataStack
-        coreDataManager = CoreDataManager(coreDataStack: coredataStack)
         
-        navigationItem.title = "Reciplease"
+        navigationItem.title = K.appName
     }
+
     
     @IBAction func addIngredient(_ sender: UIButton) {
         guard let ingredient = ingredientTextField.text else { return }
-        print(ingredient)
         ingredientTextField.text = ""
-        coreDataManager?.createIngredient(name: ingredient)
+        service.addIngredients(name: ingredient)
         ingredientsTableView.reloadData()
     }
     
     @IBAction func clearIngredientsButton(_ sender: UIButton) {
-        coreDataManager?.deleteAllIngredients()
+        service.clearAllIngredients()
         ingredientsTableView.reloadData()
     }
+    
     @IBAction func searchRecipesButton(_ sender: UIButton) {
+        let service = NetworkService()
+        service.fetchJsonData().self
     }
 }
 
 // MARK: - UITableView DataSource
 
 extension AddIngredientsController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            service.deleteIngredient(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .middle)
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coreDataManager?.ingredients.count ?? 0
+        return service.ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: "Ingredient", for: indexPath)
-        ingredientCell.textLabel?.text =  coreDataManager?.ingredients[indexPath.row].name
+        let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: K.ingredient, for: indexPath)
+        
+        ingredientCell.textLabel?.text = service.ingredients[indexPath.row]
         ingredientCell.textLabel?.textColor = UIColor.white
-        ingredientCell.textLabel?.font = UIFont(name: "Papyrus", size: 20)
+        ingredientCell.textLabel?.font = UIFont(name: K.papyrusFont, size: 20)
         return ingredientCell
     }
 }
