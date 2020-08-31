@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+final class IngredientService {
+    var ingredients = [String]()
+    
+    func addIngredients(name: String) {
+        ingredients.append(name)
+    }
+    
+    func deleteIngredient(at index: Int) {
+        ingredients.remove(at: index)
+    }
+    
+    func clearAllIngredients() {
+        ingredients.removeAll()
+    }
+    
+    
+}
