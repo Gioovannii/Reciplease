@@ -19,9 +19,12 @@ class NetworkService {
             
             let data = response.data
             
-            guard let responseDecoded = try? JSONDecoder().decode(EdanamJSON.self, from: data!) else { return }
+            guard let responseDecoded = try? JSONDecoder().decode(EdanamJSON.self, from: data!) else { return
+            }
             print("Recipe label: \(responseDecoded.hits[0].recipe.label)")
-            
+            print("Ingredients: \(responseDecoded.hits[0].recipe.ingredientLines)")
+            print("Time: \(responseDecoded.hits[0].recipe.totalTime)min")
+            print("Diet: \(responseDecoded.hits[0].recipe.dietLabels)")
         }
     }
 }

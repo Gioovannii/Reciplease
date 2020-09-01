@@ -9,7 +9,12 @@
 import Foundation
 
 final class IngredientService {
+    
+    // MARK: - Property
+    
     var ingredients = [String]()
+    
+    // MARK: - Methods
     
     func addIngredients(name: String) {
         ingredients.append(name)
@@ -22,6 +27,4 @@ final class IngredientService {
     func clearAllIngredients() {
         ingredients.removeAll()
     }
-    
-    
 }
