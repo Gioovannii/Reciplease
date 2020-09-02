@@ -14,7 +14,7 @@ class RecipeTableViewcontroller: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
     
     // MARK: - UITableView DataSource
@@ -24,7 +24,7 @@ class RecipeTableViewcontroller: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.recipeIdentifier, for: indexPath) as? RecipeCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as? RecipeTableViewCell else {
             print("Error ehile loading cell)")
             return UITableViewCell()
         }

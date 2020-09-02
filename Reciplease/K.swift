@@ -12,8 +12,9 @@ struct K {
     static let appName = "Reciplease"
     static let papyrusFont = "Papyrus"
     static let ingredient = "Ingredient"
-    static let recipeIdentifier = "RecipeCell"
     static let recipeSegue = "ToRecipe"
+    static let cellNibName = "RecipeTableViewCell"
+    static let reusableCell = "ReusableCell"
     
     struct Config {
         static let appId = "c3b651ca"

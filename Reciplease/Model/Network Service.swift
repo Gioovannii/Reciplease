@@ -24,7 +24,7 @@ class NetworkService {
             print("Recipe label: \(responseDecoded.hits[0].recipe.label)")
             print("Ingredients: \(responseDecoded.hits[0].recipe.ingredientLines)")
             print("Time: \(responseDecoded.hits[0].recipe.totalTime)min")
-            print("Diet: \(responseDecoded.hits[0].recipe.dietLabels)")
+           // print("Diet: \(responseDecoded.hits[0].recipe.dietLabels[0])")
         }
     }
 }
