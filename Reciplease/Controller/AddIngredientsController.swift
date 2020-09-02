@@ -39,6 +39,7 @@ final class AddIngredientsController: UIViewController {
     }
     
     @IBAction func searchRecipesButton(_ sender: UIButton) {
+        
         request.getData { result in
             switch result {
             case .success(let data):
@@ -47,6 +48,7 @@ final class AddIngredientsController: UIViewController {
                     print("Ingredients: \(data.hits[0].recipe.ingredientLines)")
                     print("Time: \(data.hits[0].recipe.totalTime)min")
                     print("Diet: \(data.hits[0].recipe.dietLabels[0])")
+                    self.performSegue(withIdentifier: "ToRecipe", sender: nil)
                 }
             case .failure(let error):
                 print(error.localizedDescription)

@@ -9,6 +9,7 @@
 import Foundation
 
 // MARK: - EdanamJSON
+
 struct EdanamJSON: Codable {
     let q: String
     let from, to: Int
@@ -18,12 +19,14 @@ struct EdanamJSON: Codable {
 }
 
 // MARK: - Hit
+
 struct Hit: Codable {
     let recipe: Recipe
     let bookmarked, bought: Bool
 }
 
 // MARK: - Recipe
+
 struct Recipe: Codable {
     let uri: String
     let label: String
@@ -35,8 +38,3 @@ struct Recipe: Codable {
     let dietLabels, healthLabels, cautions, ingredientLines: [String]
     let totalTime: Int
 }
-
-
-
-
-

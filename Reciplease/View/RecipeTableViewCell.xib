@@ -20,11 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpf-eP-97n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk5-S6-n88">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-Ob-3yP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza-margherita" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-Ob-3yP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK9-GB-dcW">
@@ -108,14 +104,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XK9-GB-dcW" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" constant="10" id="5SI-mI-AZM"/>
-                            <constraint firstItem="dk5-S6-n88" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" id="5rZ-h8-QJ3"/>
-                            <constraint firstItem="dk5-S6-n88" firstAttribute="top" secondItem="Gpf-eP-97n" secondAttribute="top" id="9Ol-bT-B6b"/>
-                            <constraint firstAttribute="bottom" secondItem="dk5-S6-n88" secondAttribute="bottom" id="Jun-bD-bmb"/>
                             <constraint firstAttribute="bottom" secondItem="JIA-Ob-3yP" secondAttribute="bottom" id="Kvg-xu-opE"/>
-                            <constraint firstAttribute="height" constant="100" id="Pnn-Aw-YF3"/>
                             <constraint firstItem="JIA-Ob-3yP" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" id="Sam-tP-hcC"/>
                             <constraint firstItem="pin-QM-NZy" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" constant="10" id="Uue-bz-FSf"/>
-                            <constraint firstAttribute="trailing" secondItem="dk5-S6-n88" secondAttribute="trailing" id="Voh-9R-Itb"/>
                             <constraint firstItem="pin-QM-NZy" firstAttribute="top" secondItem="XK9-GB-dcW" secondAttribute="bottom" constant="3" id="WH2-pM-SSo"/>
                             <constraint firstAttribute="trailing" secondItem="JIA-Ob-3yP" secondAttribute="trailing" id="ZOg-4P-vuf"/>
                             <constraint firstItem="Swa-wQ-eqv" firstAttribute="top" secondItem="Gpf-eP-97n" secondAttribute="top" constant="10" id="dyj-Wa-sRc"/>
@@ -146,5 +137,6 @@
     <resources>
         <image name="icons8-healthy-eating-24" width="24" height="24"/>
         <image name="icons8-timer-16" width="16" height="16"/>
+        <image name="pizza-margherita" width="390" height="280"/>
     </resources>
 </document>

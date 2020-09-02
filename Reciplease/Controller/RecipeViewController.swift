@@ -8,27 +8,21 @@
 
 import UIKit
 
-class RecipeViewcontroller: UIViewController {
+class RecipeViewcontroller: UITableViewController {
     
-    var coreDataManager: CoreDataManager?
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
-}
-
-extension RecipeViewcontroller: UITableViewDataSource {
-    // MARK: - UITableView DataSource
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as? RecipeTableViewCell else {
-            print("Error ehile loading cell)")
+            print("Error while loading cell)")
             return UITableViewCell()
         }
         
@@ -37,7 +31,8 @@ extension RecipeViewcontroller: UITableViewDataSource {
         
     }
     
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 }

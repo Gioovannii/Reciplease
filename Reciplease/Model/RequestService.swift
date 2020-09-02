@@ -23,7 +23,7 @@ final class RequestService {
     }
     
     func getData(callback: @escaping (Result<EdanamJSON, Error>) -> Void) {
-        guard let url = URL(string: "https://api.edamam.com/search?q=apple&app_key=f6a63dce852eac00b3eb7ac4bf3d54bd&app_id=c3b651ca&count=21&from=0&to=2") else { return }
+        guard let url = URL(string: "https://api.edamam.com/search?q=mozarella&app_key=f6a63dce852eac00b3eb7ac4bf3d54bd&app_id=c3b651ca&count=21&from=0&to=2") else { return }
         
         session.request(with: url) { responseData in
             guard let data = responseData.data else {
