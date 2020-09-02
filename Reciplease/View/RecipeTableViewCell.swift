@@ -19,16 +19,18 @@ class RecipeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
     
-    func configure(withImage recipe: String, title: String, ingredients: String) {
-          recipeImageView.image = UIImage(named: recipe)
-          titleLabel.text = title
-          ingredientsLabel.text = ingredients
-      }
-    
+    func configure(withImage recipe: String, title: String, ingredients: String, time: String, diet: String) {
+        recipeImageView.image = UIImage(named: recipe)
+        titleLabel.text = title
+        ingredientsLabel.text = ingredients
+        timeRecipeLabel.text = time
+        dietLabel.text = diet
+    }
 }
+

@@ -13,7 +13,8 @@ final class AddIngredientsController: UIViewController {
     
     // MARK: - Properties
     
-    var service = IngredientService()
+    private var service = IngredientService()
+    private let request: RequestService = RequestService()
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
@@ -23,7 +24,7 @@ final class AddIngredientsController: UIViewController {
         
         navigationItem.title = K.appName
     }
-
+    
     
     @IBAction func addIngredient(_ sender: UIButton) {
         guard let ingredient = ingredientTextField.text else { return }
@@ -38,8 +39,19 @@ final class AddIngredientsController: UIViewController {
     }
     
     @IBAction func searchRecipesButton(_ sender: UIButton) {
-        let service = NetworkService()
-        service.fetchJsonData().self
+        request.getData { result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    print("Recipe label: \(data.hits[0].recipe.label)")
+                    print("Ingredients: \(data.hits[0].recipe.ingredientLines)")
+                    print("Time: \(data.hits[0].recipe.totalTime)min")
+                    print("Diet: \(data.hits[0].recipe.dietLabels[0])")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

@@ -33,31 +33,10 @@ struct Recipe: Codable {
     let shareAs: String
     let yield: Int
     let dietLabels, healthLabels, cautions, ingredientLines: [String]
-    let ingredients: [Ingredients]
-    let calories, totalWeight: Double
     let totalTime: Int
-    let totalNutrients, totalDaily: [String: Total]
 }
 
-enum Unit: String, Codable {
-    case empty = "%"
-    case g = "g"
-    case kcal = "kcal"
-    case mg = "mg"
-    case µg = "µg"
-}
 
-// MARK: - Ingredient
-struct Ingredients: Codable {
-    let text: String
-    let weight: Double
-    let image: String
-}
 
-// MARK: - Total
-struct Total: Codable {
-    let label: String
-    let quantity: Double
-    let unit: Unit
-}
+
 
