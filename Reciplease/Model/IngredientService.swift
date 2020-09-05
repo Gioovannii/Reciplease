@@ -16,8 +16,13 @@ final class IngredientService {
     
     // MARK: - Methods
     
+    func checkIngredientsList(element: String) -> Bool {
+        guard ingredients.contains(element) else { return true }
+        return false
+    }
+    
     func addIngredients(name: String) {
-        ingredients.append(name)
+        guard !checkIngredientsList(element: name) else { return  ingredients.append("- " + name) }
     }
     
     func deleteIngredient(at index: Int) {

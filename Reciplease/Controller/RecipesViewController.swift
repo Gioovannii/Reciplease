@@ -8,13 +8,15 @@
 
 import UIKit
 
-class RecipeViewcontroller: UITableViewController {
+final class RecipesViewcontroller: UITableViewController {
     
+    var recipes: [Hit]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -26,14 +28,24 @@ class RecipeViewcontroller: UITableViewController {
             return UITableViewCell()
         }
         
-        cell.configure(withImage: "pizza-margherita", title: "Pizza", ingredients: "Mozzarella, tomatoes", time: "12", diet: " low calories")
+       cell.recipe = recipes?[indexPath.row].recipe
         return cell
-        
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToDescription", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDescription" {
+            let vcDestination = segue.destination as! DescriptionController
+          // vcDestination.ingredients.append(recipes?[0].recipe.ingredientLines)
+            print(vcDestination)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 130
     }
 }
 

@@ -16,15 +16,19 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeRecipeLabel: UILabel!
     @IBOutlet weak var dietLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    var recipe: Recipe? {
+        didSet {
+            recipeImageView.image = UIImage(named: "pizzaMargherita")
+            titleLabel.text = recipe?.label
+            ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
+            timeRecipeLabel.text =  String(recipe?.totalTime ?? 0)
+            dietLabel.text = recipe?.dietLabels[0]
+        }
     }
+  
+    @IBAction func favoriteTapButton(_ sender: UIButton) { }
+   
     
     func configure(withImage recipe: String, title: String, ingredients: String, time: String, diet: String) {
         recipeImageView.image = UIImage(named: recipe)

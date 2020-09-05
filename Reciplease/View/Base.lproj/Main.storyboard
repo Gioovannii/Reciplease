@@ -8,44 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Reciplease-->
-        <scene sceneID="ce3-Mh-RNq">
-            <objects>
-                <viewController id="LTZ-j7-dYs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Btp-Dz-Dgx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-xM-T3V">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recipe" rowHeight="100" id="DWa-eG-QdT">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DWa-eG-QdT" id="8ZO-NZ-k30">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="sUW-IS-HZN" firstAttribute="bottom" secondItem="6h7-xM-T3V" secondAttribute="bottom" id="OZu-WQ-vy8"/>
-                            <constraint firstItem="6h7-xM-T3V" firstAttribute="leading" secondItem="sUW-IS-HZN" secondAttribute="leading" id="fRT-6X-tpG"/>
-                            <constraint firstItem="sUW-IS-HZN" firstAttribute="trailing" secondItem="6h7-xM-T3V" secondAttribute="trailing" id="kTk-tB-kRs"/>
-                            <constraint firstItem="6h7-xM-T3V" firstAttribute="top" secondItem="sUW-IS-HZN" secondAttribute="top" id="pKX-Pb-cAC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="sUW-IS-HZN"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="sbQ-Dg-ImO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PPd-Zo-plL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="600" y="1067.4107142857142"/>
-        </scene>
         <!--Add Ingredients Controller-->
         <scene sceneID="S5r-9h-usE">
             <objects>
@@ -130,7 +92,7 @@
                                     <action selector="clearIngredientsButton:" destination="NDA-Dt-bHa" eventType="touchUpInside" id="qdd-Dg-Ab1"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G4s-SW-nU2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G4s-SW-nU2">
                                 <rect key="frame" x="20" y="273" width="296" height="430"/>
                                 <color key="backgroundColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -200,24 +162,14 @@
             </objects>
             <point key="canvasLocation" x="598.55072463768124" y="303.34821428571428"/>
         </scene>
-        <!--Recipe Viewcontroller-->
+        <!--Recipes Viewcontroller-->
         <scene sceneID="xbt-bB-eBK">
             <objects>
-                <tableViewController id="jiY-eW-eBg" customClass="RecipeViewcontroller" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jiY-eW-eBg" customClass="RecipesViewcontroller" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nE8-yq-ZKK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="To6-jg-dOf" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="To6-jg-dOf" id="ySc-KO-CGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="jiY-eW-eBg" id="9QO-wO-b0b"/>
                             <outlet property="delegate" destination="jiY-eW-eBg" id="Mhf-qv-k3o"/>
@@ -232,20 +184,14 @@
             </objects>
             <point key="canvasLocation" x="1380" y="303"/>
         </scene>
-        <!--View Controller-->
+        <!--Description Controller-->
         <scene sceneID="Cbc-hr-oUo">
             <objects>
-                <viewController id="mc8-fJ-6HW" sceneMemberID="viewController">
+                <viewController id="mc8-fJ-6HW" customClass="DescriptionController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Afc-In-4Eh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza-margherita" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-KC-Fm2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="nNh-FB-woF"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y34-es-QHw">
                                 <rect key="frame" x="20" y="733" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.2552264333" green="0.58647602799999998" blue="0.36859536170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -258,7 +204,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLt-o3-Xbo">
-                                <rect key="frame" x="0.0" y="368" width="414" height="365"/>
+                                <rect key="frame" x="0.0" y="338" width="414" height="395"/>
                                 <color key="backgroundColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstructionsCell" id="yfv-9R-E4A">
@@ -268,9 +214,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.20784313730000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mc8-fJ-6HW" id="kBt-WQ-IqO"/>
+                                </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaMargherita" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-KC-Fm2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="nNh-FB-woF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -290,10 +246,13 @@
                         <viewLayoutGuide key="safeArea" id="Wny-fi-7O0"/>
                     </view>
                     <navigationItem key="navigationItem" id="G3p-hP-6D4"/>
+                    <connections>
+                        <outlet property="tableView" destination="cLt-o3-Xbo" id="3Zn-pS-aJT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfx-Lg-rjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2171.0144927536235" y="303.34821428571428"/>
+            <point key="canvasLocation" x="2235" y="759"/>
         </scene>
         <!--Reciplease-->
         <scene sceneID="Npv-BL-hgh">
@@ -352,18 +311,47 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SgP-yR-gET">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20784313730000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LTZ-j7-dYs" kind="relationship" relationship="rootViewController" id="gWz-BH-Cvv"/>
+                        <segue destination="g2v-eU-Oib" kind="relationship" relationship="rootViewController" id="gru-d8-KEe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg8-BL-tMO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310.14492753623193" y="1067.4107142857142"/>
+            <point key="canvasLocation" x="-148" y="1067"/>
+        </scene>
+        <!--Recipes Viewcontroller-->
+        <scene sceneID="dwg-tM-Gfu">
+            <objects>
+                <tableViewController id="g2v-eU-Oib" customClass="RecipesViewcontroller" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="35h-La-nbb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="g2v-eU-Oib" id="Fq8-bV-QgJ"/>
+                            <outlet property="delegate" destination="g2v-eU-Oib" id="t0s-DZ-5D5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="XOQ-4O-6Qw"/>
+                    <connections>
+                        <segue destination="mc8-fJ-6HW" kind="show" identifier="ToDescription" id="7ik-NG-C6Q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wlq-OH-1uZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="1067"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qcW-HT-SFx"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="pizza-margherita" width="390" height="280"/>
+        <image name="pizzaMargherita" width="390" height="280"/>
     </resources>
 </document>
