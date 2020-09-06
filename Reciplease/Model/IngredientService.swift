@@ -11,9 +11,11 @@ import Foundation
 final class IngredientService {
     
     // MARK: - Property
-    
     var ingredients = [String]()
     
+    var ingredientList: String {
+        return ingredients.joined(separator: ",")
+    }
     // MARK: - Methods
     
     func checkIngredientsList(element: String) -> Bool {
@@ -22,7 +24,8 @@ final class IngredientService {
     }
     
     func addIngredients(name: String) {
-        guard !checkIngredientsList(element: name) else { return  ingredients.append("- " + name) }
+        guard !name.isEmpty else { return }
+        guard !checkIngredientsList(element: name) else { return ingredients.append(name) }
     }
     
     func deleteIngredient(at index: Int) {

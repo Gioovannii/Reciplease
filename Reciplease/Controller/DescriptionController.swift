@@ -12,10 +12,11 @@ final class DescriptionController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var ingredients = ["Tomatoes"]
+    var ingredients = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewDid load: \(ingredients)")
     }
 }
 

@@ -26,16 +26,7 @@ class RecipeTableViewCell: UITableViewCell {
             dietLabel.text = recipe?.dietLabels[0]
         }
     }
-  
-    @IBAction func favoriteTapButton(_ sender: UIButton) { }
-   
     
-    func configure(withImage recipe: String, title: String, ingredients: String, time: String, diet: String) {
-        recipeImageView.image = UIImage(named: recipe)
-        titleLabel.text = title
-        ingredientsLabel.text = ingredients
-        timeRecipeLabel.text = time
-        dietLabel.text = diet
-    }
+    @IBAction func favoriteTapButton(_ sender: UIButton) { }
 }
 

@@ -20,6 +20,7 @@
 		7B47602A24F35B7800B51168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B47602824F35B7800B51168 /* LaunchScreen.storyboard */; };
 		7B47603524F35B7800B51168 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47603424F35B7800B51168 /* RecipleaseTests.swift */; };
 		7B47604324F3970300B51168 /* AddIngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47604224F3970300B51168 /* AddIngredientsController.swift */; };
+		7B51EC282504C14500D9AED0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51EC272504C14500D9AED0 /* NetworkError.swift */; };
 		7B59A68E24FBB16C00839A3B /* EdanamJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */; };
 		7B59A69024FBE68E00839A3B /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68F24FBE68E00839A3B /* IngredientService.swift */; };
 		7B5A881124F8A9A0003B3892 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A881024F8A9A0003B3892 /* K.swift */; };
@@ -67,6 +68,7 @@
 		7B47603424F35B7800B51168 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		7B47603624F35B7800B51168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B47604224F3970300B51168 /* AddIngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsController.swift; sourceTree = "<group>"; };
+		7B51EC272504C14500D9AED0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamJSON.swift; sourceTree = "<group>"; };
 		7B59A68F24FBE68E00839A3B /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		7B5A881024F8A9A0003B3892 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				7B43982224FC909F003753A6 /* Core Data */,
 				7B43982324FCD3E3003753A6 /* EdanamSession.swift */,
 				7B71BE2B24FF73F1001EB897 /* RequestService.swift */,
+				7B51EC272504C14500D9AED0 /* NetworkError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B51EC282504C14500D9AED0 /* NetworkError.swift in Sources */,
 				7B47602524F35B7700B51168 /* Reciplease.xcdatamodeld in Sources */,
 				7B5A881124F8A9A0003B3892 /* K.swift in Sources */,
 				7B43982424FCD3E3003753A6 /* EdanamSession.swift in Sources */,

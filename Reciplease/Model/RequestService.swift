@@ -8,12 +8,6 @@
 
 import Foundation
 
-// MARK: - Edanam Error
-
-enum EdanamError: Error {
-    case noData, incorrectResponse, undecodable
-}
-
 final class RequestService {
     
     private let session: AlamoSession
@@ -23,21 +17,21 @@ final class RequestService {
     }
     
     func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, Error>) -> Void) {
-        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_key=f6a63dce852eac00b3eb7ac4bf3d54bd&app_id=c3b651ca&count=21&from=0&to=2") else { return }
+        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_key=\(K.Config.appKey)&app_id=\(K.Config.appId)&count=21&from=0&to=2") else { return }
         
         session.request(with: url) { responseData in
             guard let data = responseData.data else {
-                callback(.failure(EdanamError.noData))
+                callback(.failure(NetworkError.noData))
                 return
             }
             
             guard responseData.response?.statusCode == 200 else {
-                callback(.failure(EdanamError.incorrectResponse))
+                callback(.failure(NetworkError.incorrectResponse))
                 return
             }
             
             guard let responseDecoded = try? JSONDecoder().decode(EdanamJSON.self, from: data) else {
-                callback(.failure(EdanamError.undecodable))
+                callback(.failure(NetworkError.undecodableData))
                 return
             }
             callback(.success(responseDecoded))

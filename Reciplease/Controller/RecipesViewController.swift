@@ -37,9 +37,9 @@ final class RecipesViewcontroller: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDescription" {
+        if segue.identifier == "ToDescription" {
             let vcDestination = segue.destination as! DescriptionController
-          // vcDestination.ingredients.append(recipes?[0].recipe.ingredientLines)
+            vcDestination.ingredients.append((recipes?[0].recipe.ingredientLines.joined(separator: ", "))!)
             print(vcDestination)
         }
     }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire 
 
 final class AddIngredientsController: UIViewController {
     
@@ -15,7 +14,7 @@ final class AddIngredientsController: UIViewController {
     
     private var service = IngredientService()
     private let request: RequestService = RequestService()
-    private var data: [Hit]?
+    private var collectData: [Hit]?
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
@@ -28,10 +27,10 @@ final class AddIngredientsController: UIViewController {
     
     
     @IBAction func addIngredient(_ sender: UIButton) {
-        guard let ingredient = ingredientTextField.text else { return }
+        guard let str = ingredientTextField.text else { return }
+        let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
         ingredientTextField.text = ""
-        ingredients = ingredient
-        service.addIngredients(name: ingredient)
+        service.addIngredients(name: ingredients)
         ingredientsTableView.reloadData()
     }
     
@@ -42,12 +41,12 @@ final class AddIngredientsController: UIViewController {
     
     @IBAction func searchRecipesButton(_ sender: UIButton) {
         
-        request.getData(ingredients: ingredients) { result in
+        request.getData(ingredients: service.ingredientList) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
-                    self.data = data.hits
-                    print(self.data!)
+                    self.collectData = data.hits
+                    print(self.collectData!)
                     self.performSegue(withIdentifier: "ToRecipe", sender: nil)
                 }
             case .failure(let error):
@@ -59,7 +58,7 @@ final class AddIngredientsController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToRecipe" {
         let vcDestination = segue.destination as! RecipesViewcontroller
-            vcDestination.recipes = data
+            vcDestination.recipes = collectData
         }
     }
 }

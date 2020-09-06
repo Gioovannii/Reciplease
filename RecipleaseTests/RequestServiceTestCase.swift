@@ -15,7 +15,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: nil, data: nil))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
-            requestService.getData { result in
+            requestService.getData(ingredients: <#String#>) { result in
                 guard case .failure(let error) = result else {
                     XCTFail("Test getData method with no data failed.")
                     return
@@ -30,7 +30,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseKO, data: FakeResponseData.correctData))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
-            requestService.getData { result in
+            requestService.getData(ingredients: <#String#>) { result in
                 guard case .failure(let error) = result else {
                     XCTFail("Test getData method with incorrect response failed.")
                     return
@@ -45,7 +45,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.incorrectData))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
-            requestService.getData { result in
+            requestService.getData(ingredients: <#String#>) { result in
                 guard case .failure(let error) = result else {
                     XCTFail("Test getData method with undecodable data failed.")
                     return
@@ -60,7 +60,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctData))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
-            requestService.getData { result in
+            requestService.getData(ingredients: <#String#>) { result in
                 guard case .success(let data) = result else {
                     XCTFail("Test getData method with correct data failed.")
                     return
