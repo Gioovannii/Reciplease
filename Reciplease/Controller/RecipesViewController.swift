@@ -40,6 +40,7 @@ final class RecipesViewcontroller: UITableViewController {
         if segue.identifier == "ToDescription" {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.ingredients.append((recipes?[0].recipe.ingredientLines.joined(separator: ", "))!)
+            vcDestination.titleRecipe = recipes?[0].recipe.label
             print(vcDestination)
         }
     }

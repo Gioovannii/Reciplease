@@ -13,10 +13,11 @@ final class DescriptionController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var ingredients = [String]()
+    var titleRecipe: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewDid load: \(ingredients)")
+        print("ViewDidLoad: \(ingredients)")
     }
 }
 
@@ -28,10 +29,15 @@ extension DescriptionController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.instructions, for: indexPath)
         
-        cell.textLabel?.text = ingredients[indexPath.row]
+        cell.textLabel?.text = ingredients[(indexPath.row)]
         cell.textLabel?.font = UIFont(name: K.papyrusFont, size: 20)
         cell.textLabel?.textColor = .white
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return  titleRecipe
     }
 }
 
