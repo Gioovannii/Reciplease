@@ -19,13 +19,6 @@ final class AddIngredientsController: UIViewController {
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = K.appName
-    }
-    
-    
     @IBAction func addIngredient(_ sender: UIButton) {
         guard let str = ingredientTextField.text else { return }
         let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -51,6 +44,7 @@ final class AddIngredientsController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                self.presentAlert(title: "Error", message: "\(error.localizedDescription)")
             }
         }
     }

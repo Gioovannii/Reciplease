@@ -15,9 +15,14 @@ final class DescriptionController: UIViewController {
     var ingredients = [String]()
     var titleRecipe: String?
     
+    var recipe: [Recipe]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewDidLoad: \(ingredients)")
+    }
+    @IBAction func getDirectionsButton(_ sender: UIButton) {
+      //  recipe?[0].shareAs
     }
 }
 

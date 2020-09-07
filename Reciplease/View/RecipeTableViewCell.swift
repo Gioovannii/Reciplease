@@ -15,7 +15,9 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var timeRecipeLabel: UILabel!
     @IBOutlet weak var dietLabel: UILabel!
+    @IBOutlet weak var minLabel: UILabel!
     
+
     
     var recipe: Recipe? {
         didSet {
@@ -29,4 +31,3 @@ class RecipeTableViewCell: UITableViewCell {
     
     @IBAction func favoriteTapButton(_ sender: UIButton) { }
 }
-

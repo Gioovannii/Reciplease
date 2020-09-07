@@ -34,6 +34,7 @@ final class RequestService {
                 callback(.failure(NetworkError.undecodableData))
                 return
             }
+        
             callback(.success(responseDecoded))
         }
     }

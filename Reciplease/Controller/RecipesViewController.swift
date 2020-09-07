@@ -17,7 +17,6 @@ final class RecipesViewcontroller: UITableViewController {
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -28,7 +27,11 @@ final class RecipesViewcontroller: UITableViewController {
             return UITableViewCell()
         }
         
-       cell.recipe = recipes?[indexPath.row].recipe
+        cell.recipe = recipes?[indexPath.row].recipe
+        if cell.timeRecipeLabel.text == "0" {
+            cell.timeRecipeLabel.text = "Unknown"
+            cell.minLabel.isHidden = true
+        }
         return cell
     }
     
@@ -47,6 +50,10 @@ final class RecipesViewcontroller: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func minutesToHoursMinutes (minutes : Int) -> (hours : Int , leftMinutes : Int) {
+        return (minutes / 60, (minutes % 60))
     }
 }
 

@@ -202,6 +202,9 @@
                                 <state key="normal" title="Get Directions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="getDirectionsButton:" destination="mc8-fJ-6HW" eventType="touchUpInside" id="WjL-4H-KRm"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLt-o3-Xbo">
                                 <rect key="frame" x="0.0" y="338" width="414" height="395"/>

@@ -53,14 +53,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lRV-RP-Fpn">
                                         <rect key="frame" x="3" y="5" width="40" height="29"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-KX-3mx">
-                                                <rect key="frame" x="0.0" y="0.0" width="16.5" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-KX-3mx">
+                                                <rect key="frame" x="0.0" y="0.0" width="19.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-Wp-O4C">
-                                                <rect key="frame" x="17.5" y="0.0" width="22.5" height="29"/>
+                                                <rect key="frame" x="20.5" y="0.0" width="19.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -137,6 +137,7 @@
             <connections>
                 <outlet property="dietLabel" destination="9Kz-tN-7dx" id="XcE-Vm-C1y"/>
                 <outlet property="ingredientsLabel" destination="pin-QM-NZy" id="1DO-b0-s5B"/>
+                <outlet property="minLabel" destination="qfI-Wp-O4C" id="kf5-1c-agk"/>
                 <outlet property="recipeImageView" destination="JIA-Ob-3yP" id="rff-Xa-Peu"/>
                 <outlet property="timeRecipeLabel" destination="7Ik-KX-3mx" id="yCR-fr-xNk"/>
                 <outlet property="titleLabel" destination="XK9-GB-dcW" id="NdF-qK-aMi"/>
