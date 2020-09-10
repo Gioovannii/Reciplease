@@ -250,6 +250,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="G3p-hP-6D4"/>
                     <connections>
+                        <outlet property="recipeImageView" destination="PVQ-KC-Fm2" id="rMh-j3-HkC"/>
                         <outlet property="tableView" destination="cLt-o3-Xbo" id="3Zn-pS-aJT"/>
                     </connections>
                 </viewController>

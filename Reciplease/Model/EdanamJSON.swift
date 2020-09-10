@@ -30,7 +30,7 @@ struct Hit: Codable {
 struct Recipe: Codable {
     let uri: String
     let label: String
-    let image: String
+    var image: String
     let source: String
     let url: String
     let shareAs: String

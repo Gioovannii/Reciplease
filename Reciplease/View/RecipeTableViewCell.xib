@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpf-eP-97n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaMargherita" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-Ob-3yP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-Ob-3yP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK9-GB-dcW">
@@ -50,24 +50,24 @@
                                             <constraint firstAttribute="width" constant="25" id="poe-Xc-vqk"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lRV-RP-Fpn">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="lRV-RP-Fpn">
                                         <rect key="frame" x="3" y="5" width="40" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-KX-3mx">
-                                                <rect key="frame" x="0.0" y="0.0" width="19.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="23.5" height="10"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-Wp-O4C">
-                                                <rect key="frame" x="20.5" y="0.0" width="19.5" height="29"/>
+                                                <rect key="frame" x="16.5" y="9" width="23.5" height="11"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high-protein" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kz-tN-7dx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high-protein" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Kz-tN-7dx">
                                         <rect key="frame" x="3" y="38" width="40" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,6 +121,7 @@
                             <constraint firstAttribute="bottom" secondItem="Swa-wQ-eqv" secondAttribute="bottom" constant="10" id="eVA-G8-lFO"/>
                             <constraint firstAttribute="bottom" secondItem="pin-QM-NZy" secondAttribute="bottom" constant="10" id="lTG-Y3-qzn"/>
                             <constraint firstAttribute="trailing" secondItem="Swa-wQ-eqv" secondAttribute="trailing" constant="10" id="phb-Qx-0Am"/>
+                            <constraint firstItem="pin-QM-NZy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XK9-GB-dcW" secondAttribute="trailing" id="sSu-QQ-cLg"/>
                             <constraint firstItem="JIA-Ob-3yP" firstAttribute="top" secondItem="Gpf-eP-97n" secondAttribute="top" id="wXD-vB-UGo"/>
                             <constraint firstItem="Swa-wQ-eqv" firstAttribute="leading" secondItem="pin-QM-NZy" secondAttribute="trailing" constant="20" id="wco-Ye-XCO"/>
                         </constraints>
@@ -135,7 +136,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dietLabel" destination="9Kz-tN-7dx" id="XcE-Vm-C1y"/>
+                <outlet property="healthLabel" destination="9Kz-tN-7dx" id="XcE-Vm-C1y"/>
                 <outlet property="ingredientsLabel" destination="pin-QM-NZy" id="1DO-b0-s5B"/>
                 <outlet property="minLabel" destination="qfI-Wp-O4C" id="kf5-1c-agk"/>
                 <outlet property="recipeImageView" destination="JIA-Ob-3yP" id="rff-Xa-Peu"/>
@@ -148,7 +149,6 @@
     <resources>
         <image name="emptyHeart" width="24" height="24"/>
         <image name="healthyEating" width="24" height="24"/>
-        <image name="pizzaMargherita" width="390" height="280"/>
         <image name="timer" width="16" height="16"/>
     </resources>
 </document>

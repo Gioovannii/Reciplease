@@ -51,7 +51,7 @@ final class AddIngredientsController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToRecipe" {
-        let vcDestination = segue.destination as! RecipesViewcontroller
+            let vcDestination = segue.destination as! RecipesViewcontroller
             vcDestination.recipes = collectData
         }
     }

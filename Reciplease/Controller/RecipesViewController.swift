@@ -11,14 +11,15 @@ import UIKit
 final class RecipesViewcontroller: UITableViewController {
     
     var recipes: [Hit]?
+    var index = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return recipes?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,22 +29,25 @@ final class RecipesViewcontroller: UITableViewController {
         }
         
         cell.recipe = recipes?[indexPath.row].recipe
-        if cell.timeRecipeLabel.text == "0" {
-            cell.timeRecipeLabel.text = "Unknown"
-            cell.minLabel.isHidden = true
-        }
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.index = indexPath.row
         performSegue(withIdentifier: "ToDescription", sender: nil)
+        print("Indexxxxxxxxxxx: \(index)")
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDescription" {
             let vcDestination = segue.destination as! DescriptionController
-            vcDestination.ingredients.append((recipes?[0].recipe.ingredientLines.joined(separator: ", "))!)
-            vcDestination.titleRecipe = recipes?[0].recipe.label
+            vcDestination.ingredients = recipes?[index].recipe.ingredientLines as! [String]
+            vcDestination.recipe?.image = recipes?[index].recipe.image
+           // vcDestination.image?.load(url: URL(string: (recipes?[index].recipe.image)!)!)
+            vcDestination.titleRecipe = recipes?[index].recipe.label
+            print("Title  == \(String(describing: recipes?[index].recipe.label))")
             print(vcDestination)
         }
     }
@@ -52,9 +56,9 @@ final class RecipesViewcontroller: UITableViewController {
         return 130
     }
     
-    func minutesToHoursMinutes (minutes : Int) -> (hours : Int , leftMinutes : Int) {
-        return (minutes / 60, (minutes % 60))
-    }
+    //    func checkTime(recipe: Recipe, index) {
+    //        if recipe
+    //    }
 }
 
 
