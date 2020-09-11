@@ -26,6 +26,8 @@ final class IngredientService {
     func addIngredients(name: String) {
         guard !name.isEmpty else { return }
         guard !checkIngredientsList(element: name) else { return ingredients.append(name) }
+        //let arr = name.components(separatedBy: ", ")
+        
     }
     
     func deleteIngredient(at index: Int) {

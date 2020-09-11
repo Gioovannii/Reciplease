@@ -15,14 +15,13 @@ final class DescriptionController: UIViewController {
     
     var ingredients = [String]()
     var titleRecipe: String?
-    var image: UIImageView?
+    var imageURL: String?
     
     var recipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewDidLoad: \(ingredients)")
-        recipeImageView.load(url: URL(string: recipe!.image)!)
+        recipeImageView.load(url: URL(string: imageURL!)!)
     }
     @IBAction func getDirectionsButton(_ sender: UIButton) {
       //  recipe?[0].shareAs
@@ -40,6 +39,7 @@ extension DescriptionController: UITableViewDataSource {
         cell.textLabel?.text = ingredients[(indexPath.row)]
         cell.textLabel?.font = UIFont(name: K.papyrusFont, size: 17)
         cell.textLabel?.textColor = .white
+        
         return cell
     }
     

@@ -29,6 +29,8 @@ final class RecipesViewcontroller: UITableViewController {
         }
         
         cell.recipe = recipes?[indexPath.row].recipe
+        
+        
         return cell
     }
     
@@ -36,7 +38,6 @@ final class RecipesViewcontroller: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
         performSegue(withIdentifier: "ToDescription", sender: nil)
-        print("Indexxxxxxxxxxx: \(index)")
         
     }
     
@@ -44,11 +45,8 @@ final class RecipesViewcontroller: UITableViewController {
         if segue.identifier == "ToDescription" {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.ingredients = recipes?[index].recipe.ingredientLines as! [String]
-            vcDestination.recipe?.image = recipes?[index].recipe.image
-           // vcDestination.image?.load(url: URL(string: (recipes?[index].recipe.image)!)!)
+            vcDestination.imageURL = recipes?[index].recipe.image
             vcDestination.titleRecipe = recipes?[index].recipe.label
-            print("Title  == \(String(describing: recipes?[index].recipe.label))")
-            print(vcDestination)
         }
     }
     
@@ -56,9 +54,9 @@ final class RecipesViewcontroller: UITableViewController {
         return 130
     }
     
-    //    func checkTime(recipe: Recipe, index) {
-    //        if recipe
-    //    }
+  
+    
+
 }
 
 
