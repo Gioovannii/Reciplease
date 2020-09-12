@@ -16,6 +16,7 @@ struct K {
     static let cellNibName = "RecipeTableViewCell"
     static let reusableCell = "ReusableCell"
     static let instructions = "InstructionsCell"
+    static let toDescription = "ToDescription"
     
     struct Config {
         static let appId = "c3b651ca"

@@ -11,7 +11,7 @@ import Foundation
 final class IngredientService {
     
     // MARK: - Property
-    var ingredients = ["Lemon"]
+    var ingredients = [String]()
     
     var ingredientList: String {
         return ingredients.joined(separator: ",")

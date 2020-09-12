@@ -32,6 +32,7 @@ class RecipeTableViewCell: UITableViewCell {
     
     func convert(minutes: Double) -> String {
         minLabel.isHidden = true
+        timeRecipeLabel.font = UIFont(name: "Helvetica", size: 10)
         let formater = NumberFormatter()
         formater.maximumFractionDigits = 2
         
@@ -51,8 +52,12 @@ class RecipeTableViewCell: UITableViewCell {
 
 // MARK: - Load image from url
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
 extension UIImageView {
     func load(url: URL) {
+        self.image = nil // Set previous image to blank then load
+        
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {

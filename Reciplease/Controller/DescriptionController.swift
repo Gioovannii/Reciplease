@@ -10,30 +10,40 @@ import UIKit
 
 final class DescriptionController: UIViewController {
     
+    // MARK: - Outlets
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
     
-    var ingredients = [String]()
-    var titleRecipe: String?
-    var imageURL: String?
-    
+    // MARK: - Properties
+
     var recipe: Recipe?
+    var ingredients = [String]()
     
+    // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeImageView.load(url: URL(string: imageURL!)!)
+        recipeImageView.load(url: URL(string: recipe!.image)!)
+        
+        guard let ingr = recipe?.ingredientLines else { return }
+        ingredients = ingr
     }
+    
     @IBAction func getDirectionsButton(_ sender: UIButton) {
-      //  recipe?[0].shareAs
+        guard let shareAs = recipe?.shareAs else { return }
+        print(shareAs)
     }
 }
 
+// MARK: - Data Source
+
 extension DescriptionController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.instructions, for: indexPath)
         
         cell.textLabel?.text = ingredients[(indexPath.row)]
@@ -43,9 +53,8 @@ extension DescriptionController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return  titleRecipe
+    internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return  recipe?.label
     }
 }
 

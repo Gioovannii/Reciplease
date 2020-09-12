@@ -224,7 +224,7 @@
                                     <outlet property="dataSource" destination="mc8-fJ-6HW" id="kBt-WQ-IqO"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaMargherita" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-KC-Fm2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-KC-Fm2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="nNh-FB-woF"/>
@@ -355,7 +355,4 @@
     <inferredMetricsTieBreakers>
         <segue reference="qcW-HT-SFx"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="pizzaMargherita" width="390" height="280"/>
-    </resources>
 </document>

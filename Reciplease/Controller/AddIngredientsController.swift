@@ -19,20 +19,22 @@ final class AddIngredientsController: UIViewController {
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
     
-    @IBAction func addIngredient(_ sender: UIButton) {
+    @IBAction private func addIngredient(_ sender: UIButton) {
         guard let str = ingredientTextField.text else { return }
+        let array = str.components(separatedBy: " ")
+        print(array)
         let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
         ingredientTextField.text = ""
         service.addIngredients(name: ingredients)
         ingredientsTableView.reloadData()
     }
     
-    @IBAction func clearIngredientsButton(_ sender: UIButton) {
+    @IBAction private func clearIngredientsButton(_ sender: UIButton) {
         service.clearAllIngredients()
         ingredientsTableView.reloadData()
     }
     
-    @IBAction func searchRecipesButton(_ sender: UIButton) {
+    @IBAction private func searchRecipesButton(_ sender: UIButton) {
         
         request.getData(ingredients: service.ingredientList) { result in
             switch result {
@@ -49,7 +51,7 @@ final class AddIngredientsController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToRecipe" {
             let vcDestination = segue.destination as! RecipesViewcontroller
             vcDestination.recipes = collectData
@@ -61,18 +63,18 @@ final class AddIngredientsController: UIViewController {
 
 extension AddIngredientsController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             service.deleteIngredient(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return service.ingredients.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: K.ingredient, for: indexPath)
         
         ingredientCell.textLabel?.text = service.ingredients[(indexPath.row)]
