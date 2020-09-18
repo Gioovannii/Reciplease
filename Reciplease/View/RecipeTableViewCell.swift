@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RecipeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var recipeView: UIView!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
@@ -17,9 +19,12 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
     
-    // donner 50 de bord
-    // bord rond
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        recipeView.layer.borderWidth = 3
+        recipeView.layer.borderColor = UIColor.black.cgColor
+        recipeView.layer.cornerRadius = 10
+    }
     
     var recipe: Recipe? {
         didSet {
@@ -54,7 +59,6 @@ class RecipeTableViewCell: UITableViewCell {
 }
 
 // MARK: - Load image from url
-// sdWebImage  => pod
 
 let imageCache = NSCache<AnyObject, AnyObject>()
 

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7B1A485224F76588008562FA /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A485124F76588008562FA /* RecipesViewController.swift */; };
+		7B3E71092514F58A00A105D2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7B3E71082514F58A00A105D2 /* SDWebImage */; };
 		7B43982424FCD3E3003753A6 /* EdanamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982324FCD3E3003753A6 /* EdanamSession.swift */; };
 		7B43982724FCE92A003753A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */; };
 		7B43982824FCE92A003753A6 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */; };
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3E71092514F58A00A105D2 /* SDWebImage in Frameworks */,
 				A5057F3848C13099F11CBE3F /* Pods_Reciplease.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +256,9 @@
 			dependencies = (
 			);
 			name = Reciplease;
+			packageProductDependencies = (
+				7B3E71082514F58A00A105D2 /* SDWebImage */,
+			);
 			productName = Reciplease;
 			productReference = 7B47601724F35B7700B51168 /* Reciplease.app */;
 			productType = "com.apple.product-type.application";
@@ -305,6 +310,9 @@
 				Base,
 			);
 			mainGroup = 7B47600E24F35B7700B51168;
+			packageReferences = (
+				7B3E71072514F58A00A105D2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 7B47601824F35B7700B51168 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -700,6 +708,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B3E71072514F58A00A105D2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B3E71082514F58A00A105D2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B3E71072514F58A00A105D2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7B47602324F35B7700B51168 /* Reciplease.xcdatamodeld */ = {

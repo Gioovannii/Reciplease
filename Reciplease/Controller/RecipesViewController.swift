@@ -34,6 +34,9 @@ final class RecipesViewcontroller: UITableViewController {
             return UITableViewCell()
         }
         
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.cornerRadius = 10
         cell.recipe = recipes?[indexPath.row].recipe
         return cell
     }
@@ -58,7 +61,7 @@ final class RecipesViewcontroller: UITableViewController {
         let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
         cell.layer.transform = translationMouvement
         cell.alpha = 0
-        UIView.animate(withDuration: 3.00) {
+        UIView.animate(withDuration: 1.50) {
             cell.layer.transform = CATransform3DIdentity
             cell.alpha = 1
         }
