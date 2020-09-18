@@ -17,6 +17,9 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
     
+    // donner 50 de bord
+    // bord rond
+    
     
     var recipe: Recipe? {
         didSet {
@@ -51,6 +54,7 @@ class RecipeTableViewCell: UITableViewCell {
 }
 
 // MARK: - Load image from url
+// sdWebImage  => pod
 
 let imageCache = NSCache<AnyObject, AnyObject>()
 

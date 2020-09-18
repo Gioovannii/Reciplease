@@ -33,6 +33,9 @@ final class DescriptionController: UIViewController {
     @IBAction func getDirectionsButton(_ sender: UIButton) {
         guard let shareAs = recipe?.shareAs else { return }
         print(shareAs)
+        
+        // Ouvrir safari et allez a l'adresse
+        
     }
 }
 

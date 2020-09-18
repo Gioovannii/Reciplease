@@ -53,6 +53,16 @@ final class RecipesViewcontroller: UITableViewController {
     override internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
+        cell.layer.transform = translationMouvement
+        cell.alpha = 0
+        UIView.animate(withDuration: 3.00) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1
+        }
+    }
 }
 
 
