@@ -49,6 +49,7 @@ final class AddIngredientsController: UIViewController {
                 self.presentAlert(title: "Error", message: "\(error.localizedDescription)")
             }
         }
+        
     }
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {

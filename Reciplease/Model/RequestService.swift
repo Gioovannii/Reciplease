@@ -38,4 +38,20 @@ final class RequestService {
             callback(.success(responseDecoded))
         }
     }
+    
+    /// Encoding
+    /// - Parameters:
+    ///   - baseUrl: Without any parameters
+    ///   - parameters: Differents api provide by API
+    /// - Returns: Final complete url
+    private func encode(baseUrl: URL, with parameters: [(String, Any)]?) -> URL {
+        guard var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false), let parameters = parameters, !parameters.isEmpty else { return baseUrl }
+        urlComponents.queryItems = [URLQueryItem]()
+        for (key, value) in parameters {
+            let querryItem = URLQueryItem(name: key, value: "\(value)")
+            urlComponents.queryItems?.append(querryItem)
+        }
+        guard let url = urlComponents.url else { return baseUrl }
+        return url
+    }
 }
