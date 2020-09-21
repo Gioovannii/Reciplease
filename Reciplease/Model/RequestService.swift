@@ -16,8 +16,10 @@ final class RequestService {
         self.session = session
     }
     
-    func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, Error>) -> Void) {
-        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_key=\(K.Config.appKey)&app_id=\(K.Config.appId)&from=0&to=10") else { return }
+    func getData(ingredients: String, baseUrl: URL, parameters: [(String, Any)]?, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) {
+//        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_key=\(K.Config.appKey)&app_id=\(K.Config.appId)&from=0&to=10") else { return }
+        
+        let url = encode(baseUrl: baseUrl, with: parameters)
         
         session.request(with: url) { responseData in
             guard let data = responseData.data else {
@@ -34,7 +36,7 @@ final class RequestService {
                 callback(.failure(NetworkError.undecodableData))
                 return
             }
-        
+            
             callback(.success(responseDecoded))
         }
     }

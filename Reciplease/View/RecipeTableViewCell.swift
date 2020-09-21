@@ -36,8 +36,11 @@ class RecipeTableViewCell: UITableViewCell {
         }
     }
     
+    // TODO: - Send user to safari web site
     @IBAction func favoriteTapButton(_ sender: UIButton) { }
-    
+
+    // MARK: - Convert time minutes to hours
+
     func convert(minutes: Double) -> String {
         minLabel.isHidden = true
         timeRecipeLabel.font = UIFont(name: "Helvetica", size: 10)
@@ -50,13 +53,13 @@ class RecipeTableViewCell: UITableViewCell {
             let minTrans = formater.string(from: NSNumber(value: minutes))
             return minTrans!
         }
+        
         let result = minutes / 60
-        
         guard let resultForm = formater.string(from: NSNumber(value: result)) else { return String()}
-        
         return "\(resultForm) hours"
     }
 }
+
 
 // MARK: - Load image from url
 
