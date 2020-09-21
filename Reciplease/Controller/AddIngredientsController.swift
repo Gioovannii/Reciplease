@@ -36,8 +36,7 @@ final class AddIngredientsController: UIViewController {
     
     @IBAction private func searchRecipesButton(_ sender: UIButton) {
         
-        guard let url = URL(string: "https://api.edamam.com/search?") else { return }
-        request.getData(ingredients: service.ingredientList, baseUrl: url, parameters: [("app_id", K.Config.appId), ("app_key", K.Config.appKey), ("q", service.ingredientList)]) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
+        request.getData(ingredients: service.ingredientList ) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -47,7 +46,7 @@ final class AddIngredientsController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                self.presentAlert(title: "Error", message: "\(error.localizedDescription)")
+                self.presentAlert(title: "Error", message: "\(error.description)")
             }
         }
     }

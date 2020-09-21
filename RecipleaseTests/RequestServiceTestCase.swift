@@ -15,6 +15,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: nil, data: nil))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
+            
             requestService.getData(ingredients: "cheese,mozarella") { result in
                 guard case .failure(let error) = result else {
                     XCTFail("Test getData method with no data failed.")
@@ -30,6 +31,7 @@
             let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseKO, data: FakeResponseData.correctData))
             let requestService = RequestService(session: session)
             let expectation = XCTestExpectation(description: "Wait for queue change.")
+            
             requestService.getData(ingredients: "cheese,mozarella") { result in
                 guard case .failure(let error) = result else {
                     XCTFail("Test getData method with incorrect response failed.")

@@ -11,14 +11,16 @@ import Foundation
 final class RequestService {
     
     private let session: AlamoSession
-    
+    let service = IngredientService()
     init(session: AlamoSession = EdanamSession()) {
         self.session = session
     }
     
-    func getData(ingredients: String, baseUrl: URL, parameters: [(String, Any)]?, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) {
-//        guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients)&app_key=\(K.Config.appKey)&app_id=\(K.Config.appId)&from=0&to=10") else { return }
+    // ingredent and callback
+    func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) {
         
+        guard let baseUrl = URL(string: "https://api.edamam.com/search?") else { return }
+        let parameters = [("app_id", K.Config.appId), ("app_key", K.Config.appKey), ("q", ingredients)]
         let url = encode(baseUrl: baseUrl, with: parameters)
         
         session.request(with: url) { responseData in

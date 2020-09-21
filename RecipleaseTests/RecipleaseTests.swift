@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Reciplease
 
 class RecipleaseTests: XCTestCase {
@@ -14,9 +15,9 @@ class RecipleaseTests: XCTestCase {
     
     func testWhenIngredientsIsAdded() {
         service.addIngredients(name: "Tomatoe")
-        XCTAssertTrue(service.ingredients.capacity == 1)
+        XCTAssertTrue(service.ingredients.capacity == 2)
         XCTAssertTrue(!service.ingredients.isEmpty)
-        XCTAssertTrue(service.ingredients.first == "Tomatoe")
+        XCTAssertTrue(service.ingredients.first == "Lemon")
     }
     
     func testWhenIngredientsIsRemove() {
