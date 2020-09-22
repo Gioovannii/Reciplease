@@ -19,6 +19,14 @@ final class AddIngredientsController: UIViewController {
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() { view.endEditing(true) }
+    
     @IBAction private func addIngredient(_ sender: UIButton) {
         guard let str = ingredientTextField.text else { return }
         let array = str.components(separatedBy: " ")
@@ -41,7 +49,6 @@ final class AddIngredientsController: UIViewController {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.collectData = data.hits
-                    print(self.collectData!)
                     self.performSegue(withIdentifier: "ToRecipe", sender: nil)
                 }
             case .failure(let error):

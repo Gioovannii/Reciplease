@@ -18,7 +18,10 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeRecipeLabel: UILabel!
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
+    
+    var check = true
     override func awakeFromNib() {
         super.awakeFromNib()
         recipeView.layer.borderWidth = 3
@@ -29,7 +32,10 @@ class RecipeTableViewCell: UITableViewCell {
     
     var recipe: Recipe? {
         didSet {
-            recipeImageView.load(url: URL(string: recipe!.image)!)
+            guard let url = URL(string: recipe?.image ?? "chef") else { return }
+            
+            recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "chef"),
+                                        options: [], completed: nil)
             titleLabel.text = recipe?.label
             ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
             timeRecipeLabel.text =  convert(minutes: Double(recipe!.totalTime))
@@ -37,11 +43,26 @@ class RecipeTableViewCell: UITableViewCell {
         }
     }
     
-    // TODO: - Send user to safari web site
-    @IBAction func favoriteTapButton(_ sender: UIButton) { }
+    // TODO: - change bookmark from recipe
+    @IBAction func favoriteTapButton(_ sender: UIButton) {
+        if check == true {
+            print("NADA")
+        } else {
+            
+        }
+        
+        check = !check
 
+        switch check {
+        case true:
+            favoriteButton.setImage(UIImage(named: "fullHeart"), for: .normal)
+        case false:
+            favoriteButton.setImage(UIImage(named: "emptyHeart"), for: .normal)
+        }
+    }
+    
     // MARK: - Convert time minutes to hours
-
+    
     func convert(minutes: Double) -> String {
         minLabel.isHidden = true
         timeRecipeLabel.font = UIFont(name: "Helvetica", size: 10)
@@ -60,27 +81,3 @@ class RecipeTableViewCell: UITableViewCell {
         return "\(resultForm) hours"
     }
 }
-
-
-// MARK: - Load image from url
-
-let imageCache = NSCache<AnyObject, AnyObject>()
-
-extension UIImageView {
-    func load(url: URL) {
-        self.image = nil // Set previous image to blank then load
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                let imageToCache = UIImage(data: data)
-                //imageCache.setObject(imageToCache!, forKey: url)
-                if let image = imageToCache {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
-

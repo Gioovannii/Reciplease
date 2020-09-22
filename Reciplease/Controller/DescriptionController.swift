@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class DescriptionController: UIViewController {
     
@@ -24,18 +25,18 @@ final class DescriptionController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeImageView.load(url: URL(string: recipe!.image)!)
-        
+        guard let url = URL(string: recipe!.image) else { return }
+        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
+                                    options: [], completed: nil)
         guard let ingr = recipe?.ingredientLines else { return }
         ingredients = ingr
     }
     
     @IBAction func getDirectionsButton(_ sender: UIButton) {
         guard let shareAs = recipe?.shareAs else { return }
-        print(shareAs)
-        
-        // Ouvrir safari et allez a l'adresse
-        
+        if let url = URL(string: shareAs) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

@@ -61,7 +61,7 @@ final class RecipesViewcontroller: UITableViewController {
         let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
         cell.layer.transform = translationMouvement
         cell.alpha = 0
-        UIView.animate(withDuration: 1.50) {
+        UIView.animate(withDuration: 0.20) {
             cell.layer.transform = CATransform3DIdentity
             cell.alpha = 1
         }
