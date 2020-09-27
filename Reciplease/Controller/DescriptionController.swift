@@ -57,7 +57,6 @@ final class DescriptionController: UIViewController {
         case true:
             favoriteButton.setImage(UIImage(named: "fullHeart"), for: .normal)
             coreDataManager?.createCell(title: recipe!.label)
-            
             print(coreDataManager?.recipes as Any)
 
         case false:
