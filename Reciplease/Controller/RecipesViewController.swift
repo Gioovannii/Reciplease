@@ -34,10 +34,9 @@ final class RecipesViewcontroller: UITableViewController {
             return UITableViewCell()
         }
         
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.white.cgColor
-        cell.layer.cornerRadius = 10
+        configureCells(cell: cell)
         cell.recipe = recipes?[indexPath.row].recipe
+        
         return cell
     }
     
@@ -50,6 +49,7 @@ final class RecipesViewcontroller: UITableViewController {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.recipe = recipes?[index].recipe
+            vcDestination.hit = recipes?[index]
         }
     }
     
@@ -57,6 +57,14 @@ final class RecipesViewcontroller: UITableViewController {
         return 260
     }
     
+    func configureCells(cell: RecipeTableViewCell) {
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.cornerRadius = 10
+    }
+    
+    // MARK: - Animation cellules
+
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
         cell.layer.transform = translationMouvement
@@ -67,5 +75,3 @@ final class RecipesViewcontroller: UITableViewController {
         }
     }
 }
-
-

@@ -11,35 +11,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="295" id="KGk-i7-Jjw" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="417" height="157"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="398" id="KGk-i7-Jjw" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="260"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="417" height="157"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpf-eP-97n">
-                        <rect key="frame" x="10" y="10" width="397" height="137"/>
+                        <rect key="frame" x="10" y="10" width="395" height="240"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-Ob-3yP">
-                                <rect key="frame" x="0.0" y="0.0" width="397" height="137"/>
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="240"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK9-GB-dcW">
-                                <rect key="frame" x="10" y="83" width="43.5" height="20.5"/>
+                                <rect key="frame" x="10" y="186" width="43.5" height="20.5"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomatoes, mozarella, cheese" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pin-QM-NZy">
-                                <rect key="frame" x="10" y="106.5" width="267" height="20.5"/>
+                                <rect key="frame" x="10" y="209.5" width="375" height="20.5"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swa-wQ-eqv">
-                                <rect key="frame" x="297" y="45" width="90" height="70"/>
+                                <rect key="frame" x="295" y="45" width="90" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="healthyEating" translatesAutoresizingMaskIntoConstraints="NO" id="6KL-5Z-Ovy">
                                         <rect key="frame" x="60" y="38" width="25" height="26"/>
@@ -96,7 +96,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEl-Ji-yoQ">
-                                <rect key="frame" x="324.5" y="5" width="35" height="35"/>
+                                <rect key="frame" x="322.5" y="5" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="MqF-ej-kCK"/>
@@ -104,14 +104,12 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" image="emptyHeart"/>
-                                <connections>
-                                    <action selector="favoriteTapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CVs-xA-sga"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XK9-GB-dcW" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" constant="10" id="5SI-mI-AZM"/>
+                            <constraint firstAttribute="trailing" secondItem="pin-QM-NZy" secondAttribute="trailing" constant="10" id="CoU-jb-bvJ"/>
                             <constraint firstItem="Swa-wQ-eqv" firstAttribute="top" secondItem="GEl-Ji-yoQ" secondAttribute="bottom" constant="5" id="MzS-oN-KA8"/>
                             <constraint firstItem="GEl-Ji-yoQ" firstAttribute="centerX" secondItem="Swa-wQ-eqv" secondAttribute="centerX" id="QfQ-Re-lP0"/>
                             <constraint firstItem="pin-QM-NZy" firstAttribute="leading" secondItem="Gpf-eP-97n" secondAttribute="leading" constant="10" id="Uue-bz-FSf"/>
@@ -123,7 +121,6 @@
                             <constraint firstAttribute="bottom" secondItem="pin-QM-NZy" secondAttribute="bottom" constant="10" id="lTG-Y3-qzn"/>
                             <constraint firstAttribute="trailing" secondItem="Swa-wQ-eqv" secondAttribute="trailing" constant="10" id="phb-Qx-0Am"/>
                             <constraint firstItem="pin-QM-NZy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XK9-GB-dcW" secondAttribute="trailing" id="sSu-QQ-cLg"/>
-                            <constraint firstItem="Swa-wQ-eqv" firstAttribute="leading" secondItem="pin-QM-NZy" secondAttribute="trailing" constant="20" id="wco-Ye-XCO"/>
                             <constraint firstItem="JIA-Ob-3yP" firstAttribute="top" secondItem="Gpf-eP-97n" secondAttribute="top" id="y5m-RG-sPv"/>
                         </constraints>
                     </view>
@@ -137,7 +134,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="favoriteButton" destination="GEl-Ji-yoQ" id="oxZ-0s-uRY"/>
                 <outlet property="healthLabel" destination="9Kz-tN-7dx" id="XcE-Vm-C1y"/>
                 <outlet property="ingredientsLabel" destination="pin-QM-NZy" id="1DO-b0-s5B"/>
                 <outlet property="minLabel" destination="qfI-Wp-O4C" id="kf5-1c-agk"/>
@@ -146,7 +142,7 @@
                 <outlet property="timeRecipeLabel" destination="7Ik-KX-3mx" id="yCR-fr-xNk"/>
                 <outlet property="titleLabel" destination="XK9-GB-dcW" id="NdF-qK-aMi"/>
             </connections>
-            <point key="canvasLocation" x="215.21739130434784" y="5.6919642857142856"/>
+            <point key="canvasLocation" x="213.768115942029" y="-28.794642857142854"/>
         </tableViewCell>
     </objects>
     <resources>

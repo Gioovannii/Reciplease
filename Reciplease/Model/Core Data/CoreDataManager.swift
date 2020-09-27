@@ -21,6 +21,12 @@ final class CoreDataManager {
         guard let ingredients = try? managedObjectContext.fetch(request) else { return [] }
         return ingredients
     }
+    
+    var recipes: [Recipes] {
+        let request: NSFetchRequest<Recipes> = Recipes.fetchRequest()
+        guard let recipes = try? managedObjectContext.fetch(request) else { return [] }
+        return recipes
+    }
 
     // MARK: - Initializer
 
@@ -31,14 +37,14 @@ final class CoreDataManager {
 
     // MARK: - Manage Task Entity
 
-    func createIngredient(name: String) {
-        let ingredient = Ingredient(context: managedObjectContext)
-        ingredient.name = name
-        coreDataStack.saveContext()
-    }
-
-    func deleteAllIngredients() {
-        ingredients.forEach { managedObjectContext.delete($0) }
+    func createCell(title: String) {
+//        let ingredient = Ingredient(context: managedObjectContext)
+//        ingredient.name = name
+//        coreDataStack.saveContext()
+        
+        let recipe = Recipes(context: managedObjectContext)
+        recipe.title = title
+        print(recipe.title as Any)
         coreDataStack.saveContext()
     }
 }
