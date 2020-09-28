@@ -8,11 +8,17 @@
 
 import UIKit
 
+
 class FavoriteTableViewController: UITableViewController {
 
+    
+    var coreDataManager: CoreDataManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
+       // print(coreDataManager?.recipes.first?.title)
     }
 
     // MARK: - Table view data source

@@ -24,6 +24,8 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         recipeView.layer.borderWidth = 3
@@ -37,7 +39,7 @@ class RecipeTableViewCell: UITableViewCell {
             guard let url = URL(string: recipe?.image ?? "chef") else { return }
             recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "chef"),
                                         options: [], completed: nil)
-            coreDataManager?.createCell(title: recipe!.label)
+//            coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: Int32(recipe!.totalTime))
             
             titleLabel.text = recipe?.label
             ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")

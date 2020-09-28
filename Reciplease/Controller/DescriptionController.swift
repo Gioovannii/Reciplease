@@ -15,32 +15,36 @@ final class DescriptionController: UIViewController {
     // MARK: - Properties
     
     var ingredients = [String]()
-
+    
     var hit: Hit?
-
+    
     var recipe: Recipe?
     var favorite = false
     var coreDataManager: CoreDataManager?
     
     
     // MARK: - Outlets
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     
     // MARK: - Life cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
+        
         guard let url = URL(string: recipe!.image) else { return }
         recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
                                     options: [], completed: nil)
         guard let ingr = recipe?.ingredientLines else { return }
         ingredients = ingr
-                            
-        print("Hit data = \(hit?.bookmarked7)")
+        
+        //print("Hit data = \(hit?.bookmarked)")
     }
     
     @IBAction func getDirectionsButton(_ sender: UIButton) {
@@ -50,17 +54,21 @@ final class DescriptionController: UIViewController {
         }
     }
     
-    @IBAction func tapFavorite(_ sender: UIButton) {
-        favorite = !favorite
+    @IBAction func favoriteTap(_ sender: UIBarButtonItem) {
+        favorite.toggle()
+        print("Press")
         
         switch favorite {
         case true:
-            favoriteButton.setImage(UIImage(named: "fullHeart"), for: .normal)
-            coreDataManager?.createCell(title: recipe!.label)
-            print(coreDataManager?.recipes as Any)
-
+            sender.image = UIImage(named: "fullHeart")
+            coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: Int32(recipe!.totalTime))
+            // favoriteButton.setImage(UIImage(named: "fullHeart"), for: .normal)
+            // coreDataManager?.createRecipe(title: recipe!.label)
+                    print(coreDataManager?.recipes as Any)
+        
         case false:
-            favoriteButton.setImage(UIImage(named: "emptyHeart"), for: .normal)
+            sender.image = UIImage(named: "emptyHeart")
+            //favoriteButton.setImage(UIImage(named: "emptyHeart"), for: .normal)
         }
     }
 }

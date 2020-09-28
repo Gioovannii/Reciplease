@@ -233,25 +233,16 @@
                                     <constraint firstAttribute="height" constant="250" id="nNh-FB-woF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfc-ZZ-QdH">
-                                <rect key="frame" x="372" y="98" width="32" height="32"/>
-                                <state key="normal" image="emptyHeart"/>
-                                <connections>
-                                    <action selector="tapFavorite:" destination="mc8-fJ-6HW" eventType="touchUpInside" id="bfw-7Q-FMb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wny-fi-7O0"/>
                         <color key="backgroundColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="y34-es-QHw" firstAttribute="leading" secondItem="Wny-fi-7O0" secondAttribute="leading" constant="20" id="0CL-N5-hPR"/>
-                            <constraint firstItem="hfc-ZZ-QdH" firstAttribute="top" secondItem="Wny-fi-7O0" secondAttribute="top" constant="10" id="9S3-6D-2i4"/>
                             <constraint firstItem="cLt-o3-Xbo" firstAttribute="leading" secondItem="Wny-fi-7O0" secondAttribute="leading" id="H6t-iy-CR1"/>
                             <constraint firstItem="PVQ-KC-Fm2" firstAttribute="top" secondItem="Wny-fi-7O0" secondAttribute="top" id="LAT-hd-V7n"/>
                             <constraint firstItem="Wny-fi-7O0" firstAttribute="trailing" secondItem="y34-es-QHw" secondAttribute="trailing" constant="25" id="MzH-Ff-i76"/>
                             <constraint firstItem="y34-es-QHw" firstAttribute="top" secondItem="cLt-o3-Xbo" secondAttribute="bottom" id="VmH-qj-0y8"/>
                             <constraint firstItem="Wny-fi-7O0" firstAttribute="bottom" secondItem="y34-es-QHw" secondAttribute="bottom" constant="20" id="Xsg-ie-HHP"/>
-                            <constraint firstItem="Wny-fi-7O0" firstAttribute="trailing" secondItem="hfc-ZZ-QdH" secondAttribute="trailing" constant="10" id="ZjV-fD-RIi"/>
                             <constraint firstItem="PVQ-KC-Fm2" firstAttribute="leading" secondItem="Wny-fi-7O0" secondAttribute="leading" id="gN3-SQ-6WB"/>
                             <constraint firstItem="Wny-fi-7O0" firstAttribute="trailing" secondItem="PVQ-KC-Fm2" secondAttribute="trailing" id="jH8-SY-pOO"/>
                             <constraint firstItem="PVQ-KC-Fm2" firstAttribute="centerX" secondItem="Afc-In-4Eh" secondAttribute="centerX" id="k47-WK-8AD"/>
@@ -259,9 +250,15 @@
                             <constraint firstItem="Wny-fi-7O0" firstAttribute="trailing" secondItem="cLt-o3-Xbo" secondAttribute="trailing" id="pds-6W-EGr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G3p-hP-6D4"/>
+                    <navigationItem key="navigationItem" id="G3p-hP-6D4">
+                        <barButtonItem key="rightBarButtonItem" image="emptyHeart" id="T6j-nt-0fp">
+                            <connections>
+                                <action selector="favoriteTap:" destination="mc8-fJ-6HW" id="Ztn-tT-pZN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="favoriteButton" destination="hfc-ZZ-QdH" id="pio-l7-xaC"/>
+                        <outlet property="favoriteButton" destination="T6j-nt-0fp" id="m4I-6J-IeT"/>
                         <outlet property="recipeImageView" destination="PVQ-KC-Fm2" id="rMh-j3-HkC"/>
                         <outlet property="tableView" destination="cLt-o3-Xbo" id="3Zn-pS-aJT"/>
                     </connections>
