@@ -250,15 +250,8 @@
                             <constraint firstItem="Wny-fi-7O0" firstAttribute="trailing" secondItem="cLt-o3-Xbo" secondAttribute="trailing" id="pds-6W-EGr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G3p-hP-6D4">
-                        <barButtonItem key="rightBarButtonItem" image="emptyHeart" id="T6j-nt-0fp">
-                            <connections>
-                                <action selector="favoriteTap:" destination="mc8-fJ-6HW" id="Ztn-tT-pZN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="G3p-hP-6D4"/>
                     <connections>
-                        <outlet property="favoriteButton" destination="T6j-nt-0fp" id="m4I-6J-IeT"/>
                         <outlet property="recipeImageView" destination="PVQ-KC-Fm2" id="rMh-j3-HkC"/>
                         <outlet property="tableView" destination="cLt-o3-Xbo" id="3Zn-pS-aJT"/>
                     </connections>
@@ -298,6 +291,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5yg-uZ-2ZK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -362,10 +356,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qcW-HT-SFx"/>
+        <segue reference="7ik-NG-C6Q"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="emptyHeart" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
