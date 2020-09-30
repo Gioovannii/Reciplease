@@ -8,18 +8,17 @@
 
 import UIKit
 import SDWebImage
-import CoreData
 
 final class DescriptionController: UIViewController {
     
     // MARK: - Properties
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     var ingredients = [String]()
     
     var hit: Hit?
     
     var recipe: Recipe?
-    var favorite = false
     var coreDataManager: CoreDataManager?
     
     
@@ -43,36 +42,6 @@ final class DescriptionController: UIViewController {
         ingredients = ingr
         
         //print("Hit data = \(hit?.bookmarked)")
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: isTapped(check: favorite)), style: .done, target: self, action: #selector(favoriteTapped))
-    }
-    
-    private func isTapped(check: Bool) -> String {
-        favorite = check
-        switch favorite {
-        case true:
-            return "fullHearth"
-            
-        case false:
-            return "emptyHeart"
-        }
-    }
-    
-    @objc func favoriteTapped() {
-        favorite.toggle()
-        
-//        print("Press")
-//        switch favorite {
-//        case true:
-//            coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: Int32(recipe!.totalTime))
-//            // favoriteButton.image = UIImage(named: "coeurs")
-//            // coreDataManager?.createRecipe(title: recipe!.label)
-//                    print(coreDataManager?.recipes as Any)
-//
-//        case false:
-//            print("Something")
-//            //favoriteButton.setImage(UIImage(named: "emptyHeart"), for: .normal)
-//        }
     }
     
     @IBAction func getDirectionsButton(_ sender: UIButton) {
@@ -82,23 +51,13 @@ final class DescriptionController: UIViewController {
         }
     }
     
-//    @IBAction func favoriteTap(_ sender: UIBarButtonItem) {
-//        favorite.toggle()
-//        print("Press")
-//
-//        switch favorite {
-//        case true:
-//            sender.image = UIImage(named: "coeurs")
-//            coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: Int32(recipe!.totalTime))
-//            // favoriteButton.image = UIImage(named: "coeurs")
-//            // coreDataManager?.createRecipe(title: recipe!.label)
-//                    print(coreDataManager?.recipes as Any)
-//
-//        case false:
-//            sender.image = UIImage(named: "emptyHeart")
-//            //favoriteButton.setImage(UIImage(named: "emptyHeart"), for: .normal)
-//        }
-//    }
+    @IBAction func favoriteTapped(_ sender: UIBarButtonItem) {
+        
+        sender.image = UIImage(named: "fullHeart")
+        guard coreDataManager?.title != nil else { return }
+        coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+
+    }
 }
 
 // MARK: - Data Source

@@ -179,6 +179,7 @@
 				7B47602B24F35B7800B51168 /* Info.plist */,
 				7B47601A24F35B7700B51168 /* AppDelegate.swift */,
 				7B47601C24F35B7700B51168 /* SceneDelegate.swift */,
+				7B47602624F35B7800B51168 /* Assets.xcassets */,
 			);
 			path = "Supported Files";
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 		7B47604124F35DBD00B51168 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7B47602624F35B7800B51168 /* Assets.xcassets */,
 				7B47602824F35B7800B51168 /* LaunchScreen.storyboard */,
 				7B47602024F35B7700B51168 /* Main.storyboard */,
 				7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */,

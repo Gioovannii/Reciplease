@@ -2,11 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RecipeEntity" representedClassName="RecipeEntity" syncable="YES" codeGenerationType="class">
         <attribute name="healthLabel" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="NSKeyedUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="sourceUrl" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RecipeEntity" positionX="-144" positionY="-18" width="128" height="103"/>
+        <element name="RecipeEntity" positionX="-144" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

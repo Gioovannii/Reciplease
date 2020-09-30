@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import CoreData
 
 class RecipeTableViewCell: UITableViewCell {
     
@@ -39,12 +38,17 @@ class RecipeTableViewCell: UITableViewCell {
             guard let url = URL(string: recipe?.image ?? "chef") else { return }
             recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "chef"),
                                         options: [], completed: nil)
-//            coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: Int32(recipe!.totalTime))
             
             titleLabel.text = recipe?.label
             ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
             timeRecipeLabel.text =  convert(minutes: Double(recipe!.totalTime))
             healthLabel.text = recipe?.healthLabels[0]
+        }
+    }
+    
+    var recipeEntity: Recipe? {
+        didSet {
+
         }
     }
     

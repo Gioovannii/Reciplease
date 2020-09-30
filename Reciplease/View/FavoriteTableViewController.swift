@@ -8,20 +8,23 @@
 
 import UIKit
 
-
 class FavoriteTableViewController: UITableViewController {
-
     
     var coreDataManager: CoreDataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
 
         print(coreDataManager?.recipes.first?.title as Any)
+        print(coreDataManager?.recipes.first?.time as Any)
+        print(coreDataManager?.recipes.first?.ingredients as Any)
+
+      
     }
 
     // MARK: - Table view data source
@@ -37,6 +40,7 @@ class FavoriteTableViewController: UITableViewController {
         }
         
        // cell.recipe = coreDataManager?.recipes[indexPath.row]
+        
         print(cell)
         return UITableViewCell()
     }
