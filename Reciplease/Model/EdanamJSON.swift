@@ -22,7 +22,7 @@ struct EdanamJSON: Codable {
 
 struct Hit: Codable {
     let recipe: Recipe
-    var bookmarked, bought: Bool
+    let bookmarked, bought: Bool
 }
 
 // MARK: - Recipe

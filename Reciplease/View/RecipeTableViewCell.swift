@@ -46,9 +46,10 @@ class RecipeTableViewCell: UITableViewCell {
         }
     }
     
-    var recipeEntity: Recipe? {
+    var recipeEntity: RecipeEntity? {
         didSet {
-
+            titleLabel.text = recipeEntity?.title
+            ingredientsLabel.text = recipeEntity?.ingredients?.joined(separator: ", ")
         }
     }
     

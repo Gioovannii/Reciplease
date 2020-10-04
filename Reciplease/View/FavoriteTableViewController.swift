@@ -19,16 +19,15 @@ class FavoriteTableViewController: UITableViewController {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-
+        
         print(coreDataManager?.recipes.first?.title as Any)
         print(coreDataManager?.recipes.first?.time as Any)
-        print(coreDataManager?.recipes.first?.ingredients as Any)
-
-      
+        print(coreDataManager?.recipes.first?.healthLabel as Any)
+        self.reloadInputViews()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coreDataManager?.recipes.count ?? 0
     }
@@ -39,10 +38,8 @@ class FavoriteTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-       // cell.recipe = coreDataManager?.recipes[indexPath.row]
-        
-        print(cell)
-        return UITableViewCell()
+        cell.recipeEntity = coreDataManager?.recipes[indexPath.row]
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -340,14 +340,15 @@
             </objects>
             <point key="canvasLocation" x="-148" y="1067"/>
         </scene>
-        <!--Recipes Viewcontroller-->
+        <!--Favorite Table View Controller-->
         <scene sceneID="dwg-tM-Gfu">
             <objects>
-                <tableViewController id="g2v-eU-Oib" customClass="RecipesViewcontroller" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="35h-La-nbb">
+                <tableViewController id="g2v-eU-Oib" customClass="FavoriteTableViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="35h-La-nbb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" red="0.25096914170000001" green="0.24705910680000001" blue="0.24705874920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <connections>
                             <outlet property="dataSource" destination="g2v-eU-Oib" id="Fq8-bV-QgJ"/>
                             <outlet property="delegate" destination="g2v-eU-Oib" id="t0s-DZ-5D5"/>
@@ -364,7 +365,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qcW-HT-SFx"/>
+        <segue reference="7ik-NG-C6Q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="emptyHeart" width="30" height="30"/>

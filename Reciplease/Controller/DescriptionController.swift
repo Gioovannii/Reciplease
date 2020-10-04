@@ -54,8 +54,9 @@ final class DescriptionController: UIViewController {
     @IBAction func favoriteTapped(_ sender: UIBarButtonItem) {
         
         sender.image = UIImage(named: "fullHeart")
-        guard coreDataManager?.title != nil else { return }
+//        guard coreDataManager?.title == self.title else { return }
         coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+        print(coreDataManager?.recipes as Any)
 
     }
 }

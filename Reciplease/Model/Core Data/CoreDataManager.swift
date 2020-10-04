@@ -37,11 +37,18 @@ final class CoreDataManager {
         
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
+        self.title = recipe.title!
         recipe.healthLabel = healthLabel
         //recipe.image = image
         recipe.time = time
-        recipe.ingredients = ingredients 
+        //recipe.ingredients = ingredients 
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
+    }
+    
+    func checkRecipeName(title name: String) {
+        if name == self.title {
+            
+        }
     }
 }
