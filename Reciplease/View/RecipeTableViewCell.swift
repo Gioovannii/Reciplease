@@ -50,6 +50,7 @@ class RecipeTableViewCell: UITableViewCell {
         didSet {
             titleLabel.text = recipeEntity?.title
             ingredientsLabel.text = recipeEntity?.ingredients?.joined(separator: ", ")
+            
         }
     }
     

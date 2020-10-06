@@ -52,10 +52,19 @@ final class DescriptionController: UIViewController {
     }
     
     @IBAction func favoriteTapped(_ sender: UIBarButtonItem) {
-        
+        // TODO: - Condition check title use already
+        //if condition => {    // TODO: - check recipes.title of coreData if there is a recipe title already named
+                
+           // sender.image = UIImage(named: "emptyHeart")
+        //} else {
         sender.image = UIImage(named: "fullHeart")
-//        guard coreDataManager?.title == self.title else { return }
-        coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], image: recipe!.image, time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+        //}
+        coreDataManager?.favorite = true
+        
+        // TODO: - Save all datas. Missing => (favorite, image, sourceUrl)
+
+        coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+        
         print(coreDataManager?.recipes as Any)
 
     }

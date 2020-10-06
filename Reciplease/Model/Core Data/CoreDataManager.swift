@@ -17,6 +17,7 @@ final class CoreDataManager {
     private let managedObjectContext: NSManagedObjectContext
     
     var title = ""
+    var favorite = false
     
     var recipes: [RecipeEntity] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
@@ -33,15 +34,16 @@ final class CoreDataManager {
 
     // MARK: - Manage Task Entity
 
-    func createRecipe(title: String, healthLabel: String, image: String, time: String, ingredients: [String]) {
-        
+    func createRecipe(title: String, healthLabel: String, time: String, ingredients: [String]) {
+        // TODO: - Image
+
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
         self.title = recipe.title!
         recipe.healthLabel = healthLabel
-        //recipe.image = image
         recipe.time = time
-        //recipe.ingredients = ingredients 
+//        recipe.ingredients = ingredients
+        //favorite = recipe.isFavorite
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
     }
