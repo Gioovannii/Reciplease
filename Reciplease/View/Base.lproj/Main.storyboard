@@ -206,7 +206,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="getDirectionsButton:" destination="mc8-fJ-6HW" eventType="touchUpInside" id="WjL-4H-KRm"/>
+                                    <action selector="getDirectionsButtonTapped:" destination="mc8-fJ-6HW" eventType="touchUpInside" id="WjL-4H-KRm"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLt-o3-Xbo">
@@ -254,7 +254,7 @@
                         <barButtonItem key="rightBarButtonItem" image="emptyHeart" id="Rw5-Ww-lGw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="favoriteTapped:" destination="mc8-fJ-6HW" id="I70-8Y-B61"/>
+                                <action selector="favoriteButtonTapped:" destination="mc8-fJ-6HW" id="I70-8Y-B61"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -16,9 +16,6 @@ final class CoreDataManager {
     private let coreDataStack: CoreDataStack
     private let managedObjectContext: NSManagedObjectContext
     
-    var title = ""
-    var favorite = false
-    
     var recipes: [RecipeEntity] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let recipes = try? managedObjectContext.fetch(request) else { return [] }
@@ -34,23 +31,33 @@ final class CoreDataManager {
 
     // MARK: - Manage Task Entity
 
-    func createRecipe(title: String, healthLabel: String, time: String, ingredients: [String]) {
+    func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
         // TODO: - Image
 
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
-        self.title = recipe.title!
-        recipe.healthLabel = healthLabel
+        
+        recipe.healthLabel = health
         recipe.time = time
-//        recipe.ingredients = ingredients
+        recipe.ingredients = ingredients
         //favorite = recipe.isFavorite
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
     }
     
-    func checkRecipeName(title name: String) {
-        if name == self.title {
-            
-        }
+    func isRecipeRegistered(for name: String) -> Bool {
+        // faire requete qui recuper entite recette
+        // appliquer flitre sur requete (predicate)
+        // executer requete
+        //analyser resultat tableau contient recette
+        // si contient recette => favoris
+        // contient true
+        // false
+        
+        return true
+    }
+    
+    func deleteRecipe() {
+        
     }
 }

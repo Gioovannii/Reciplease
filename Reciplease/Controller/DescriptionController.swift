@@ -44,28 +44,40 @@ final class DescriptionController: UIViewController {
         //print("Hit data = \(hit?.bookmarked)")
     }
     
-    @IBAction func getDirectionsButton(_ sender: UIButton) {
+    @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
         guard let shareAs = recipe?.shareAs else { return }
         if let url = URL(string: shareAs) {
             UIApplication.shared.open(url)
         }
     }
     
-    @IBAction func favoriteTapped(_ sender: UIBarButtonItem) {
-        // TODO: - Condition check title use already
-        //if condition => {    // TODO: - check recipes.title of coreData if there is a recipe title already named
-                
-           // sender.image = UIImage(named: "emptyHeart")
-        //} else {
-        sender.image = UIImage(named: "fullHeart")
-        //}
-        coreDataManager?.favorite = true
+    @IBAction func favoriteButtonTapped(_ sender: UIBarButtonItem) {
+        guard let recipeTitle = recipe?.label else { return }
+        guard let coreDataManager = coreDataManager else { return }
         
-        // TODO: - Save all datas. Missing => (favorite, image, sourceUrl)
-
-        coreDataManager?.createRecipe(title: recipe!.label, healthLabel: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+            
+        if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
+            coreDataManager.createRecipe(title: recipe!.label, health: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+            sender.image = UIImage(named: "fullHeart")
+        } else {
+            sender.image = UIImage(named: "emptyHeart")
+         // supprimer la recette
+        }
         
-        print(coreDataManager?.recipes as Any)
+        
+//        // TODO: - Condition check title use already
+//            // TODO: - check recipes.title of coreData if there is a recipe title already named
+//
+//           // sender.image = UIImage(named: "emptyHeart")
+//
+//        sender.image = UIImage(named: "fullHeart")
+//        coreDataManager?.favorite = true
+//
+//        // TODO: - Save all datas. Missing => (image, sourceUrl)
+//
+//        coreDataManager?.createRecipe(title: recipe!.label, health: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+//
+//        print(coreDataManager?.recipes as Any)
 
     }
 }
