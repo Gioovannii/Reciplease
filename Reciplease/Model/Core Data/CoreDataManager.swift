@@ -46,13 +46,24 @@ final class CoreDataManager {
     }
     
     func isRecipeRegistered(for name: String) -> Bool {
-        // faire requete qui recuper entite recette
-        // appliquer flitre sur requete (predicate)
-        // executer requete
-        //analyser resultat tableau contient recette
-        // si contient recette => favoris
-        // contient true
-        // false
+        
+        // TODO: - faire requete qui recuper entite recette
+        let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
+        guard let recipe = try? managedObjectContext.fetch(request) else { return false }
+        
+        // TODO: - appliquer filtre sur requete (predicate)
+        let predicate = NSPredicate(format: "SELF CONTAINS %@", "name")
+        recipe.filter { element  in
+            return
+        }
+        //recipe.filter(NSPredicate(format: "SELF CONTAINS %@", "name"))
+        
+        
+        // TODO: - executer requete
+        // TODO: -analyser resultat tableau contient recette
+        // TODO: - si contient recette => favoris
+        // TODO: - contient true
+        // TODO: - false
         
         return true
     }
