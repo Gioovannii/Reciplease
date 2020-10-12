@@ -51,11 +51,11 @@ final class CoreDataManager {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let recipe = try? managedObjectContext.fetch(request) else { return false }
         
+        
+        
         // TODO: - appliquer filtre sur requete (predicate)
-        let predicate = NSPredicate(format: "SELF CONTAINS %@", "name")
-        recipe.filter { element  in
-            return
-        }
+      
+        
         //recipe.filter(NSPredicate(format: "SELF CONTAINS %@", "name"))
         
         
