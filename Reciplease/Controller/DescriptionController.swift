@@ -40,8 +40,6 @@ final class DescriptionController: UIViewController {
                                     options: [], completed: nil)
         guard let ingr = recipe?.ingredientLines else { return }
         ingredients = ingr
-        
-        //print("Hit data = \(hit?.bookmarked)")
     }
     
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
@@ -52,33 +50,18 @@ final class DescriptionController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIBarButtonItem) {
-        guard let recipeTitle = recipe?.label else { return }
+        guard let recipe = recipe else { return }
+        let recipeTitle = recipe.label
         guard let coreDataManager = coreDataManager else { return }
         
-            
+        
         if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
-            coreDataManager.createRecipe(title: recipe!.label, health: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
+            coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels[0], time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines)
             sender.image = UIImage(named: "fullHeart")
         } else {
             sender.image = UIImage(named: "emptyHeart")
-         // supprimer la recette
+            // supprimer la recette
         }
-        
-        
-//        // TODO: - Condition check title use already
-//            // TODO: - check recipes.title of coreData if there is a recipe title already named
-//
-//           // sender.image = UIImage(named: "emptyHeart")
-//
-//        sender.image = UIImage(named: "fullHeart")
-//        coreDataManager?.favorite = true
-//
-//        // TODO: - Save all datas. Missing => (image, sourceUrl)
-//
-//        coreDataManager?.createRecipe(title: recipe!.label, health: recipe!.healthLabels[0], time: "\(recipe!.totalTime)", ingredients: recipe!.ingredientLines)
-//
-//        print(coreDataManager?.recipes as Any)
-
     }
 }
 
