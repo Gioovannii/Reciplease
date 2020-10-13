@@ -10,36 +10,37 @@ import Foundation
 import CoreData
 
 final class CoreDataManager {
-
+    
     // MARK: - Properties
-
+    
     private let coreDataStack: CoreDataStack
     private let managedObjectContext: NSManagedObjectContext
     
     var recipes: [RecipeEntity] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         guard let recipes = try? managedObjectContext.fetch(request) else { return [] }
         return recipes
     }
-
+    
     // MARK: - Initializer
-
+    
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
         self.managedObjectContext = coreDataStack.mainContext
     }
-
+    
     // MARK: - Manage Task Entity
-
+    
     func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
         // TODO: - Image
-
+        
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
         
         recipe.healthLabel = health
         recipe.time = time
-        recipe.ingredients = ingredients
+        //recipe.ingredients = ingredients
         //favorite = recipe.isFavorite
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
@@ -50,22 +51,20 @@ final class CoreDataManager {
         // TODO: - faire requete qui recuper entite recette
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let recipe = try? managedObjectContext.fetch(request) else { return false }
-        
-        
-        
+        print(recipe)
         // TODO: - appliquer filtre sur requete (predicate)
-      
-        
-        //recipe.filter(NSPredicate(format: "SELF CONTAINS %@", "name"))
-        
-        
+        request.predicate = NSPredicate(format: "name == %@", name)
         // TODO: - executer requete
-        // TODO: -analyser resultat tableau contient recette
-        // TODO: - si contient recette => favoris
-        // TODO: - contient true
-        // TODO: - false
+        //request.execute()
         
-        return true
+        // TODO: - Analyser resultat tableau contient recette
+        
+        
+        // TODO: - Si contient recette => favoris
+        // TODO: - Contient => true
+        // TODO: - sinon => false
+        
+        return false
     }
     
     func deleteRecipe() {
