@@ -16,7 +16,6 @@ final class RequestService {
         self.session = session
     }
     
-    // ingredent and callback
     func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) {
         
         guard let baseUrl = URL(string: "https://api.edamam.com/search?") else { return }
