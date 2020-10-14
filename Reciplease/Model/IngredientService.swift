@@ -25,9 +25,8 @@ final class IngredientService {
     
     func addIngredients(name: String) {
         guard !name.isEmpty else { return }
-        guard !checkIngredientsList(element: name) else { return ingredients.append(name) }
-        //let arr = name.components(separatedBy: ", ")
-        
+        let checkNameSymbols = name.components(separatedBy: .punctuationCharacters).filter { $0 != ""}
+        guard !checkIngredientsList(element: name) else { return ingredients.append(contentsOf: checkNameSymbols) }
     }
     
     func deleteIngredient(at index: Int) {
