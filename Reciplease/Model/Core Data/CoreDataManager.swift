@@ -59,7 +59,6 @@ final class CoreDataManager {
         
         // TODO: - Analyser resultat tableau contient recette
         
-        
         // TODO: - Si contient recette => favoris
         // TODO: - Contient => true
         // TODO: - sinon => false
