@@ -34,14 +34,15 @@ final class CoreDataManager {
     
     func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
         // TODO: - Image
-        
+        // TODO: - URL
+
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
         
         recipe.healthLabel = health
         recipe.time = time
         //recipe.ingredients = ingredients
-        //favorite = recipe.isFavorite
+        
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
     }
@@ -50,22 +51,23 @@ final class CoreDataManager {
         
         // TODO: - faire requete qui recuper entite recette
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        guard let recipe = try? managedObjectContext.fetch(request) else { return false }
-        print(recipe)
         // TODO: - appliquer filtre sur requete (predicate)
-        request.predicate = NSPredicate(format: "name == %@", name)
+        request.predicate = NSPredicate(format: "title == %@", name)
         // TODO: - executer requete
+        guard let recipes = try? managedObjectContext.fetch(request) else { return false }
+        if recipes.isEmpty { return false }
+        return true
         
-        // TODO: - Analyser resultat tableau contient recette
-        // TODO: - Si contient recette => favoris
-        // TODO: - Contient => true
-        // TODO: - sinon => false
-        
-        return false
     }
     
-    func deleteRecipe() {
-        //recipes.remove(at: managedObjectContext.delete())
+    func deleteRecipe(name: String) {
+        let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
+        // TODO: - appliquer filtre sur requete (predicate)
+        request.predicate = NSPredicate(format: "title == %@", name)
+        // TODO: - executer requete
+        guard let recipes = try? managedObjectContext.fetch(request) else { return }
+        guard let recipe = recipes.first else { return }
+        managedObjectContext.delete(recipe)
         coreDataStack.saveContext()
     }
 }
