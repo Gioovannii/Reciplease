@@ -55,10 +55,8 @@ final class CoreDataManager {
         // TODO: - appliquer filtre sur requete (predicate)
         request.predicate = NSPredicate(format: "name == %@", name)
         // TODO: - executer requete
-        //request.execute()
         
         // TODO: - Analyser resultat tableau contient recette
-        
         // TODO: - Si contient recette => favoris
         // TODO: - Contient => true
         // TODO: - sinon => false
@@ -67,6 +65,7 @@ final class CoreDataManager {
     }
     
     func deleteRecipe() {
-        
+        //recipes.remove(at: managedObjectContext.delete())
+        coreDataStack.saveContext()
     }
 }
