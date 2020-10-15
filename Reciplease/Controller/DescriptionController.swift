@@ -60,7 +60,6 @@ final class DescriptionController: UIViewController {
             sender.image = UIImage(named: "fullHeart")
         } else {
             sender.image = UIImage(named: "emptyHeart")
-            // supprimer la recette
         }
     }
 }
