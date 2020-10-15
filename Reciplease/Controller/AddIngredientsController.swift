@@ -29,8 +29,6 @@ final class AddIngredientsController: UIViewController {
     
     @IBAction private func addIngredient(_ sender: UIButton) {
         guard let str = ingredientTextField.text else { return }
-        let array = str.components(separatedBy: " ")
-        print(array)
         let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
         ingredientTextField.text = ""
         service.addIngredients(name: ingredients)
