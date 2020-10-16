@@ -35,7 +35,7 @@ final class CoreDataManager {
     func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
         // TODO: - Image
         // TODO: - URL
-
+        
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
         
