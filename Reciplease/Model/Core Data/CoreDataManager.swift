@@ -34,6 +34,7 @@ final class CoreDataManager {
     
     func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
         // TODO: - Image
+        
         // TODO: - URL
         
         let recipe = RecipeEntity(context: managedObjectContext)
@@ -41,7 +42,7 @@ final class CoreDataManager {
         
         recipe.healthLabel = health
         recipe.time = time
-        //recipe.ingredients = ingredients
+        recipe.ingredients = ingredients
         
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
@@ -49,22 +50,20 @@ final class CoreDataManager {
     
     func isRecipeRegistered(for name: String) -> Bool {
         
-        // TODO: - faire requete qui recuper entite recette
+        // faire requete qui recuper entite recette
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        // TODO: - appliquer filtre sur requete (predicate)
+        // appliquer filtre sur requete (predicate)
         request.predicate = NSPredicate(format: "title == %@", name)
-        // TODO: - executer requete
+        // Execution requete
         guard let recipes = try? managedObjectContext.fetch(request) else { return false }
         if recipes.isEmpty { return false }
         return true
         
     }
     
-    func deleteRecipe(name: String) {
+    func deleteRecipe(for name: String) {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        // TODO: - appliquer filtre sur requete (predicate)
         request.predicate = NSPredicate(format: "title == %@", name)
-        // TODO: - executer requete
         guard let recipes = try? managedObjectContext.fetch(request) else { return }
         guard let recipe = recipes.first else { return }
         managedObjectContext.delete(recipe)
