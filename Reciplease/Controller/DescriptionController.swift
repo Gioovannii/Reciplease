@@ -21,7 +21,6 @@ final class DescriptionController: UIViewController {
     var recipe: Recipe?
     var coreDataManager: CoreDataManager?
     
-    
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
