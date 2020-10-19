@@ -38,8 +38,8 @@ final class DescriptionController: UIViewController {
         guard let url = URL(string: recipe!.image) else { return }
         recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
                                     options: [], completed: nil)
-        guard let ingr = recipe?.ingredientLines else { return }
-        ingredients = ingr
+        guard let ingredientLines = recipe?.ingredientLines else { return }
+        ingredients = ingredientLines
     }
     
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
@@ -56,10 +56,14 @@ final class DescriptionController: UIViewController {
         
         
         if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
-            coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels[0], time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines)
+            // TODO: - Image
+            // TODO: - URL
+
+            coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels.first ?? "None", time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines)
             sender.image = UIImage(named: "fullHeart")
         } else {
             sender.image = UIImage(named: "emptyHeart")
+            coreDataManager.deleteRecipe(for: recipe.label)
         }
     }
 }
