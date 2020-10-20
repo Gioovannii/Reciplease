@@ -20,10 +20,11 @@ class FavoriteTableViewController: UITableViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
         
+        print(coreDataManager?.recipes ?? "   ")
         print(coreDataManager?.recipes.first?.title as Any)
         print(coreDataManager?.recipes.first?.time as Any)
         print(coreDataManager?.recipes.first?.healthLabel as Any)
-        self.reloadInputViews()
+        
     }
     
     // MARK: - Table view data source
