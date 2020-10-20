@@ -21,6 +21,7 @@ final class CoreDataManager {
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         guard let recipes = try? managedObjectContext.fetch(request) else { return [] }
         return recipes
+        recipes.first?.ingredients
     }
     
     // MARK: - Initializer
@@ -32,17 +33,16 @@ final class CoreDataManager {
     
     // MARK: - Manage Task Entity
     
-    func createRecipe(title: String, health: String, time: String, ingredients: [String]) {
+    func createRecipe(title: String, health: String, time: String, ingredients: [String], sourceUrl: String) {
         // TODO: - Image
-        
         // TODO: - URL
         
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
-        
         recipe.healthLabel = health
         recipe.time = time
         recipe.ingredients = ingredients
+        recipe.sourceUrl = sourceUrl
         
         coreDataStack.saveContext()
         print(" coreDataManager: \(recipe.title as Any)")
