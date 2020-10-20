@@ -52,13 +52,14 @@ final class DescriptionController: UIViewController {
         guard let recipe = recipe else { return }
         let recipeTitle = recipe.label
         guard let coreDataManager = coreDataManager else { return }
-        
+        guard let health = recipe.healthLabels.first else { return }
         
         if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
             // TODO: - Image
             // TODO: - URL
-
-            coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels.first ?? "None", time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines)
+            
+            coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url)
+            print(coreDataManager.recipes)
             sender.image = UIImage(named: "fullHeart")
         } else {
             sender.image = UIImage(named: "emptyHeart")
@@ -80,10 +81,11 @@ extension DescriptionController: UITableViewDataSource {
         cell.textLabel?.text = ingredients[(indexPath.row)]
         cell.textLabel?.font = UIFont(name: K.papyrusFont, size: 17)
         cell.textLabel?.textColor = .white
-        
         return cell
     }
     
+    // MARK: - Header
+
     internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return  recipe?.label
     }
