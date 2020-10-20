@@ -3,7 +3,7 @@
     <entity name="RecipeEntity" representedClassName="RecipeEntity" syncable="YES" codeGenerationType="class">
         <attribute name="healthLabel" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
-        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="NSKeyedUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable" customClassName=".[String]"/>
         <attribute name="sourceUrl" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
