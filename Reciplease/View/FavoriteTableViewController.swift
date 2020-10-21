@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FavoriteTableViewController: UITableViewController {
+final class FavoriteTableViewController: UITableViewController {
     
-    var coreDataManager: CoreDataManager?
+    private var coreDataManager: CoreDataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +19,16 @@ class FavoriteTableViewController: UITableViewController {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-        
         print(coreDataManager?.recipes ?? "   ")
-        print(coreDataManager?.recipes.first?.title as Any)
-        print(coreDataManager?.recipes.first?.time as Any)
-        print(coreDataManager?.recipes.first?.healthLabel as Any)
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Here our table view")
+
+    }
+    
+    
     
     // MARK: - Table view data source
     
