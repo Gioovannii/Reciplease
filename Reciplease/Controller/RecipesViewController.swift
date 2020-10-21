@@ -49,7 +49,6 @@ final class RecipesViewcontroller: UITableViewController {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.recipe = recipes?[index].recipe
-            vcDestination.hit = recipes?[index]
         }
     }
     
