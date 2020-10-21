@@ -50,3 +50,10 @@ final class FavoriteTableViewController: UITableViewController {
         return 200
     }
 }
+
+// MARK: - UITableView Delegate
+
+extension FavoriteTableViewController {
+    
+}
+
