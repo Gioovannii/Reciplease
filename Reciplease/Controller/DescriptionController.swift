@@ -14,12 +14,9 @@ final class DescriptionController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
-    var ingredients = [String]()
-    
-    var hit: Hit?
-    
-    var recipe: Recipe?
     var coreDataManager: CoreDataManager?
+    var recipe: Recipe?
+    var ingredients = [String]()
     
     // MARK: - Outlets
     
