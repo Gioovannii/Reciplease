@@ -21,7 +21,6 @@ final class CoreDataManager {
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         guard let recipes = try? managedObjectContext.fetch(request) else { return [] }
         return recipes
-        recipes.first?.ingredients
     }
     
     // MARK: - Initializer
