@@ -36,13 +36,15 @@ class RecipeTableViewCell: UITableViewCell {
     var recipe: Recipe? {
         didSet {
             guard let url = URL(string: recipe?.image ?? "chef") else { return }
+            guard let recipeUnwrapped = recipe else { return }
+            guard let health = recipeUnwrapped.healthLabels.first else { return }
             recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "chef"),
                                         options: [], completed: nil)
             
             titleLabel.text = recipe?.label
             ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
             timeRecipeLabel.text =  convert(minutes: Double(recipe!.totalTime))
-            healthLabel.text = recipe?.healthLabels[0]
+            healthLabel.text = health
         }
     }
     
