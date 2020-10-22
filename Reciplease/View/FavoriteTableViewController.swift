@@ -24,12 +24,9 @@ final class FavoriteTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Here our table view")
-
+        tableView.reloadData()
     }
-    
-    
-    
+
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,6 +40,7 @@ final class FavoriteTableViewController: UITableViewController {
         }
         
         cell.recipeEntity = coreDataManager?.recipes[indexPath.row]
+        
         return cell
     }
     
@@ -53,7 +51,5 @@ final class FavoriteTableViewController: UITableViewController {
 
 // MARK: - UITableView Delegate
 
-extension FavoriteTableViewController {
-    
-}
+extension FavoriteTableViewController {}
 
