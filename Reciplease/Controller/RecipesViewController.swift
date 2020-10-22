@@ -34,7 +34,6 @@ final class RecipesViewcontroller: UITableViewController {
             return UITableViewCell()
         }
         
-        configureCells(cell: cell)
         cell.recipe = recipes?[indexPath.row].recipe
         
         return cell
@@ -54,12 +53,6 @@ final class RecipesViewcontroller: UITableViewController {
     
     override internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
-    }
-    
-    func configureCells(cell: RecipeTableViewCell) {
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.white.cgColor
-        cell.layer.cornerRadius = 10
     }
     
     // MARK: - Animation cellules
