@@ -32,9 +32,8 @@ final class CoreDataManager {
     
     // MARK: - Manage Task Entity
     
-    func createRecipe(title: String, health: String, time: String, ingredients: [String], sourceUrl: String) {
+    func createRecipe(title: String, health: String, time: String, ingredients: [String], sourceUrl: String, image: Data?) {
         // TODO: - Image
-        // TODO: - URL
         
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
@@ -42,9 +41,8 @@ final class CoreDataManager {
         recipe.time = time
         recipe.ingredients = ingredients
         recipe.sourceUrl = sourceUrl
-        
+        recipe.image = image
         coreDataStack.saveContext()
-        print(" coreDataManager: \(recipe.title as Any)")
     }
     
     func isRecipeRegistered(for name: String) -> Bool {
