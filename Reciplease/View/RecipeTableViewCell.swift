@@ -31,6 +31,10 @@ class RecipeTableViewCell: UITableViewCell {
         recipeImageView.layer.borderWidth = 3
         recipeView.layer.borderColor = UIColor.black.cgColor
         recipeView.layer.cornerRadius = 10
+        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.white.cgColor
+        layer.cornerRadius = 10
     }
     
     var recipe: Recipe? {
@@ -51,8 +55,14 @@ class RecipeTableViewCell: UITableViewCell {
     var recipeEntity: RecipeEntity? {
         didSet {
             titleLabel.text = recipeEntity?.title
+            healthLabel.text = recipeEntity?.healthLabel
+            timeRecipeLabel.text = recipeEntity?.time
             ingredientsLabel.text = recipeEntity?.ingredients?.joined(separator: ", ")
-            
+            if let imageData = recipeEntity?.image {
+                recipeImageView.image = UIImage(data: imageData)
+            } else {
+                recipeImageView.image = UIImage(named: "chef")
+            }
         }
     }
     
