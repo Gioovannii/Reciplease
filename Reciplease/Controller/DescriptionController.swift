@@ -54,17 +54,15 @@ final class DescriptionController: UIViewController {
         if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
            
             let imageString = recipe.image
-            
-            // recuperer stringURL de l'image
-            // convertir en data
+            // convert to data
             
             print("imageStr = \(imageString)")
             let imageConverted = Data(imageString.utf8)
             print("converted \(imageConverted)")
             
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
-            print(coreDataManager.recipes)
             sender.image = UIImage(named: "fullHeart")
+            
         } else {
             sender.image = UIImage(named: "emptyHeart")
             coreDataManager.deleteRecipe(for: recipe.label)
