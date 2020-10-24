@@ -37,7 +37,16 @@ final class DescriptionController: UIViewController {
         guard let ingredientLines = recipe?.ingredientLines else { return }
         ingredients = ingredientLines
         
-       
+        guard let recipe = recipe else { return }
+        let recipeTitle = recipe.label
+        guard let coreDataManager = coreDataManager else { return }
+        
+        switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
+        case true:
+            favoriteButton.image = UIImage(named: "fullHeart")
+        case false:
+            favoriteButton.image = UIImage(named: "emptyHeart")
+        }
     }
     
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
@@ -53,8 +62,8 @@ final class DescriptionController: UIViewController {
         guard let coreDataManager = coreDataManager else { return }
         guard let health = recipe.healthLabels.first else { return }
         
-        if !coreDataManager.isRecipeRegistered(for: recipeTitle) {
-           
+        switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
+        case false:
             let imageString = recipe.image
             // convert to data
             
@@ -65,9 +74,10 @@ final class DescriptionController: UIViewController {
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
             sender.image = UIImage(named: "fullHeart")
             
-        } else {
+        case true:
             sender.image = UIImage(named: "emptyHeart")
             coreDataManager.deleteRecipe(for: recipe.label)
+            
         }
     }
 }
@@ -89,7 +99,7 @@ extension DescriptionController: UITableViewDataSource {
     }
     
     // MARK: - Header
-
+    
     internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return  recipe?.label
     }
