@@ -11,7 +11,8 @@ import UIKit
 final class FavoriteTableViewController: UITableViewController {
     
     private var coreDataManager: CoreDataManager?
-    
+    private var index = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +47,17 @@ final class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.index = indexPath.row
+        performSegue(withIdentifier: K.toDescription, sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.toDescription {
+            let vcDestination = segue.destination as! DescriptionController
+            vcDestination.recipeEntity = coreDataManager?.recipes[index]   //recipes?[index].recipe
+        }
     }
 }
 
