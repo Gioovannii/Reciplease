@@ -51,5 +51,19 @@ final class FavoriteTableViewController: UITableViewController {
 
 // MARK: - UITableView Delegate
 
-extension FavoriteTableViewController {}
+extension FavoriteTableViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "You need to add some recipes"
+        label.font = UIFont.systemFont(ofSize: 27, weight: .semibold)
+        label.textAlignment = .center
+        label.textColor = .darkGray
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return coreDataManager?.recipes.isEmpty ?? true ? 420 : 0
+    }
+}
 
