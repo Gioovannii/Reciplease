@@ -16,6 +16,7 @@ final class DescriptionController: UIViewController {
     
     var coreDataManager: CoreDataManager?
     var recipe: Recipe?
+    var recipeEntity: RecipeEntity?
     var ingredients = [String]()
     
     // MARK: - Outlets
@@ -68,7 +69,7 @@ final class DescriptionController: UIViewController {
             // convert to data
             
             print("imageStr = \(imageString)")
-            let imageConverted = Data(base64Encoded: imageString)
+            guard let imageConverted = imageString.data(using: .utf8) else { return }
             print("converted \(String(describing: imageConverted))")
             
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
@@ -77,7 +78,6 @@ final class DescriptionController: UIViewController {
         case true:
             sender.image = UIImage(named: "emptyHeart")
             coreDataManager.deleteRecipe(for: recipe.label)
-            
         }
     }
 }
