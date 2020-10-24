@@ -36,6 +36,8 @@ final class DescriptionController: UIViewController {
                                     options: [], completed: nil)
         guard let ingredientLines = recipe?.ingredientLines else { return }
         ingredients = ingredientLines
+        
+       
     }
     
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
@@ -57,8 +59,8 @@ final class DescriptionController: UIViewController {
             // convert to data
             
             print("imageStr = \(imageString)")
-            let imageConverted = Data(imageString.utf8)
-            print("converted \(imageConverted)")
+            let imageConverted = Data(base64Encoded: imageString)
+            print("converted \(String(describing: imageConverted))")
             
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
             sender.image = UIImage(named: "fullHeart")
