@@ -20,7 +20,6 @@ final class FavoriteTableViewController: UITableViewController {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-        print(coreDataManager?.recipes ?? "   ")
     }
     
     override func viewWillAppear(_ animated: Bool) {
