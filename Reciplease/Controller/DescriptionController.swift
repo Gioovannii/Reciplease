@@ -35,6 +35,7 @@ final class DescriptionController: UIViewController {
         guard let url = URL(string: recipe!.image) else { return }
         recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
                                     options: [], completed: nil)
+        
         guard let ingredientLines = recipe?.ingredientLines else { return }
         ingredients = ingredientLines
         
@@ -69,7 +70,7 @@ final class DescriptionController: UIViewController {
             // convert to data
             
             print("imageStr = \(imageString)")
-            guard let imageConverted = imageString.data(using: .utf8) else { return }
+            let imageConverted = Data(base64Encoded: imageString, options: [])
             print("converted \(String(describing: imageConverted))")
             
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)

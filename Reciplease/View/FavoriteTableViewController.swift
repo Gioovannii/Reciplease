@@ -55,7 +55,7 @@ final class FavoriteTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-            vcDestination.recipeEntity = coreDataManager?.recipes[index]   //recipes?[index].recipe
+            vcDestination.recipeEntity = coreDataManager?.recipes[index]
         }
     }
 }
