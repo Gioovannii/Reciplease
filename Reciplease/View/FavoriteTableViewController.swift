@@ -45,12 +45,12 @@ final class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 260
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
-        performSegue(withIdentifier: K.toDescription, sender: nil)
+        performSegue(withIdentifier: K.toDescriptionFromFavorite, sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {

@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfx-Lg-rjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234.7826086956525" y="758.70535714285711"/>
+            <point key="canvasLocation" x="2263" y="654"/>
         </scene>
         <!--Reciplease-->
         <scene sceneID="Npv-BL-hgh">
@@ -339,7 +339,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg8-BL-tMO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="1067"/>
+            <point key="canvasLocation" x="-150" y="1067"/>
         </scene>
         <!--Favorite Table View Controller-->
         <scene sceneID="dwg-tM-Gfu">
@@ -357,16 +357,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="XOQ-4O-6Qw"/>
                     <connections>
-                        <segue destination="mc8-fJ-6HW" kind="show" identifier="ToDescription" id="7ik-NG-C6Q"/>
+                        <segue destination="mc8-fJ-6HW" kind="show" identifier="ToDescription" id="NHU-0o-nWX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlq-OH-1uZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="1067"/>
+            <point key="canvasLocation" x="1095" y="1067"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7ik-NG-C6Q"/>
+        <segue reference="NHU-0o-nWX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="emptyHeart" width="30" height="30"/>
