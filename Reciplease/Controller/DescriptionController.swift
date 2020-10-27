@@ -70,7 +70,7 @@ final class DescriptionController: UIViewController {
             // convert to data
             
             print("imageStr = \(imageString)")
-            let imageConverted = Data(base64Encoded: imageString, options: [])
+            let imageConverted = imageString.data(using: .utf8)
             print("converted \(String(describing: imageConverted))")
             
             coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
