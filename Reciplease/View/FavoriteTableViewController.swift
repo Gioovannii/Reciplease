@@ -50,7 +50,7 @@ final class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
-        performSegue(withIdentifier: K.toDescriptionFromFavorite, sender: nil)
+        performSegue(withIdentifier: K.toDescription, sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
