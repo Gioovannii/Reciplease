@@ -150,6 +150,7 @@
 		7B47601924F35B7700B51168 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				7B7E6CED25496CB000F3432F /* View Model */,
 				7BA18C962500B62300B6F717 /* Extension */,
 				7B47603F24F35D8E00B51168 /* Supported Files */,
 				7B5EC18724F4B0730095BAA8 /* Model */,
@@ -218,6 +219,13 @@
 				7B51EC272504C14500D9AED0 /* NetworkError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7B7E6CED25496CB000F3432F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		7BA18C962500B62300B6F717 /* Extension */ = {
