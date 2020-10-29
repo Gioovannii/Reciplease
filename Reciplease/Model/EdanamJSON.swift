@@ -34,7 +34,15 @@ struct Recipe: Codable {
     let source: String
     let url: String
     let shareAs: String
-    let yield: Int
     let dietLabels, healthLabels, cautions, ingredientLines: [String]
     let totalTime: Int
+}
+
+struct RecipeRepresentable {
+    var imageData: Data?
+    let source: String
+    let ingredients: [String]
+    let label: String
+    let totalTime: String
+    let healthLabels: [String]
 }
