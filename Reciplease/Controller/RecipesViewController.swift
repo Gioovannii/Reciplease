@@ -13,7 +13,7 @@ final class RecipesViewcontroller: UITableViewController {
     // MARK: - Properties
 
     var recipes: [Hit]?
-    private var index = 0
+    var recipe: Recipe?
     
     // MARK: - Life Cycle
 
@@ -40,14 +40,19 @@ final class RecipesViewcontroller: UITableViewController {
     }
     
     override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.index = indexPath.row
+//        self.index = indexPath.row
+        recipe = recipes?[indexPath.row].recipe
+
         performSegue(withIdentifier: K.toDescription, sender: nil)
     }
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-            vcDestination.recipe = recipes?[index].recipe
+//            vcDestination.recipe = recipe
+            guard let recipe = recipe else { return }
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels)
+            vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
     
