@@ -17,6 +17,7 @@ final class DescriptionController: UIViewController {
     var coreDataManager: CoreDataManager?
     var recipe: Recipe?
     var recipeEntity: RecipeEntity?
+    var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
     
     // MARK: - Outlets
@@ -31,21 +32,23 @@ final class DescriptionController: UIViewController {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-        
-        guard let url = URL(string: recipe!.image) else { return }
-        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
-                                    options: [], completed: nil)
-        
+
         guard let ingredientLines = recipe?.ingredientLines else { return }
         ingredients = ingredientLines
         
         guard let recipe = recipe else { return }
-        let recipeTitle = recipe.label
-        guard let coreDataManager = coreDataManager else { return }
+        guard let url = URL(string: recipe.image) else { return }
         
+        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
+                                    options: [], completed: nil)
+  
+        guard let coreDataManager = coreDataManager else { return }
+        let recipeTitle = recipe.label
+
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case true:
             favoriteButton.image = UIImage(named: "fullHeart")
+            
         case false:
             favoriteButton.image = UIImage(named: "emptyHeart")
         }
@@ -66,14 +69,7 @@ final class DescriptionController: UIViewController {
         
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case false:
-            let imageString = recipe.image
-            // convert to data
-            
-            print("imageStr = \(imageString)")
-            let imageConverted = imageString.data(using: .utf8)
-            print("converted \(String(describing: imageConverted))")
-            
-            coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: imageConverted)
+            coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.url, image: recipe.image.data)
             sender.image = UIImage(named: "fullHeart")
             
         case true:
