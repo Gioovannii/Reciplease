@@ -45,4 +45,5 @@ struct RecipeRepresentable {
     let label: String
     let totalTime: String
     let healthLabels: [String]
+    let ingredientLines: [String]
 }
