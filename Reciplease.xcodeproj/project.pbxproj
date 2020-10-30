@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B1A485224F76588008562FA /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A485124F76588008562FA /* RecipesViewController.swift */; };
+		7B347DC8254BF34C0037D36B /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B347DC7254BF34C0037D36B /* Double+String.swift */; };
 		7B43982424FCD3E3003753A6 /* EdanamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982324FCD3E3003753A6 /* EdanamSession.swift */; };
 		7B43982724FCE92A003753A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */; };
 		7B43982824FCE92A003753A6 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */; };
@@ -54,6 +55,7 @@
 		16BE8D08DA33B27C76A653D9 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B5899A2F1EE2FB3AC4B5BBD /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		7B1A485124F76588008562FA /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		7B347DC7254BF34C0037D36B /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		7B43982324FCD3E3003753A6 /* EdanamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamSession.swift; sourceTree = "<group>"; };
 		7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				7BA18C972500B63300B6F717 /* UIViewController+Alert.swift */,
 				7B526541254AB4D200F97AAD /* String+Data.swift */,
+				7B347DC7254BF34C0037D36B /* Double+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				7B51EC282504C14500D9AED0 /* NetworkError.swift in Sources */,
 				7B464ECB251B5F010066F8D8 /* FavoriteTableViewController.swift in Sources */,
 				7B47602524F35B7700B51168 /* Reciplease.xcdatamodeld in Sources */,
+				7B347DC8254BF34C0037D36B /* Double+String.swift in Sources */,
 				7B5A881124F8A9A0003B3892 /* K.swift in Sources */,
 				7B43982424FCD3E3003753A6 /* EdanamSession.swift in Sources */,
 				7B43982724FCE92A003753A6 /* RecipeTableViewCell.swift in Sources */,
