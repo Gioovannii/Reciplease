@@ -40,10 +40,12 @@ struct Recipe: Codable {
 
 struct RecipeRepresentable {
     var imageData: Data?
+    let url: String
     let source: String
     let ingredients: [String]
     let label: String
     let totalTime: String
     let healthLabels: [String]
     let ingredientLines: [String]
+    let shareAs: String
 }
