@@ -40,7 +40,6 @@ final class RecipesViewcontroller: UITableViewController {
     }
     
     override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.index = indexPath.row
         recipe = recipes?[indexPath.row].recipe
 
         performSegue(withIdentifier: K.toDescription, sender: nil)
@@ -51,7 +50,7 @@ final class RecipesViewcontroller: UITableViewController {
             let vcDestination = segue.destination as! DescriptionController
 //            vcDestination.recipe = recipe
             guard let recipe = recipe else { return }
-            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines)
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, url: recipe.url, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
             vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
@@ -60,7 +59,7 @@ final class RecipesViewcontroller: UITableViewController {
         return 260
     }
     
-    // MARK: - Animation cellules
+    // MARK: - Animation cells
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
