@@ -52,10 +52,11 @@ final class FavoriteTableViewController: UITableViewController {
         self.index = indexPath.row
         performSegue(withIdentifier: K.toDescription, sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-            vcDestination.recipeEntity = coreDataManager?.recipes[index]
+//            vcDestination.recipeEntity = coreDataManager?.recipes[index]
         }
     }
 }
