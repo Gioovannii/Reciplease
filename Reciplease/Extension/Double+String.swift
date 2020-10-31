@@ -15,7 +15,7 @@ extension Double {
         guard minutes != 0 else { return "Unavailable" }
         guard minutes > 59 else {
             guard let minTrans = formater.string(from: NSNumber(value: minutes)) else { return ""}
-            return minTrans
+            return "\(minTrans) min"
         }
         
         let result = minutes / 60
