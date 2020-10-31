@@ -51,7 +51,7 @@ final class RecipesViewcontroller: UITableViewController {
             let vcDestination = segue.destination as! DescriptionController
 //            vcDestination.recipe = recipe
             guard let recipe = recipe else { return }
-            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels)
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines)
             vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
