@@ -47,8 +47,7 @@ class RecipeTableViewCell: UITableViewCell {
             
             titleLabel.text = recipe?.label
             ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
-//            timeRecipeLabel.text =  convert(minutes: Double(recipe!.totalTime))
-            timeRecipeLabel.text = Double(recipe?.totalTime)
+            timeRecipeLabel.text = Double().convert(minutes: Double(recipe!.totalTime))
             healthLabel.text = health
         }
     }
@@ -67,23 +66,3 @@ class RecipeTableViewCell: UITableViewCell {
         }
     }
 }
-
-//// MARK: - Convert time minutes to hours
-//
-//func convert(minutes: Double) -> String {
-//    minLabel.isHidden = true
-//    timeRecipeLabel.font = UIFont(name: "Helvetica", size: 10)
-//    let formater = NumberFormatter()
-//    formater.maximumFractionDigits = 2
-//
-//    guard minutes != 0 else { return "Unavailable" }
-//    guard minutes > 59 else {
-//        minLabel.isHidden = false
-//        let minTrans = formater.string(from: NSNumber(value: minutes))
-//        return minTrans!
-//    }
-//
-//    let result = minutes / 60
-//    guard let resultForm = formater.string(from: NSNumber(value: result)) else { return String() }
-//    return "\(resultForm) hours"
-//}
