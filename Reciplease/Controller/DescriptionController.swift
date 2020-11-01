@@ -72,7 +72,7 @@ final class DescriptionController: UIViewController {
         
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case false:
-//            coreDataManager.createRecipe(title: recipe.label, health: health, time: "\(recipe.totalTime)", ingredients: recipe.ingredientLines, sourceUrl: recipe.source, image: recipe.image.data)
+            coreDataManager.createRecipe(title: recipe.label, health: health, time: recipe.totalTime, ingredients: recipe.ingredientLines, sourceUrl: recipe.source, image: recipe.imageData)
             sender.image = UIImage(named: "fullHeart")
             
         case true:
