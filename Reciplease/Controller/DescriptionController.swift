@@ -19,6 +19,7 @@ final class DescriptionController: UIViewController {
 //    var recipeEntity: RecipeEntity?
     var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
+    var imageUrl : String?
     
     // MARK: - Outlets
     
