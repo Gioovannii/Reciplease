@@ -48,9 +48,9 @@ final class RecipesViewcontroller: UITableViewController {
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-//            vcDestination.recipe = recipe
             guard let recipe = recipe else { return }
-            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, url: recipe.url, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: "", healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
+            let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, url: recipe.url, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
             vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
