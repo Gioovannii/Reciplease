@@ -51,9 +51,9 @@ final class RecipesViewcontroller: UITableViewController {
             guard let recipe = recipe else { return }
             let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
             
-            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
             vcDestination.recipeRepresentable = recipeRepresentable
-            vcDestination.dataImg = recipe.image.data
+            vcDestination.imageData = recipe.image.data
         }
     }
     
