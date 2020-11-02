@@ -35,7 +35,6 @@ final class RecipesViewcontroller: UITableViewController {
         }
         
         cell.recipe = recipes?[indexPath.row].recipe
-        
         return cell
     }
     
@@ -48,10 +47,13 @@ final class RecipesViewcontroller: UITableViewController {
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
+            
             guard let recipe = recipe else { return }
             let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
-            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, url: recipe.url, source: recipe.source, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
+            
+            let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, ingredients: recipe.ingredientLines, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels, ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
             vcDestination.recipeRepresentable = recipeRepresentable
+            vcDestination.dataImg = recipe.image.data
         }
     }
     
