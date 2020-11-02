@@ -11,8 +11,8 @@ import UIKit
 final class FavoriteTableViewController: UITableViewController {
     
     private var coreDataManager: CoreDataManager?
-    private var index = 0
-
+    var recipeRepresentable: RecipeRepresentable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +49,8 @@ final class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.index = indexPath.row
+        guard let recipe = coreDataManager?.recipes[indexPath.row] else { return }
+        recipeRepresentable = RecipeRepresentable(imageData: recipe.image, label: recipe.title ?? "", totalTime: recipe.time ?? "", healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], shareAs: recipe.shareAs ?? "")
         performSegue(withIdentifier: K.toDescription, sender: nil)
     }
     
@@ -57,19 +58,8 @@ final class FavoriteTableViewController: UITableViewController {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             print(vcDestination)
-            guard let recipes = coreDataManager?.recipes else { return }
-            guard let image = recipes[index].image else { return }
-            guard let ingredients = recipes[index].ingredients else { return }
-            guard let label = recipes[index].title else { return }
-            guard let totalTime = recipes[index].time else { return }
-            guard let health = recipes[index].healthLabel?.first else { return }
-            guard let ingredientsLine = recipes[index].ingredients?.joined(separator: ", ") else { return }
-            guard let shareAs = recipes[index].sourceUrl else { return }
             
-            let recipe = RecipeRepresentable(imageData: image, ingredients: ingredients, label: label, totalTime: totalTime, healthLabels: health, ingredientLines: ingredientsLine, shareAs: shareAs)
-            
-            vcDestination.recipeRepresentable = recipe
-           
+            vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
 }
