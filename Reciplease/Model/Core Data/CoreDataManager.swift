@@ -32,7 +32,7 @@ final class CoreDataManager {
     
     // MARK: - Manage Task Entity
     
-    func createRecipe(title: String, health: String, time: String, ingredients: [String], sourceUrl: String, image: Data?) {
+    func createRecipe(title: String, health: String, time: String, ingredients: [String], shareAs: String, image: Data?) {
         // TODO: - Image
         
         let recipe = RecipeEntity(context: managedObjectContext)
@@ -40,7 +40,7 @@ final class CoreDataManager {
         recipe.healthLabel = health
         recipe.time = time
         recipe.ingredients = ingredients
-        recipe.sourceUrl = sourceUrl
+        recipe.shareAs = shareAs
         recipe.image = image
         coreDataStack.saveContext()
     }
