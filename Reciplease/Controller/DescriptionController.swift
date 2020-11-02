@@ -12,14 +12,13 @@ import SDWebImage
 final class DescriptionController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     var coreDataManager: CoreDataManager?
-//    var recipe: Recipe?
 //    var recipeEntity: RecipeEntity?
     var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
-    var imageUrl : String?
+    var dataImg: Data?
     
     // MARK: - Outlets
     
@@ -34,18 +33,20 @@ final class DescriptionController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
 
-//        guard let ingredientLines = recipe?.ingredientLines else { return }
         guard let ingredientLines = recipeRepresentable?.ingredientLines else { return }
         ingredients = ingredientLines
         
-//        guard let recipe = recipe else { return }
         guard let recipe = recipeRepresentable else { return }
-
-        guard let url = URL(string: recipe.url) else { return }
         
-        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
-                                    options: [], completed: nil)
-  
+//        guard let image = imageUrl else { return }
+//        let url = URL(string: image)
+        
+        recipeImageView.image = UIImage(data: dataImg!)
+
+//        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
+//                                    options: [], completed: nil)
+        
+        
         guard let coreDataManager = coreDataManager else { return }
         let recipeTitle = recipe.label
 
@@ -73,7 +74,7 @@ final class DescriptionController: UIViewController {
         
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case false:
-            coreDataManager.createRecipe(title: recipe.label, health: health, time: recipe.totalTime, ingredients: recipe.ingredientLines, sourceUrl: recipe.source, image: recipe.imageData)
+            coreDataManager.createRecipe(title: recipe.label, health: health, time: recipe.totalTime, ingredients: recipe.ingredientLines, sourceUrl: recipe.shareAs, image: recipe.imageData)
             sender.image = UIImage(named: "fullHeart")
             
         case true:
