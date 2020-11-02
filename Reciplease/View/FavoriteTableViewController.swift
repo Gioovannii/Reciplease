@@ -56,7 +56,20 @@ final class FavoriteTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-//            vcDestination.recipeEntity = coreDataManager?.recipes[index]
+            print(vcDestination)
+            guard let recipes = coreDataManager?.recipes else { return }
+            guard let image = recipes[index].image else { return }
+            guard let ingredients = recipes[index].ingredients else { return }
+            guard let label = recipes[index].title else { return }
+            guard let totalTime = recipes[index].time else { return }
+            guard let health = recipes[index].healthLabel?.first else { return }
+            guard let ingredientsLine = recipes[index].ingredients?.joined(separator: ", ") else { return }
+            guard let shareAs = recipes[index].sourceUrl else { return }
+            
+            let recipe = RecipeRepresentable(imageData: image, ingredients: ingredients, label: label, totalTime: totalTime, healthLabels: health, ingredientLines: ingredientsLine, shareAs: shareAs)
+            
+            vcDestination.recipeRepresentable = recipe
+           
         }
     }
 }
