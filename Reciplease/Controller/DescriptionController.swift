@@ -18,7 +18,7 @@ final class DescriptionController: UIViewController {
 //    var recipeEntity: RecipeEntity?
     var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
-    var dataImg: Data?
+    var imageData: Data?
     
     // MARK: - Outlets
     
@@ -27,6 +27,11 @@ final class DescriptionController: UIViewController {
     
     // MARK: - Life cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,13 +43,10 @@ final class DescriptionController: UIViewController {
         
         guard let recipe = recipeRepresentable else { return }
         
-//        guard let image = imageUrl else { return }
-//        let url = URL(string: image)
+        guard let imageData = recipe.imageData else { return }
         
-        recipeImageView.image = UIImage(data: dataImg!)
+        recipeImageView.image = UIImage(data: imageData)
 
-//        recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "cooking"),
-//                                    options: [], completed: nil)
         
         
         guard let coreDataManager = coreDataManager else { return }
@@ -70,11 +72,10 @@ final class DescriptionController: UIViewController {
         guard let recipe = recipeRepresentable else { return }
         let recipeTitle = recipe.label
         guard let coreDataManager = coreDataManager else { return }
-        guard let health = recipe.healthLabels.first else { return }
         
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case false:
-            coreDataManager.createRecipe(title: recipe.label, health: health, time: recipe.totalTime, ingredients: recipe.ingredientLines, sourceUrl: recipe.shareAs, image: recipe.imageData)
+            coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels, time: recipe.totalTime, ingredients: recipe.ingredientLines, shareAs: recipe.shareAs, image: recipe.imageData)
             sender.image = UIImage(named: "fullHeart")
             
         case true:
