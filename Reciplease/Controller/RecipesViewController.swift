@@ -40,8 +40,8 @@ final class RecipesViewcontroller: UITableViewController {
     
     override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipe = recipes?[indexPath.row].recipe
-
         performSegue(withIdentifier: K.toDescription, sender: nil)
+        print("Perform from network Call")
     }
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,7 +53,6 @@ final class RecipesViewcontroller: UITableViewController {
             
             let recipeRepresentable = RecipeRepresentable(imageData: recipe.image.data, label: recipe.label, totalTime: timeConverted, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, shareAs: recipe.shareAs)
             vcDestination.recipeRepresentable = recipeRepresentable
-            vcDestination.imageData = recipe.image.data
         }
     }
     
