@@ -15,10 +15,8 @@ final class DescriptionController: UIViewController {
     
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     var coreDataManager: CoreDataManager?
-//    var recipeEntity: RecipeEntity?
     var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
-    var imageData: Data?
     
     // MARK: - Outlets
     
@@ -29,29 +27,10 @@ final class DescriptionController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
-
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-
-        guard let ingredientLines = recipeRepresentable?.ingredientLines else { return }
-        ingredients = ingredientLines
-        
         guard let recipe = recipeRepresentable else { return }
-        
-        guard let imageData = recipe.imageData else { return }
-        
-        recipeImageView.image = UIImage(data: imageData)
-
-        
-        
         guard let coreDataManager = coreDataManager else { return }
         let recipeTitle = recipe.label
-
+        
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case true:
             favoriteButton.image = UIImage(named: "fullHeart")
@@ -59,6 +38,20 @@ final class DescriptionController: UIViewController {
         case false:
             favoriteButton.image = UIImage(named: "emptyHeart")
         }
+        tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
+        
+        guard let ingredientLines = recipeRepresentable?.ingredientLines else { return }
+        ingredients = ingredientLines
+        
+        guard let recipe = recipeRepresentable, let imageData = recipe.imageData else { return }
+        recipeImageView.image = UIImage(data: imageData)
     }
     
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
@@ -73,6 +66,7 @@ final class DescriptionController: UIViewController {
         let recipeTitle = recipe.label
         guard let coreDataManager = coreDataManager else { return }
         
+        
         switch coreDataManager.isRecipeRegistered(for: recipeTitle) {
         case false:
             coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels, time: recipe.totalTime, ingredients: recipe.ingredientLines, shareAs: recipe.shareAs, image: recipe.imageData)
@@ -83,6 +77,8 @@ final class DescriptionController: UIViewController {
             coreDataManager.deleteRecipe(for: recipe.label)
         }
     }
+    
+    @IBAction func unwindToFavoriteViewController(_sender: UIStoryboardSegue) {}
 }
 
 // MARK: - Data Source
