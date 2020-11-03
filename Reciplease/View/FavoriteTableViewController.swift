@@ -52,13 +52,12 @@ final class FavoriteTableViewController: UITableViewController {
         guard let recipe = coreDataManager?.recipes[indexPath.row] else { return }
         recipeRepresentable = RecipeRepresentable(imageData: recipe.image, label: recipe.title ?? "", totalTime: recipe.time ?? "", healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], shareAs: recipe.shareAs ?? "")
         performSegue(withIdentifier: K.toDescription, sender: nil)
+        print("Perform from favorite")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-            print(vcDestination)
-            
             vcDestination.recipeRepresentable = recipeRepresentable
         }
     }
