@@ -17,6 +17,7 @@ final class DescriptionController: UIViewController {
     var coreDataManager: CoreDataManager?
     var recipeRepresentable: RecipeRepresentable?
     var ingredients = [String]()
+    var isFavorite = false
     
     // MARK: - Outlets
     
@@ -75,10 +76,9 @@ final class DescriptionController: UIViewController {
         case true:
             sender.image = UIImage(named: "emptyHeart")
             coreDataManager.deleteRecipe(for: recipe.label)
+            if isFavorite { self.navigationController?.popViewController(animated: true)}
         }
     }
-    
-    @IBAction func unwindToFavoriteViewController(_sender: UIStoryboardSegue) {}
 }
 
 // MARK: - Data Source
