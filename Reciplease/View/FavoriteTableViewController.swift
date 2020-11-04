@@ -40,7 +40,6 @@ final class FavoriteTableViewController: UITableViewController {
         }
         
         cell.recipeEntity = coreDataManager?.recipes[indexPath.row]
-        
         return cell
     }
     
@@ -59,6 +58,7 @@ final class FavoriteTableViewController: UITableViewController {
         if segue.identifier == K.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.recipeRepresentable = recipeRepresentable
+            vcDestination.isFavorite = true
         }
     }
 }
