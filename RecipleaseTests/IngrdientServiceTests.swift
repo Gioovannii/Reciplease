@@ -35,5 +35,8 @@ class IngrdientServiceTests: XCTestCase {
     func testWhenIngredientsIsDelete() {
         service.addIngredients(name: "Pumpkin")
         service.deleteIngredient(at: 0)
+        XCTAssertTrue(service.ingredients.first == nil)
+        XCTAssertTrue(service.ingredientList.isEmpty)
+        print(service.ingredients)
     }
 }
