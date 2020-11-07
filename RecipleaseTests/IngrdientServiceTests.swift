@@ -10,14 +10,20 @@ import XCTest
 
 @testable import Reciplease
 
-class RecipleaseTests: XCTestCase {
+class IngrdientServiceTests: XCTestCase {
     let service = IngredientService()
     
     func testWhenIngredientsIsAdded() {
         service.addIngredients(name: "Lemon")
-        XCTAssertTrue(service.ingredients.capacity == 2)
+        XCTAssertTrue(service.ingredients.capacity == 1)
         XCTAssertTrue(!service.ingredients.isEmpty)
-        XCTAssertTrue(service.ingredients.first == "Tomatoe")
+        XCTAssertTrue(service.ingredients.first == "Lemon")
+    }
+
+    func testWhenIngredientIsAddedFonctionShouldReturn() {
+        service.addIngredients(name: "Lime")
+        service.addIngredients(name: "Lime")
+        XCTAssertTrue(service.ingredients.first == "Lime")
     }
     
     func testWhenIngredientsIsRemove() {
