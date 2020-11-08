@@ -80,11 +80,11 @@ extension AddIngredientsController: UITableViewDataSource {
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: K.ingredient, for: indexPath)
+        let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: Constant.ingredient, for: indexPath)
         
         ingredientCell.textLabel?.text = service.ingredients[(indexPath.row)]
         ingredientCell.textLabel?.textColor = UIColor.white
-        ingredientCell.textLabel?.font = UIFont(name: K.papyrusFont, size: 20)
+        ingredientCell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 20)
         return ingredientCell
     }
 }

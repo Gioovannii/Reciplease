@@ -19,7 +19,7 @@ final class RequestService {
     func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) {
         
         guard let baseUrl = URL(string: "https://api.edamam.com/search?") else { return }
-        let parameters = [("app_id", K.Config.appId), ("app_key", K.Config.appKey), ("q", ingredients)]
+        let parameters = [("app_id", Constant.Config.appId), ("app_key", Constant.Config.appKey), ("q", ingredients)]
         let url = encode(baseUrl: baseUrl, with: parameters)
         
         session.request(with: url) { responseData in

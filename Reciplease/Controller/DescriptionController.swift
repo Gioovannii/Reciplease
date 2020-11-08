@@ -89,10 +89,10 @@ extension DescriptionController: UITableViewDataSource {
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.instructions, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.instructions, for: indexPath)
         
         cell.textLabel?.text = ingredients[(indexPath.row)]
-        cell.textLabel?.font = UIFont(name: K.papyrusFont, size: 17)
+        cell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 17)
         cell.textLabel?.textColor = .white
         return cell
     }

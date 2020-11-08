@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct K {
+struct Constant {
     static let appName = "Reciplease"
     static let papyrusFont = "Papyrus"
     static let ingredient = "Ingredient"

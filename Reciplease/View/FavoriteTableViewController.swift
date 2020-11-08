@@ -16,7 +16,7 @@ final class FavoriteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
+        self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
@@ -34,7 +34,7 @@ final class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as? RecipeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.reusableCell, for: indexPath) as? RecipeTableViewCell else {
             print("Error while loading cell")
             return UITableViewCell()
         }
@@ -50,12 +50,12 @@ final class FavoriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let recipe = coreDataManager?.recipes[indexPath.row] else { return }
         recipeRepresentable = RecipeRepresentable(imageData: recipe.image, label: recipe.title ?? "", totalTime: recipe.time ?? "", healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], shareAs: recipe.shareAs ?? "")
-        performSegue(withIdentifier: K.toDescription, sender: nil)
+        performSegue(withIdentifier: Constant.toDescription, sender: nil)
         print("Perform from favorite")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.toDescription {
+        if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             vcDestination.recipeRepresentable = recipeRepresentable
             vcDestination.isFavorite = true

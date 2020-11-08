@@ -19,7 +19,7 @@ final class RecipesViewcontroller: UITableViewController {
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
+        self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
     }
     
     // MARK: - TableView
@@ -29,7 +29,7 @@ final class RecipesViewcontroller: UITableViewController {
     }
     
     override internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as? RecipeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.reusableCell, for: indexPath) as? RecipeTableViewCell else {
             print("Error while loading cell")
             return UITableViewCell()
         }
@@ -40,12 +40,12 @@ final class RecipesViewcontroller: UITableViewController {
     
     override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipe = recipes?[indexPath.row].recipe
-        performSegue(withIdentifier: K.toDescription, sender: nil)
+        performSegue(withIdentifier: Constant.toDescription, sender: nil)
         print("Perform from network Call")
     }
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.toDescription {
+        if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             
             guard let recipe = recipe else { return }
