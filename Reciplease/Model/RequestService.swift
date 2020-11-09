@@ -11,7 +11,7 @@ import Foundation
 final class RequestService {
     
     private let session: AlamoSession
-    let service = IngredientService()
+    private let service = IngredientService()
     init(session: AlamoSession = EdanamSession()) {
         self.session = session
     }
