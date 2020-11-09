@@ -271,7 +271,7 @@
         <!--Reciplease-->
         <scene sceneID="Npv-BL-hgh">
             <objects>
-                <tabBarController id="3dQ-wF-Hcu" customClass="TabBarController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="3dQ-wF-Hcu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Reciplease" id="Qby-D6-BA3"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="dg3-rH-2DZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
