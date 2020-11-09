@@ -49,7 +49,8 @@ final class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let recipe = coreDataManager?.recipes[indexPath.row] else { return }
-        recipeRepresentable = RecipeRepresentable(imageData: recipe.image, label: recipe.title ?? "", totalTime: recipe.time ?? "", healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], shareAs: recipe.shareAs ?? "")
+        recipeRepresentable = RecipeRepresentable(label: recipe.title ?? "", imageData: recipe.image, healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], totalTime: recipe.time ?? "", shareAs: recipe.shareAs ?? "")
+//        recipeRepresentable = RecipeRepresentable(imageData: recipe.image, label: recipe.title ?? "", totalTime: recipe.time ?? "", healthLabels: recipe.healthLabel ?? "", ingredientLines: recipe.ingredients ?? [], shareAs: recipe.shareAs ?? "")
         performSegue(withIdentifier: Constant.toDescription, sender: nil)
         print("Perform from favorite")
     }
