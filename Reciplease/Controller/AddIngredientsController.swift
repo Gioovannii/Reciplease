@@ -12,7 +12,7 @@ final class AddIngredientsController: UIViewController {
     
     // MARK: - Properties
     
-    private var service = IngredientService()
+    private let service = IngredientService()
     private let request: RequestService = RequestService()
     private var collectData: [Hit]?
     
@@ -58,7 +58,7 @@ final class AddIngredientsController: UIViewController {
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToRecipe" {
-            let vcDestination = segue.destination as! RecipesViewcontroller
+            guard let vcDestination = segue.destination as? RecipesViewcontroller else { return }
             vcDestination.recipes = collectData
         }
     }
