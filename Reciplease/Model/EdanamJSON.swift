@@ -10,38 +10,33 @@ import Foundation
 
 // MARK: - EdanamJSON
 
-struct EdanamJSON: Codable {
+struct EdanamJSON: Decodable {
     let q: String
-    let from, to: Int
-    let more: Bool
-    let count: Int
     let hits: [Hit]
 }
 
 // MARK: - Hit
 
-struct Hit: Codable {
+struct Hit: Decodable {
     let recipe: Recipe
-    let bookmarked, bought: Bool
 }
 
 // MARK: - Recipe
 
-struct Recipe: Codable {
-    let uri: String
+struct Recipe: Decodable {
     let label: String
     var image: String
     let url: String
-    let shareAs: String
-    let dietLabels, healthLabels, ingredientLines: [String]
+    let healthLabels, ingredientLines: [String]
     let totalTime: Int
+    let shareAs: String
 }
 
 struct RecipeRepresentable {
-    var imageData: Data?
     let label: String
-    let totalTime: String
+    var imageData: Data?
     let healthLabels: String
     let ingredientLines: [String]
+    let totalTime: String
     let shareAs: String
 }
