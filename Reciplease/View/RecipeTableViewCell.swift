@@ -42,12 +42,13 @@ class RecipeTableViewCell: UITableViewCell {
             guard let url = URL(string: recipe?.image ?? "chef") else { return }
             guard let recipeUnwrapped = recipe else { return }
             guard let health = recipeUnwrapped.healthLabels.first else { return }
+            guard let recipe = recipe else { return }
             recipeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "chef"),
                                         options: [], completed: nil)
             
-            titleLabel.text = recipe?.label
-            ingredientsLabel.text = recipe?.ingredientLines.joined(separator: ", ")
-            timeRecipeLabel.text = Double().convert(minutes: Double(recipe!.totalTime))
+            titleLabel.text = recipe.label
+            ingredientsLabel.text = recipe.ingredientLines.joined(separator: ", ")
+            timeRecipeLabel.text = Double().convert(minutes: Double(recipe.totalTime))
             healthLabel.text = health
         }
     }
