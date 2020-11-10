@@ -12,7 +12,6 @@
 		7B43982424FCD3E3003753A6 /* EdanamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982324FCD3E3003753A6 /* EdanamSession.swift */; };
 		7B43982724FCE92A003753A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */; };
 		7B43982824FCE92A003753A6 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */; };
-		7B44C735255697D70058824D /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44C734255697D70058824D /* CoreDataStackTests.swift */; };
 		7B44C73C255698050058824D /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44C73B255698050058824D /* CoreDataManagerTests.swift */; };
 		7B464ECB251B5F010066F8D8 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B464ECA251B5F010066F8D8 /* FavoriteTableViewController.swift */; };
 		7B47601B24F35B7700B51168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47601A24F35B7700B51168 /* AppDelegate.swift */; };
@@ -60,7 +59,6 @@
 		7B43982324FCD3E3003753A6 /* EdanamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamSession.swift; sourceTree = "<group>"; };
 		7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
-		7B44C734255697D70058824D /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		7B44C73B255698050058824D /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		7B464ECA251B5F010066F8D8 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteTableViewController.swift; path = Reciplease/View/FavoriteTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B47601724F35B7700B51168 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,14 +150,6 @@
 			path = IngredientService;
 			sourceTree = "<group>";
 		};
-		7B44C733255697AC0058824D /* CoreDataStackTestCase */ = {
-			isa = PBXGroup;
-			children = (
-				7B44C734255697D70058824D /* CoreDataStackTests.swift */,
-			);
-			path = CoreDataStackTestCase;
-			sourceTree = "<group>";
-		};
 		7B44C73A255697E50058824D /* CoreDataManagerTestCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +197,6 @@
 			children = (
 				7B44C72F255697440058824D /* NetworkTestCase */,
 				7B44C732255697850058824D /* IngredientService */,
-				7B44C733255697AC0058824D /* CoreDataStackTestCase */,
 				7B44C73A255697E50058824D /* CoreDataManagerTestCase */,
 				7B47603624F35B7800B51168 /* Info.plist */,
 			);
@@ -488,7 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B44C735255697D70058824D /* CoreDataStackTests.swift in Sources */,
 				7B47603524F35B7800B51168 /* IngrdientServiceTests.swift in Sources */,
 				7B71BE3424FFE9C8001EB897 /* RequestServiceTestCase.swift in Sources */,
 				7B71BE3224FFE6E2001EB897 /* MockEdanamSession.swift in Sources */,
