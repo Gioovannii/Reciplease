@@ -16,4 +16,18 @@ final class CoreDataManagerTests: XCTestCase {
     var coreDataStack: MockCoreDataStack!
     var coreDataManager: CoreDataManager!
 
+    //MARK: - Tests Life Cycle
+
+    override func setUp() {
+        super.setUp()
+        coreDataStack = MockCoreDataStack()
+        coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        coreDataManager = nil
+        coreDataStack = nil
+    }
+
 }
