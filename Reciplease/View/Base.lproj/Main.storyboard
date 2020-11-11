@@ -128,6 +128,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-pl-MHQ">
+                                <rect key="frame" x="189" y="758" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cEO-xs-WTq"/>
+                                    <constraint firstAttribute="width" secondItem="8Na-pl-MHQ" secondAttribute="height" multiplier="1:1" id="gjD-Jp-1uf"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="46c-bi-Rwn"/>
                         <color key="backgroundColor" red="0.207823962" green="0.20000272990000001" blue="0.1999998093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -142,9 +149,11 @@
                             <constraint firstItem="81v-ie-ClU" firstAttribute="top" secondItem="CN5-YF-ljh" secondAttribute="top" constant="216" id="FWk-oq-b14"/>
                             <constraint firstItem="46c-bi-Rwn" firstAttribute="bottom" secondItem="u93-ze-OEV" secondAttribute="bottom" constant="30" id="GCD-WV-Wcs"/>
                             <constraint firstItem="81v-ie-ClU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2w-XC-OrI" secondAttribute="trailing" constant="8" symbolic="YES" id="ISJ-ns-edk"/>
+                            <constraint firstItem="46c-bi-Rwn" firstAttribute="bottom" secondItem="8Na-pl-MHQ" secondAttribute="bottom" constant="35" id="IcQ-Em-fWV"/>
                             <constraint firstAttribute="trailing" secondItem="0US-wM-Edd" secondAttribute="trailing" id="gdq-Om-x0L"/>
                             <constraint firstItem="46c-bi-Rwn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="u93-ze-OEV" secondAttribute="trailing" id="hP0-me-i3X"/>
                             <constraint firstItem="81v-ie-ClU" firstAttribute="bottom" secondItem="b2w-XC-OrI" secondAttribute="bottom" id="nX2-bg-ddg"/>
+                            <constraint firstItem="8Na-pl-MHQ" firstAttribute="centerX" secondItem="CN5-YF-ljh" secondAttribute="centerX" id="nXa-15-PXr"/>
                             <constraint firstItem="u93-ze-OEV" firstAttribute="top" secondItem="G4s-SW-nU2" secondAttribute="bottom" constant="20" id="omV-o9-I5s"/>
                             <constraint firstItem="46c-bi-Rwn" firstAttribute="trailing" secondItem="G4s-SW-nU2" secondAttribute="trailing" constant="98" id="pCV-vM-ji5"/>
                             <constraint firstItem="46c-bi-Rwn" firstAttribute="trailing" secondItem="81v-ie-ClU" secondAttribute="trailing" constant="20" id="w6c-S2-NyP"/>
@@ -155,15 +164,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="Oct-cK-INd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="8Na-pl-MHQ" id="jq6-dS-Xhg"/>
                         <outlet property="ingredientTextField" destination="036-8U-4at" id="7eZ-V5-jwE"/>
                         <outlet property="ingredientsTableView" destination="G4s-SW-nU2" id="mYF-ex-mxv"/>
+                        <outlet property="searchForRecipesButton" destination="u93-ze-OEV" id="zej-lh-ujj"/>
                         <segue destination="jiY-eW-eBg" kind="show" identifier="ToRecipe" id="fDn-Of-bIA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pi-do-c8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4Rg-Dn-hqJ"/>
             </objects>
-            <point key="canvasLocation" x="598.55072463768124" y="303.34821428571428"/>
+            <point key="canvasLocation" x="597.19626168224295" y="303.23974082073437"/>
         </scene>
         <!--Recipes Viewcontroller-->
         <scene sceneID="xbt-bB-eBK">
