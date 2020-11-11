@@ -18,11 +18,15 @@ final class AddIngredientsController: UIViewController {
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var searchForRecipesButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        activityIndicator.isHidden = true
     }
     
     @objc func dismissKeyboard() { view.endEditing(true) }
@@ -41,11 +45,16 @@ final class AddIngredientsController: UIViewController {
     }
     
     @IBAction private func searchRecipesButton(_ sender: UIButton) {
-        
+        searchForRecipesButton.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         request.getData(ingredients: service.ingredientList ) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
+                    activityIndicator.isHidden = true
+                    searchForRecipesButton.isHidden = false
+                    
                     self.collectData = data.hits
                     self.performSegue(withIdentifier: "ToRecipe", sender: nil)
                 }
