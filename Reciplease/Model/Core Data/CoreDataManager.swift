@@ -33,7 +33,6 @@ final class CoreDataManager {
     // MARK: - Manage Task Entity
     
     func createRecipe(title: String, health: String, time: String, ingredients: [String], shareAs: String, image: Data?) {
-        // TODO: - Image
         
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
