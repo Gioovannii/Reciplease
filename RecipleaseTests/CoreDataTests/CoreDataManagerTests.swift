@@ -30,4 +30,12 @@ final class CoreDataManagerTests: XCTestCase {
         coreDataStack = nil
     }
 
+    // MARK: - Tests
+
+    func testAddCreateRecipeMethods_WhenAnEnntityIsCreated_ThenShouldBeSaved() {
+        coreDataManager.createRecipe(title: "Strawberry tart", health: "Vegetarien", time: "1.3", ingredients: ["Strawberry", "pate"], shareAs: "SomeUrl", image: "image".data)
+        XCTAssertTrue(!coreDataManager.recipes.isEmpty)
+        XCTAssertTrue(coreDataManager.recipes.count == 1)
+        XCTAssertTrue(coreDataManager.recipes[0].title == "Strawberry tart")
+    }
 }
