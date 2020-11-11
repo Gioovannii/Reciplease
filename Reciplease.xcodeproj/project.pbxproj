@@ -22,6 +22,7 @@
 		7B47602A24F35B7800B51168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B47602824F35B7800B51168 /* LaunchScreen.storyboard */; };
 		7B47603524F35B7800B51168 /* IngrdientServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47603424F35B7800B51168 /* IngrdientServiceTests.swift */; };
 		7B47604324F3970300B51168 /* AddIngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47604224F3970300B51168 /* AddIngredientsController.swift */; };
+		7B49A343255BF0DD0082ED36 /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A342255BF0DD0082ED36 /* MockCoreDataStack.swift */; };
 		7B51EC282504C14500D9AED0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51EC272504C14500D9AED0 /* NetworkError.swift */; };
 		7B526542254AB4D200F97AAD /* String+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B526541254AB4D200F97AAD /* String+Data.swift */; };
 		7B59A68E24FBB16C00839A3B /* EdanamJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */; };
@@ -73,6 +74,7 @@
 		7B47603424F35B7800B51168 /* IngrdientServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrdientServiceTests.swift; sourceTree = "<group>"; };
 		7B47603624F35B7800B51168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B47604224F3970300B51168 /* AddIngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsController.swift; sourceTree = "<group>"; };
+		7B49A342255BF0DD0082ED36 /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		7B51EC272504C14500D9AED0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7B526541254AB4D200F97AAD /* String+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Data.swift"; sourceTree = "<group>"; };
 		7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamJSON.swift; sourceTree = "<group>"; };
@@ -150,12 +152,13 @@
 			path = IngredientService;
 			sourceTree = "<group>";
 		};
-		7B44C73A255697E50058824D /* CoreDataManagerTestCase */ = {
+		7B44C73A255697E50058824D /* CoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
+				7B49A342255BF0DD0082ED36 /* MockCoreDataStack.swift */,
 				7B44C73B255698050058824D /* CoreDataManagerTests.swift */,
 			);
-			path = CoreDataManagerTestCase;
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 		7B47600E24F35B7700B51168 = {
@@ -197,7 +200,7 @@
 			children = (
 				7B44C72F255697440058824D /* NetworkTestCase */,
 				7B44C732255697850058824D /* IngredientService */,
-				7B44C73A255697E50058824D /* CoreDataManagerTestCase */,
+				7B44C73A255697E50058824D /* CoreDataTests */,
 				7B47603624F35B7800B51168 /* Info.plist */,
 			);
 			path = RecipleaseTests;
@@ -478,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B47603524F35B7800B51168 /* IngrdientServiceTests.swift in Sources */,
+				7B49A343255BF0DD0082ED36 /* MockCoreDataStack.swift in Sources */,
 				7B71BE3424FFE9C8001EB897 /* RequestServiceTestCase.swift in Sources */,
 				7B71BE3224FFE6E2001EB897 /* MockEdanamSession.swift in Sources */,
 				7B44C73C255698050058824D /* CoreDataManagerTests.swift in Sources */,
