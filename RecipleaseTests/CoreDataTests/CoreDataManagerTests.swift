@@ -38,4 +38,11 @@ final class CoreDataManagerTests: XCTestCase {
         XCTAssertTrue(coreDataManager.recipes.count == 1)
         XCTAssertTrue(coreDataManager.recipes[0].title == "Strawberry tart")
     }
+    
+    func testIsRecipeRegistered_WhenEntityCreated_ThenShouldBeFoundByName() {
+        coreDataManager.createRecipe(title: "Strawberry tart", health: "Vegetarien", time: "1.3", ingredients: ["Strawberry", "pate"], shareAs: "SomeUrl", image: "image".data)
+        guard let titleRecipe = coreDataManager.recipes[0].title else { return }
+        let isRegistered = coreDataManager.isRecipeRegistered(for: titleRecipe)
+        XCTAssertTrue(isRegistered)
+    }
 }
