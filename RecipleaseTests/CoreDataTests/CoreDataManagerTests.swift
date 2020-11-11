@@ -45,4 +45,11 @@ final class CoreDataManagerTests: XCTestCase {
         let isRegistered = coreDataManager.isRecipeRegistered(for: titleRecipe)
         XCTAssertTrue(isRegistered)
     }
+    
+    func testDeleteTaskMethod_WhenEntityIsCreated_ThenShouldBeCorectlyDeleted() {
+        coreDataManager.createRecipe(title: "Strawberry tart", health: "Vegetarien", time: "1.3", ingredients: ["Strawberry", "pate"], shareAs: "SomeUrl", image: "image".data)
+        guard let titleRecipe = coreDataManager.recipes[0].title else { return }
+        coreDataManager.deleteRecipe(for: titleRecipe)
+        XCTAssertTrue(coreDataManager.recipes.isEmpty)
+    }
 }
