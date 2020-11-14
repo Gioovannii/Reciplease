@@ -16,6 +16,7 @@ final class IngredientService {
     var ingredientList: String {
         return ingredients.joined(separator: ",")
     }
+    
     // MARK: - Methods
     
     func checkIngredientsList(element: String) -> Bool {

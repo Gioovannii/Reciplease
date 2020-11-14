@@ -16,7 +16,6 @@ struct FakeResponse {
 }
 
 final class MockEdanamSession: AlamoSession {
-    
     private let fakeResponse: FakeResponse
     
     init(fakeResponse: FakeResponse) {

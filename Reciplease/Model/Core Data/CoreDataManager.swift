@@ -33,7 +33,6 @@ final class CoreDataManager {
     // MARK: - Manage Task Entity
     
     func createRecipe(title: String, health: String, time: String, ingredients: [String], shareAs: String, image: Data?) {
-        
         let recipe = RecipeEntity(context: managedObjectContext)
         recipe.title = title
         recipe.healthLabel = health
@@ -45,16 +44,14 @@ final class CoreDataManager {
     }
     
     func isRecipeRegistered(for name: String) -> Bool {
-        
-        // faire requete qui recuper entite recette
+        // Make request which will collect data
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        // appliquer filtre sur requete (predicate)
+        // Apply filter on request (predicate)
         request.predicate = NSPredicate(format: "title == %@", name)
-        // Execution requete
+        // Execute request
         guard let recipes = try? managedObjectContext.fetch(request) else { return false }
         if recipes.isEmpty { return false }
         return true
-        
     }
     
     func deleteRecipe(for name: String) {
