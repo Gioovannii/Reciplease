@@ -19,15 +19,15 @@ final class IngredientService {
     
     // MARK: - Methods
     
-    func checkIngredientsList(element: String) -> Bool {
-        guard ingredients.contains(element) else { return true }
-        return false
+    func isIngredientAlreadyRegistered(element: String) -> Bool {
+        guard ingredients.contains(element) else { return false }
+        return true
     }
     
     func addIngredients(name: String) {
         guard !name.isEmpty else { return }
         let checkNameSymbols = name.components(separatedBy: .punctuationCharacters).filter { $0 != ""}
-        guard !checkIngredientsList(element: name) else { return ingredients.append(contentsOf: checkNameSymbols) }
+        guard isIngredientAlreadyRegistered(element: name) else { return ingredients.append(contentsOf: checkNameSymbols) }
     }
     
     func deleteIngredient(at index: Int) {
