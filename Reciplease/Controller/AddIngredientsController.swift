@@ -10,11 +10,16 @@ import UIKit
 
 final class AddIngredientsController: UIViewController {
     
-    // MARK: - Properties
     
+    // TODO: - Instantiate controller with viewModel property from AddIngredientsViewModel
+    var viewModel: AddIngredientsViewModel?
+    
+    // MARK: - Properties
+
     private let service = IngredientService()
     private let request: RequestService = RequestService()
     private var collectData: [Hit]?
+    private var ingredients = [String]()
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
@@ -27,6 +32,17 @@ final class AddIngredientsController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         activityIndicator.isHidden = true
+        // TODO: - Bring View did load here
+        viewModel = AddIngredientsViewModel()
+        bind()
+        viewModel?.viewDidLoad()
+    }
+    
+    // Change 
+    func bind() {
+        viewModel?.ingredientsList = { ingredients in
+            self.ingredients = ingredients
+        }
     }
     
     @objc func dismissKeyboard() { view.endEditing(true) }
@@ -35,8 +51,10 @@ final class AddIngredientsController: UIViewController {
         guard let str = ingredientTextField.text else { return }
         let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
         ingredientTextField.text = ""
-        service.addIngredients(name: ingredients)
+        viewModel?.addIngredient(name: ingredients)
         ingredientsTableView.reloadData()
+        //service.addIngredients(name: ingredients)
+
     }
     
     @IBAction private func clearIngredientsButton(_ sender: UIButton) {
@@ -48,13 +66,13 @@ final class AddIngredientsController: UIViewController {
         searchForRecipesButton.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        request.getData(ingredients: service.ingredientList ) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
+        request.getData(ingredients: ingredients.joined()) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
+                            //service.ingredientList
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     activityIndicator.isHidden = true
                     searchForRecipesButton.isHidden = false
-                    
                     self.collectData = data.hits
                     self.performSegue(withIdentifier: "ToRecipe", sender: nil)
                 }
@@ -84,14 +102,15 @@ extension AddIngredientsController: UITableViewDataSource {
         }
     }
     
-    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return service.ingredients.count
-    }
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return ingredients.count }
+        //service.ingredients.count
+   
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ingredientCell = ingredientsTableView.dequeueReusableCell(withIdentifier: Constant.ingredient, for: indexPath)
         
-        ingredientCell.textLabel?.text = service.ingredients[(indexPath.row)]
+        ingredientCell.textLabel?.text = ingredients[indexPath.row]
+            //service.ingredients[(indexPath.row)]
         ingredientCell.textLabel?.textColor = UIColor.white
         ingredientCell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 20)
         return ingredientCell
