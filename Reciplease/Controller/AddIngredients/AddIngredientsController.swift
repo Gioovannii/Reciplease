@@ -39,10 +39,31 @@ final class AddIngredientsController: UIViewController {
         viewModel?.viewDidLoad()
     }
     
-    // Change 
     func bind() {
         viewModel?.ingredientsList = { ingredients in
-            self.ingredients = ingredients
+            self.dataSource.update(with: ingredients)
+            self.ingredientsTableView.reloadData()
+        }
+        dataSource.deleteIngredientWithIndex = viewModel?.deleteIngredient
+        
+        viewModel?.recipes = { recipes in
+            self.performSegue(withIdentifier: "toRecipe", sender: nil)
+        }
+        
+        viewModel?.isSearching = isSearching
+        
+        viewModel?.recipes = { [weak self] recipe in
+            DispatchQueue.main.async {
+                self?.recipes = recipe
+                self?.performSegue(withIdentifier: Constant.recipeSegue, sender: nil)
+            }
+        }
+    }
+    
+    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constant.recipeSegue {
+            guard let vcDestination = segue.destination as? RecipesViewcontroller else { return }
+            vcDestination.recipes = self.recipes
         }
     }
     
