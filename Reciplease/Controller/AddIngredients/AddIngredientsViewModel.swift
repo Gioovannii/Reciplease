@@ -54,4 +54,19 @@ final class AddIngredientsViewModel {
         ingredients = ingredientService.ingredients
     }
     
+    func searchRecipes() {
+        isSearching?(false)
+        service.getData(ingredients: ingredients.joined()) { [unowned self] (result: Result<EdanamJSON, NetworkError>) in
+            
+            switch result {
+            case .success(let data):
+                isSearching?(true)
+                self.recipes?(data.hits)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            //presentAlert(title: "Error", message: "\(error.description)")
+            }
+        }
+    }
 }
