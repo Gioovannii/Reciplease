@@ -48,5 +48,10 @@ final class AddIngredientsViewModel {
         ingredientService.deleteIngredient(at: index)
         ingredients = ingredientService.ingredients
     }
-  
+    
+    func clearAllIngredients() {
+        ingredientService.clearAllIngredients()
+        ingredients = ingredientService.ingredients
+    }
+    
 }
