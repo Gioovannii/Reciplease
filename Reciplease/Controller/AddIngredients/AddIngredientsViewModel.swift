@@ -16,7 +16,6 @@ final class AddIngredientsViewModel {
     private var ingredients = [String]() {
         didSet {
             self.ingredientsList?(ingredients.map{ "- \($0)" })
-            
         }
     }
     
@@ -26,14 +25,13 @@ final class AddIngredientsViewModel {
         self.service = service
         self.ingredientService = ingredientService
     }
-
     
     
     // MARK: - Outputs
     
-    var output: Recipe?
+    var recipes: (([Hit]) -> Void)?
+    var isSearching: ((Bool) -> (Void))?
     var ingredientsList: (([String]) -> ())?
-    
     
     // MARK: - Inputs
     
