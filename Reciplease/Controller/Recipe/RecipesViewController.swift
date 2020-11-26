@@ -41,7 +41,6 @@ final class RecipesViewcontroller: UITableViewController {
     override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipe = recipes?[indexPath.row].recipe
         performSegue(withIdentifier: Constant.toDescription, sender: nil)
-        print("Perform from network Call")
     }
     
     override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
