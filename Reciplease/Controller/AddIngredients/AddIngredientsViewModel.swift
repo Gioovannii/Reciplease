@@ -35,10 +35,10 @@ final class AddIngredientsViewModel {
     
     // MARK: - Inputs
     
-    func viewDidLoad() {
-        
-    }
-
+    func viewDidLoad() {}
+    
+    // MARK: - Methods
+    
     func addIngredient(name: String) {
         ingredientService.addIngredients(name: name)
         ingredients = ingredientService.ingredients
