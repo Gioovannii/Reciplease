@@ -62,7 +62,7 @@ final class AddIngredientsController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.recipeSegue {
             guard let vcDestination = segue.destination as? RecipesViewcontroller else { return }
-            vcDestination.recipes = self.recipes
+            vcDestination.viewModel = RecipesViewModel(recipes: recipes)
         }
     }
     
