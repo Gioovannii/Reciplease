@@ -38,7 +38,7 @@ final class AddIngredientsController: UIViewController {
         bind()
     }
     
-    func bind() {
+    private func bind() {
         viewModel?.ingredientsList = { ingredients in
             self.dataSource.update(with: ingredients)
             self.ingredientsTableView.reloadData()
@@ -84,7 +84,7 @@ final class AddIngredientsController: UIViewController {
     
     @IBAction private func searchRecipesButton(_ sender: UIButton) { viewModel?.searchRecipes() }
  
-    func isSearching(result: Bool) {
+    private func isSearching(result: Bool) {
         switch result {
         case true:
             activityIndicator.isHidden = true
