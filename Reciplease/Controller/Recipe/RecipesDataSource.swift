@@ -11,3 +11,19 @@ import UIKit
 protocol RecipesListViewControllerDelegate: class {
     func didSelectRecipe(with recipe: Hit)
 }
+
+
+final class RecipesDataSource: NSObject {
+    
+    // MARK: - Properties
+
+    var recipes = [Hit]()
+    //var recipe: Recipe?
+    
+    var didSelectRecipeAtIndex: ((Int) -> Void)?
+    
+    func update(with recipes: [Hit]) {
+        self.recipes = recipes
+    }
+}
+
