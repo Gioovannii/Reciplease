@@ -36,7 +36,6 @@ final class AddIngredientsController: UIViewController {
         ingredientsTableView.dataSource = dataSource
         viewModel = AddIngredientsViewModel()
         bind()
-        viewModel?.viewDidLoad()
     }
     
     func bind() {
