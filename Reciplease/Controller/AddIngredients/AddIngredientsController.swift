@@ -23,8 +23,8 @@ final class AddIngredientsController: UIViewController {
     
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
-    @IBOutlet weak var searchForRecipesButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var searchForRecipesButton: UIButton!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
