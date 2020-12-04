@@ -27,3 +27,10 @@ final class RecipesDataSource: NSObject {
     }
 }
 
+// MARK: - UITableView DataSource
+
+extension RecipesDataSource: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        recipes.count
+    }
+}
