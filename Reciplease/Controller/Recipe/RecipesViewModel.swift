@@ -19,4 +19,11 @@ final class RecipesViewModel {
             recipesOutput?(recipes)
         }
     }
+    // MARK: - Initializer
+
+    init(recipes: [Hit]) {
+        self.recipes = recipes
+    }
+    
+
 }
