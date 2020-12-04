@@ -37,7 +37,7 @@ extension RecipesDataSource: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.reusableCell, for: indexPath) as? RecipeTableViewCell else {
             print("Error while loading cell")
             return UITableViewCell()
-    }
+        }
         cell.recipe = recipes[indexPath.row].recipe
         return cell
     }
@@ -45,18 +45,29 @@ extension RecipesDataSource: UITableViewDataSource {
         return 260
     }
 }
-   
+
 // MARK: - UITableView Delegate
 
-    extension RecipesDataSource: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-            //recipe = recipes?[indexPath.row].recipe
-            didSelectRecipeAtIndex?(indexPath.row)
-        }
-
+extension RecipesDataSource: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //recipe = recipes?[indexPath.row].recipe
+        didSelectRecipeAtIndex?(indexPath.row)
     }
+    
+    // MARK: - Cells Animations
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let translationMouvement = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
+        cell.layer.transform = translationMouvement
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.20) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1
+        }
+    }
+}
 
-        
+
 
 
