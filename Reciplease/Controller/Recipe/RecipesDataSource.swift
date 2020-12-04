@@ -33,4 +33,13 @@ extension RecipesDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count
     }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.reusableCell, for: indexPath) as? RecipeTableViewCell else {
+            print("Error while loading cell")
+            return UITableViewCell()
+    }
+        cell.recipe = recipes[indexPath.row].recipe
+        return cell
+    }
 }
+    
