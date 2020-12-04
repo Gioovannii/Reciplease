@@ -25,5 +25,14 @@ final class RecipesViewModel {
         self.recipes = recipes
     }
     
-
+    // MARK: - Outputs
+    var recipesOutput: (([Hit]) -> Void)?
+    var recipeOutput: ((Recipe) -> Void)?
+    
+    // MARK: - Inputs
+    func viewDidLoad() {
+        recipesOutput?(recipes)
+    }
+    
+   
 }
