@@ -41,5 +41,8 @@ extension RecipesDataSource: UITableViewDataSource {
         cell.recipe = recipes[indexPath.row].recipe
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 260
+    }
 }
-    
+
