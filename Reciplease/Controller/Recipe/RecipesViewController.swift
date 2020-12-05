@@ -20,18 +20,22 @@ final class RecipesViewcontroller: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
+        //dataSource.recipes = viewModel?.recipes
+        
+        tableView.delegate = dataSource
+        tableView.dataSource = dataSource
+        bind()
+        viewModel?.viewDidLoad()
     }
     
-    // MARK: - TableView
-
-    override internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes?.count ?? 0
-    }
-    
-    override internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.reusableCell, for: indexPath) as? RecipeTableViewCell else {
-            print("Error while loading cell")
-            return UITableViewCell()
+    func bind() {
+        //dataSource.recipes = viewModel?.recipes
+        //dataSource.recipe = viewModel?.recipe
+        viewModel?.recipesOutput = { [weak self] recipes in
+            DispatchQueue.main.async {
+                self?.dataSource.update(with: recipes)
+                self?.tableView.reloadData()
+            }
         }
         
         cell.recipe = recipes?[indexPath.row].recipe
