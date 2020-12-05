@@ -16,9 +16,9 @@ final class RecipesViewcontroller: UITableViewController {
     var viewModel: RecipesViewModel?
     
     // MARK: - Life Cycle
-
-    override internal func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
     }
     
