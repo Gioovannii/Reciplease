@@ -38,16 +38,21 @@ final class RecipesViewcontroller: UITableViewController {
             }
         }
         
-        cell.recipe = recipes?[indexPath.row].recipe
-        return cell
+            viewModel?.recipeOutput = { [weak self] recipe in
+                DispatchQueue.main.async {
+                    print(recipe)
+                    self?.performSegue(withIdentifier: Constant.toDescription, sender: nil)
+                }
+            }
+        
+        dataSource.didSelectRecipeAtIndex = viewModel?.didSelectRecipe
     }
     
-    override internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        recipe = recipes?[indexPath.row].recipe
-        performSegue(withIdentifier: Constant.toDescription, sender: nil)
-    }
+
     
-    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // TODO: - In viewModel
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             
