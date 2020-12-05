@@ -41,6 +41,12 @@ final class RecipesViewModel {
         recipe = recipes[index].recipe
         recipeOutput?(recipe!)
     }
+
+    func prepareForSegue() {
+        
+    }
+
+    
  
 //    guard let recipe = viewModel?.recipe else { return }
 //    let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
