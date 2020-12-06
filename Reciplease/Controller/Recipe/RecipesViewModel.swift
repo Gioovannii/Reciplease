@@ -11,7 +11,6 @@ import Foundation
 final class RecipesViewModel {
     
     // MARK: - Properties
-   // private weak var delegate: RecipesListViewControllerDelegate?
     
     var recipe: Recipe?
     var recipes = [Hit]() {
