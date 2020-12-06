@@ -19,6 +19,9 @@ final class RecipesViewModel {
             recipesOutput?(recipes)
         }
     }
+    
+    var recipeRepresentable: RecipeRepresentable?
+    
     // MARK: - Initializer
 
     init(recipes: [Hit]) {
