@@ -56,11 +56,7 @@ final class RecipesViewcontroller: UITableViewController {
         if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             
-            guard let recipe = viewModel?.recipe else { return }
-            let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
-            
-            let recipeRepresentable = RecipeRepresentable(label: recipe.label, imageData: recipe.image.data, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, totalTime: timeConverted, shareAs: recipe.shareAs)
-            vcDestination.recipeRepresentable = recipeRepresentable
+            vcDestination.recipeRepresentable = viewModel?.recipeRepresentable
         }
     }
 }
