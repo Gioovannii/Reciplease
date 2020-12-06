@@ -20,7 +20,6 @@ final class RecipesViewcontroller: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
-        //dataSource.recipes = viewModel?.recipes
         
         tableView.delegate = dataSource
         tableView.dataSource = dataSource
