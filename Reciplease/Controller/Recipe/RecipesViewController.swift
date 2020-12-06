@@ -39,7 +39,6 @@ final class RecipesViewcontroller: UITableViewController {
         
             viewModel?.recipeOutput = { [weak self] recipe in
                 DispatchQueue.main.async {
-                    print(recipe)
                     self?.performSegue(withIdentifier: Constant.toDescription, sender: nil)
                 }
             }
