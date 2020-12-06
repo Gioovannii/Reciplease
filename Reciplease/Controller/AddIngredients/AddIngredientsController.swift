@@ -69,12 +69,11 @@ final class AddIngredientsController: UIViewController {
     @objc private func dismissKeyboard() { view.endEditing(true) }
     
     @IBAction private func addIngredient(_ sender: UIButton) {
-        guard let str = ingredientTextField.text else { return }
-        let ingredients = str.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let ingredient = ingredientTextField.text else { return }
+        let ingredients = ingredient.trimmingCharacters(in: .whitespacesAndNewlines)
         ingredientTextField.text = ""
         viewModel?.addIngredient(name: ingredients)
         ingredientsTableView.reloadData()
-        
     }
     
     @IBAction private func clearIngredientsButton(_ sender: UIButton) {
