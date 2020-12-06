@@ -39,7 +39,6 @@ final class RecipesViewModel {
     // MARK: - Methods
     
     func didSelectRecipe(at index: Int) {
-        guard var recipe = recipe else { return }
         recipe = recipes[index].recipe
         recipeOutput?(recipe)
     }
