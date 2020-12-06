@@ -40,6 +40,7 @@ final class RecipesViewModel {
     
     func didSelectRecipe(at index: Int) {
         recipe = recipes[index].recipe
+        guard let recipe = recipe else { return }
         recipeOutput?(recipe)
     }
 
