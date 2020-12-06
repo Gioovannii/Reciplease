@@ -45,7 +45,12 @@ final class RecipesViewModel {
     }
 
     func prepareForSegue() {
+        guard let recipe = recipe else { return }
+        let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
         
+        let recipeTodescription = RecipeRepresentable(label: recipe.label, imageData: recipe.image.data, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, totalTime: timeConverted, shareAs: recipe.shareAs)
+        
+        recipeRepresentable = recipeTodescription
     }
 
     
