@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol RecipesListViewControllerDelegate: class {
-    func didSelectRecipe(with recipe: Hit)
-}
-
-
 final class RecipesDataSource: NSObject {
     
     // MARK: - Properties
