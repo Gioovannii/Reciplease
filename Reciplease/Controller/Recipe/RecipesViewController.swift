@@ -28,8 +28,6 @@ final class RecipesViewcontroller: UITableViewController {
     }
     
     func bind() {
-        //dataSource.recipes = viewModel?.recipes
-        //dataSource.recipe = viewModel?.recipe
         viewModel?.recipesOutput = { [weak self] recipes in
             DispatchQueue.main.async {
                 self?.dataSource.update(with: recipes)
