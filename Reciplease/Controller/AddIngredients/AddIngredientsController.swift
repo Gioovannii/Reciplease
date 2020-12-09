@@ -33,7 +33,9 @@ final class AddIngredientsController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         isSearching(result: true)
+        
         ingredientsTableView.dataSource = dataSource
+        ingredientsTableView.delegate = dataSource
         viewModel = AddIngredientsViewModel()
         bind()
     }
