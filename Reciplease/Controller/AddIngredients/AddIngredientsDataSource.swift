@@ -25,12 +25,6 @@ final class AddIngredientDataSource: NSObject {
 // MARK: - UITableViewDataSource
 
 extension AddIngredientDataSource: UITableViewDataSource {
-   
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            deleteIngredientWithIndex?(indexPath.row)            
-        }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
@@ -43,5 +37,13 @@ extension AddIngredientDataSource: UITableViewDataSource {
         ingredientCell.textLabel?.textColor = UIColor.white
         ingredientCell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 20)
         return ingredientCell
+    }
+}
+
+extension AddIngredientDataSource: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteIngredientWithIndex?(indexPath.row)
+        }
     }
 }
