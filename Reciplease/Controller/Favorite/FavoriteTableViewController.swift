@@ -56,8 +56,11 @@ final class FavoriteTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-            vcDestination.recipeRepresentable = recipeRepresentable
-            vcDestination.isFavorite = true
+            
+            guard let recipeRepresentable = recipeRepresentable else { return }
+            guard let coreDataManager = coreDataManager else { return }
+            
+            vcDestination.viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
         }
     }
 }
