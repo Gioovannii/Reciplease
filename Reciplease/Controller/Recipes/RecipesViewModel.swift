@@ -38,7 +38,7 @@ final class RecipesViewModel {
     
     // MARK: - Outputs
     var recipesOutput: (([Hit]) -> Void)?
-    var recipeOutput: ((Recipe) -> Void)?
+    var recipeOutput: ((RecipeRepresentable) -> Void)?
     
     // MARK: - Inputs
     func viewDidLoad() {
