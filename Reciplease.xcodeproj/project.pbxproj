@@ -41,6 +41,7 @@
 		7B843EA92563AD4500109D92 /* AddIngredientsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B843EA82563AD4400109D92 /* AddIngredientsDataSource.swift */; };
 		7B92CC4C255FC01B00169ECC /* AddIngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92CC4B255FC01B00169ECC /* AddIngredientsViewModel.swift */; };
 		7BA18C982500B63300B6F717 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA18C972500B63300B6F717 /* UIViewController+Alert.swift */; };
+		7BB0194B25809F7F0043233B /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0194A25809F7F0043233B /* FavoriteViewModel.swift */; };
 		7BE80CC3257C9B6F00A7379D /* DescriptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE80CC2257C9B6F00A7379D /* DescriptionDataSource.swift */; };
 		7BF9E6072500B45D0037B55A /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9E6062500B45D0037B55A /* DescriptionController.swift */; };
 		A5057F3848C13099F11CBE3F /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BE8D08DA33B27C76A653D9 /* Pods_Reciplease.framework */; };
@@ -99,6 +100,7 @@
 		7B843EA82563AD4400109D92 /* AddIngredientsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsDataSource.swift; sourceTree = "<group>"; };
 		7B92CC4B255FC01B00169ECC /* AddIngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsViewModel.swift; sourceTree = "<group>"; };
 		7BA18C972500B63300B6F717 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		7BB0194A25809F7F0043233B /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		7BE80CC2257C9B6F00A7379D /* DescriptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionDataSource.swift; sourceTree = "<group>"; };
 		7BF9E6062500B45D0037B55A /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
 		8BE0AC394AE7E3ADF58228CA /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				7B843EAC2563AD5300109D92 /* AddIngredients */,
-				7B843EAD2563AD7400109D92 /* Recipe */,
+				7B843EAD2563AD7400109D92 /* Recipes */,
 				7B843EAF2563AD8800109D92 /* Description */,
 				7B843EAE2563AD8000109D92 /* Favorite */,
 			);
@@ -273,20 +275,21 @@
 			path = AddIngredients;
 			sourceTree = "<group>";
 		};
-		7B843EAD2563AD7400109D92 /* Recipe */ = {
+		7B843EAD2563AD7400109D92 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
 				7B1A485124F76588008562FA /* RecipesViewController.swift */,
 				7B019AF2256F50700092BFE4 /* RecipesViewModel.swift */,
 				7B019AF6256F50820092BFE4 /* RecipesDataSource.swift */,
 			);
-			path = Recipe;
+			path = Recipes;
 			sourceTree = "<group>";
 		};
 		7B843EAE2563AD8000109D92 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
 				7B464ECA251B5F010066F8D8 /* FavoriteTableViewController.swift */,
+				7BB0194A25809F7F0043233B /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				7B47601B24F35B7700B51168 /* AppDelegate.swift in Sources */,
 				7B59A69024FBE68E00839A3B /* IngredientService.swift in Sources */,
 				7B71BE2C24FF73F1001EB897 /* RequestService.swift in Sources */,
+				7BB0194B25809F7F0043233B /* FavoriteViewModel.swift in Sources */,
 				7B5EC18924F4B0AB0095BAA8 /* CoreDataStack.swift in Sources */,
 				7B47604324F3970300B51168 /* AddIngredientsController.swift in Sources */,
 				7BA18C982500B63300B6F717 /* UIViewController+Alert.swift in Sources */,
