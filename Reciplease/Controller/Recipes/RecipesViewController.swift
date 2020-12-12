@@ -54,9 +54,12 @@ final class RecipesViewcontroller: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
-
-            viewModel?.prepareForSegue()
-            vcDestination.recipeRepresentable = viewModel?.recipeRepresentable
+            
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
+            
+            guard let recipe = recipe else { return }
+            vcDestination.viewModel = DescriptionViewModel(recipe: recipe, coreDataManager: coreDataManager! )
         }
     }
 }
