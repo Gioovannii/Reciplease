@@ -26,7 +26,7 @@ final class IngredientService {
     
     func addIngredients(name: String) {
         guard !name.isEmpty else { return }
-        let checkNameSymbols = name.components(separatedBy: .punctuationCharacters).filter { $0 != ""}
+        let checkNameSymbols = name.components(separatedBy: .punctuationCharacters).filter { $0 != "" }
         guard isIngredientAlreadyRegistered(element: name) else { return ingredients.append(contentsOf: checkNameSymbols) }
     }
     
