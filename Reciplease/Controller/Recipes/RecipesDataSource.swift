@@ -44,7 +44,6 @@ extension RecipesDataSource: UITableViewDataSource {
 extension RecipesDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //recipe = recipes?[indexPath.row].recipe
         didSelectRecipeAtIndex?(indexPath.row)
     }
     
