@@ -14,6 +14,8 @@ final class RecipesViewcontroller: UITableViewController {
     
     private let dataSource = RecipesDataSource()
     var viewModel: RecipesViewModel?
+    private var recipe: RecipeRepresentable?
+    var coreDataManager: CoreDataManager?
     
     // MARK: - Life Cycle
     
