@@ -49,24 +49,7 @@ final class RecipesViewModel {
     
     func didSelectRecipe(at index: Int) {
         recipe = recipes[index].recipe
-        guard let recipe = recipe else { return }
-        recipeOutput?(recipe)
+        //guard let recipe = recipe else { return }
+        //self.recipe = recipe
     }
-
-    func prepareForSegue() {
-        guard let recipe = recipe else { return }
-        let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
-        
-        let recipeTodescription = RecipeRepresentable(label: recipe.label, imageData: recipe.image.data, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, totalTime: timeConverted, shareAs: recipe.shareAs)
-        
-        recipeRepresentable = recipeTodescription
-    }
-
-    
- 
-//    guard let recipe = viewModel?.recipe else { return }
-//    let timeConverted = Double().convert(minutes: Double(recipe.totalTime))
-//
-//    let recipeRepresentable = RecipeRepresentable(label: recipe.label, imageData: recipe.image.data, healthLabels: recipe.healthLabels.first ?? "", ingredientLines: recipe.ingredientLines, totalTime: timeConverted, shareAs: recipe.shareAs)
-//    vcDestination.recipeRepresentable = recipeRepresentable
 }
