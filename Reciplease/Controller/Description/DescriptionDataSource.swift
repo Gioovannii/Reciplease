@@ -10,6 +10,38 @@ import UIKit
 
 final class DescriptionDataSource: NSObject {
 
+    // MARK: - Properties
+    
+    var ingredients = [String]()
+    var title: String?
+    
+    // MARK: - Methods
+    
+    func update(with ingredients: [String], title: String) {
+        self.ingredients = ingredients
+        self.title = title
+    }
+}
+
+// MARK: - UItableView DataSource
+
+extension DescriptionDataSource: UITableViewDataSource {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingredients.count
+    }
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.instructions, for: indexPath)
+        
+        cell.textLabel?.text = ingredients[(indexPath.row)]
+        cell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 17)
+        cell.textLabel?.textColor = .white
+        return cell
+    }
+
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return  title
+    }
 }
 
 
