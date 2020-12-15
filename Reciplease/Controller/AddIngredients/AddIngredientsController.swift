@@ -11,7 +11,6 @@ import UIKit
 final class AddIngredientsController: UIViewController {
     
     
-    // TODO: - Instantiate controller with viewModel property from AddIngredientsViewModel
     var viewModel: AddIngredientsViewModel?
     
     // MARK: - Properties

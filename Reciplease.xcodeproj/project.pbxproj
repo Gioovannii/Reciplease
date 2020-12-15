@@ -43,6 +43,7 @@
 		7B92CC4C255FC01B00169ECC /* AddIngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92CC4B255FC01B00169ECC /* AddIngredientsViewModel.swift */; };
 		7BA18C982500B63300B6F717 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA18C972500B63300B6F717 /* UIViewController+Alert.swift */; };
 		7BB0194B25809F7F0043233B /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0194A25809F7F0043233B /* FavoriteViewModel.swift */; };
+		7BC1B7F725889EC500E6FEDA /* AddIngredientViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B7F625889EC500E6FEDA /* AddIngredientViewModelTestCase.swift */; };
 		7BE80CC3257C9B6F00A7379D /* DescriptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE80CC2257C9B6F00A7379D /* DescriptionDataSource.swift */; };
 		7BF9E6072500B45D0037B55A /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9E6062500B45D0037B55A /* DescriptionController.swift */; };
 		A5057F3848C13099F11CBE3F /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BE8D08DA33B27C76A653D9 /* Pods_Reciplease.framework */; };
@@ -103,6 +104,7 @@
 		7B92CC4B255FC01B00169ECC /* AddIngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsViewModel.swift; sourceTree = "<group>"; };
 		7BA18C972500B63300B6F717 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		7BB0194A25809F7F0043233B /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		7BC1B7F625889EC500E6FEDA /* AddIngredientViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewModelTestCase.swift; sourceTree = "<group>"; };
 		7BE80CC2257C9B6F00A7379D /* DescriptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionDataSource.swift; sourceTree = "<group>"; };
 		7BF9E6062500B45D0037B55A /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
 		8BE0AC394AE7E3ADF58228CA /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,12 +162,13 @@
 			path = NetworkTestCase;
 			sourceTree = "<group>";
 		};
-		7B44C732255697850058824D /* IngredientService */ = {
+		7B44C732255697850058824D /* IngredientTestCase */ = {
 			isa = PBXGroup;
 			children = (
 				7B47603424F35B7800B51168 /* IngrdientServiceTests.swift */,
+				7BC1B7F625889EC500E6FEDA /* AddIngredientViewModelTestCase.swift */,
 			);
-			path = IngredientService;
+			path = IngredientTestCase;
 			sourceTree = "<group>";
 		};
 		7B44C73A255697E50058824D /* CoreDataTests */ = {
@@ -213,8 +216,11 @@
 		7B47603324F35B7800B51168 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				7B44C732255697850058824D /* IngredientTestCase */,
+				7BC1B7EF2588998F00E6FEDA /* RecipesTestCase */,
+				7BC1B7F0258899A700E6FEDA /* DescriptionTestCase */,
+				7BC1B7F1258899B800E6FEDA /* FavoriteTestCase */,
 				7B44C72F255697440058824D /* NetworkTestCase */,
-				7B44C732255697850058824D /* IngredientService */,
 				7B44C73A255697E50058824D /* CoreDataTests */,
 				7B47603624F35B7800B51168 /* Info.plist */,
 			);
@@ -315,6 +321,27 @@
 				7B347DC7254BF34C0037D36B /* Double+String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7BC1B7EF2588998F00E6FEDA /* RecipesTestCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecipesTestCase;
+			sourceTree = "<group>";
+		};
+		7BC1B7F0258899A700E6FEDA /* DescriptionTestCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DescriptionTestCase;
+			sourceTree = "<group>";
+		};
+		7BC1B7F1258899B800E6FEDA /* FavoriteTestCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoriteTestCase;
 			sourceTree = "<group>";
 		};
 		D138380220D28C7D80A8DE83 /* Pods */ = {
@@ -542,6 +569,7 @@
 				7B71BE3224FFE6E2001EB897 /* MockEdanamSession.swift in Sources */,
 				7B44C73C255698050058824D /* CoreDataManagerTests.swift in Sources */,
 				7B71BE3024FF9B14001EB897 /* FakeResponseData.swift in Sources */,
+				7BC1B7F725889EC500E6FEDA /* AddIngredientViewModelTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
