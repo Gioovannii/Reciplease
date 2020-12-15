@@ -34,6 +34,7 @@ final class DescriptionViewModel {
     
     func viewDidLoad() {
         recipeOutput?(recipe)
+        favoriteLoad()
     }
     
     // MARK: - Methods
@@ -53,12 +54,12 @@ final class DescriptionViewModel {
         case false:
             coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels, time: recipe.totalTime, ingredients: recipe.ingredientLines, shareAs: recipe.shareAs, image: recipe.imageData)
             isFavoriteOutput?(true)
-            print(coreDataManager.recipes.last?.title as Any)
+            print(coreDataManager.recipes.last as Any)
             
         case true:
             coreDataManager.deleteRecipe(for: recipe.label)
             isFavoriteOutput?(false)
-            print(coreDataManager.recipes.last?.title as Any)
+            print(coreDataManager.recipes.last as Any)
         }
     }
 }
