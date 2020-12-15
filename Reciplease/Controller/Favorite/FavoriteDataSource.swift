@@ -33,6 +33,7 @@ extension FavoriteDataSource: UITableViewDataSource {
             return UITableViewCell()
         }
         
+    
         cell.recipeEntity = recipes[indexPath.row]
         return cell
     }
