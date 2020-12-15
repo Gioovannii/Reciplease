@@ -33,7 +33,6 @@ extension FavoriteDataSource: UITableViewDataSource {
             return UITableViewCell()
         }
         
-    
         cell.recipeEntity = recipes[indexPath.row]
         return cell
     }
@@ -41,6 +40,12 @@ extension FavoriteDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
     }
+    
+}
+
+// MARK: - UITableView Delegate
+
+extension FavoriteDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
