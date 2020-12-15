@@ -51,11 +51,6 @@ extension FavoriteDataSource: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         didSelectRecipeAtIndex?(indexPath.row)
     }
-}
-
-// MARK: - UITableView Delegate
-
-extension FavoriteDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let label = UILabel()
