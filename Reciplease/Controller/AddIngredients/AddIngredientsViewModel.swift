@@ -33,10 +33,6 @@ final class AddIngredientsViewModel {
     var isSearching: ((Bool) -> (Void))?
     var ingredientsList: (([String]) -> ())?
     
-    // MARK: - Inputs
-    
-    func viewDidLoad() {}
-    
     // MARK: - Methods
     
     func addIngredient(name: String) {
@@ -65,7 +61,6 @@ final class AddIngredientsViewModel {
                 
             case .failure(let error):
                 print(error.localizedDescription)
-            //presentAlert(title: "Error", message: "\(error.description)")
             }
         }
     }
