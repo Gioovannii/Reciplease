@@ -14,7 +14,7 @@ final class FavoriteViewModel {
     
     var recipe: RecipeEntity? {
         didSet {
-                let recipeRepresentable = RecipeRepresentable(label: recipe!.title ?? "", imageData: recipe!.image, healthLabels: recipe!.healthLabel ?? "", ingredientLines: recipe!.ingredients ?? [], totalTime: recipe!.time ?? "", shareAs: recipe!.shareAs ?? "")
+            let recipeRepresentable = RecipeRepresentable(label: recipe!.title ?? "", imageData: recipe!.image, healthLabels: recipe!.healthLabel ?? "", ingredientLines: recipe!.ingredients ?? [], totalTime: recipe!.time ?? "", shareAs: recipe!.shareAs ?? "")
             recipeOutput?(recipeRepresentable)
         }
     }
@@ -22,7 +22,7 @@ final class FavoriteViewModel {
     var coreDataManager: CoreDataManager
     
     // MARK: - Initializer
-
+    
     init(coreDataManager: CoreDataManager) {
         self.coreDataManager = coreDataManager
     }
@@ -39,9 +39,9 @@ final class FavoriteViewModel {
     }
     
     // MARK: - Method
-
+    
     func didSelectRecipe(at index: Int) {
         self.recipe = coreDataManager.recipes[index]
-       
+        
     }
 }

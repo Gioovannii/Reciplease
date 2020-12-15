@@ -47,19 +47,16 @@ final class RecipesViewcontroller: UITableViewController {
         dataSource.didSelectRecipeAtIndex = viewModel?.didSelectRecipe
     }
     
-
-    
-    // TODO: - In viewModel
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.toDescription {
             let vcDestination = segue.destination as! DescriptionController
             
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
-            
+            guard let coreDataManager = coreDataManager else { return }
             guard let recipe = recipe else { return }
-            vcDestination.viewModel = DescriptionViewModel(recipe: recipe, coreDataManager: coreDataManager! )
+            
+            vcDestination.viewModel = DescriptionViewModel(recipe: recipe, coreDataManager: coreDataManager)
         }
     }
 }
