@@ -45,7 +45,6 @@ final class FavoriteTableViewController: UITableViewController {
 
         viewModel?.recipesOutput = { [weak self] recipes in
             DispatchQueue.main.async {
-                print(recipes)
                 self?.dataSource.update(with: recipes)
                 self?.tableView.reloadData()
             }
