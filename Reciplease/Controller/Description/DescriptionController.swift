@@ -38,7 +38,6 @@ final class DescriptionController: UIViewController {
     
     func bind() {
         viewModel?.isFavoriteOutput = { [weak self] favorite in
-            print(favorite)
             DispatchQueue.main.async {
                 switch favorite {
                 case false:
