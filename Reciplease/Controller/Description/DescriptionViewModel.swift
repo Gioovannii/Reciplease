@@ -58,7 +58,6 @@ final class DescriptionViewModel {
         case true:
             coreDataManager.deleteRecipe(for: recipe.label)
             isFavoriteOutput?(false)
-            print(coreDataManager.recipes.last as Any)
         }
     }
 }
