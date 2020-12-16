@@ -54,7 +54,6 @@ final class DescriptionViewModel {
         case false:
             coreDataManager.createRecipe(title: recipe.label, health: recipe.healthLabels, time: recipe.totalTime, ingredients: recipe.ingredientLines, shareAs: recipe.shareAs, image: recipe.imageData)
             isFavoriteOutput?(true)
-            print(coreDataManager.recipes.last as Any)
             
         case true:
             coreDataManager.deleteRecipe(for: recipe.label)
