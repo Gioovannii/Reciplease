@@ -15,6 +15,8 @@ final class FavoriteDataSource: NSObject {
     var recipes = [RecipeEntity]()
     var didSelectRecipeAtIndex: ((Int) -> Void)?
     
+    // MARK: - Method
+
     func update(with recipes: [RecipeEntity]) {
         self.recipes = recipes
     }
@@ -40,7 +42,6 @@ extension FavoriteDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
     }
-    
 }
 
 // MARK: - UITableView Delegate
