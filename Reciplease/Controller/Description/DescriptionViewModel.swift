@@ -45,7 +45,6 @@ final class DescriptionViewModel {
             isFavoriteOutput?(false)
         case true:
             isFavoriteOutput?(true)
-            
         }
     }
     
