@@ -12,7 +12,6 @@ final class AddIngredientsViewModel {
     
     private let ingredientService: IngredientService
     private let service: RequestService
-
     private var ingredients = [String]() {
         didSet {
             self.ingredientsList?(ingredients.map{ "- \($0)" })
@@ -25,7 +24,6 @@ final class AddIngredientsViewModel {
         self.service = service
         self.ingredientService = ingredientService
     }
-    
     
     // MARK: - Outputs
     
@@ -56,6 +54,7 @@ final class AddIngredientsViewModel {
             
             switch result {
             case .success(let data):
+                print(data)
                 isSearching?(true)
                 self.recipes?(data.hits)
                 
