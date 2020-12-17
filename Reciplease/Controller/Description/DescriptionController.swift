@@ -51,8 +51,7 @@ final class DescriptionController: UIViewController {
                 }
             }
         }
-        
-        
+
         viewModel?.recipeOutput = { [weak self] recipe in
             DispatchQueue.main.async {
                 if let image = recipe.imageData { self?.recipeImageView?.image = UIImage(data: image) }
