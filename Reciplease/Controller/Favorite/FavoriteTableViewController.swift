@@ -22,13 +22,6 @@ final class FavoriteTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        
-        guard let coreDataManager = coreDataManager else { return }
-        viewModel = FavoriteViewModel(coreDataManager: coreDataManager)
-        bind()
         viewModel?.viewDidLoad()
         tableView.reloadData()
     }
