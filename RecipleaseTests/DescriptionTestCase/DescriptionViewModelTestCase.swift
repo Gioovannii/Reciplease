@@ -10,6 +10,9 @@ import XCTest
 @testable import Reciplease
 
 class DescriptionViewModelTestCase: XCTestCase {
+   
+    override func setUp() { }
 
+    override func tearDown() { }
   
 }
