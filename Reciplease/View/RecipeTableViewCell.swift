@@ -11,20 +11,19 @@ import SDWebImage
 
 class RecipeTableViewCell: UITableViewCell {
     
-    // MARK: - Property and Outlet
+    // MARK: - Property
 
     var coreDataManager: CoreDataManager?
     
+    // MARK: - Outlet
+
     @IBOutlet weak var recipeView: UIView!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var timeRecipeLabel: UILabel!
-    @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
-    
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         recipeView.layer.borderWidth = 3
