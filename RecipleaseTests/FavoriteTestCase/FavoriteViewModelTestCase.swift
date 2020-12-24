@@ -7,8 +7,23 @@
 //
 
 import XCTest
+@testable import Reciplease
 
 class FavoriteViewModelTestCase: XCTestCase {
-
-
+    
+    var coreDataStack: CoreDataStack!
+    var coreDataManager: CoreDataManager!
+    
+    
+    override func setUp() {
+        coreDataStack = MockCoreDataStack()
+        coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
+    }
+    
+    override func tearDown() {
+        coreDataStack = nil
+        coreDataManager = nil
+    }
+    
+    
 }
