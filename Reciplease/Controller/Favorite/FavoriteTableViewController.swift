@@ -28,10 +28,17 @@ final class FavoriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.tableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.reusableCell)
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         coreDataManager = CoreDataManager(coreDataStack: appDelegate.coreDataStack)
+        
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
+        guard let coreDataManager = coreDataManager else { return }
+        viewModel = FavoriteViewModel(coreDataManager: coreDataManager)
+        bind()
     }
 
     func bind() {
