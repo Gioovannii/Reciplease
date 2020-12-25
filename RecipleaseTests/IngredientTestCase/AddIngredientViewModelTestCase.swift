@@ -47,5 +47,20 @@ class AddIngredientViewModelTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-   
+    func testDeleteAllIngredient_WhenAllIngredientsAreDelete_ThenItShouldNotBeHere() {
+        let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseOK))
+        let requestService = RequestService(session: session)
+        let viewModel = AddIngredientsViewModel(service: requestService)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        
+        let expectedResult = [String]()
+        viewModel.addIngredient(name: "Tomatoe, Lemon")
+        viewModel.ingredientsList = { ingredients in
+            XCTAssert(expectedResult == ingredients)
+            expectation.fulfill()
+        }
+        viewModel.clearAllIngredients()
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
