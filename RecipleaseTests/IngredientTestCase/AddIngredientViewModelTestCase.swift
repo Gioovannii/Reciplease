@@ -63,4 +63,22 @@ class AddIngredientViewModelTestCase: XCTestCase {
         viewModel.clearAllIngredients()
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testSearchRecipes_WhenSearchIsPressed_ThenShouldCollectData() {
+        let session = MockEdanamSession(fakeResponse: FakeResponse(response: FakeResponseData.responseOK))
+        let requestService = RequestService(session: session)
+        let viewModel = AddIngredientsViewModel(service: requestService)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        
+          let expectedResult = "Lemon Confit"
+        viewModel.recipes = { recipes in
+            XCTAssert(expectedResult == recipes[0].recipe.label)
+            expectation.fulfill()
+        }
+        
+        viewModel.addIngredient(name: "Lemon")
+        viewModel.searchRecipes()
+        wait(for: [expectation], timeout: 15)
+    }
 }
