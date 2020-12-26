@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RequestTestService {
-    func getDataForTest(ingredients: String, callback: @escaping (Result<[Hit], NetworkError>) -> Void)
+    func getDataForTest(isSuccess: Bool, callback: @escaping (Result<[Hit], NetworkError>) -> Void)
 }
 
 final class RequestService: RequestTestService {
