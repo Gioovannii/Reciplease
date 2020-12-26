@@ -28,6 +28,7 @@ final class RequestService: RequestTestService {
                         "6 lemons, scrubbed and halved crosswise"
                     ], totalTime: 0, shareAs: "http://www.edamam.com/recipe/lemon-confit-2fb391cceeec3d82920a2035f1849d72/lemon"))
        ]
+        callback(.success(recipe))
     }
     
     private let session: AlamoSession
