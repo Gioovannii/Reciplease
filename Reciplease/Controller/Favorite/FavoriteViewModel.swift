@@ -42,6 +42,5 @@ final class FavoriteViewModel {
     
     func didSelectRecipe(at index: Int) {
         self.recipe = coreDataManager.recipes[index]
-        
     }
 }
