@@ -11,7 +11,7 @@ import Foundation
 final class AddIngredientsViewModel {
     
     private let ingredientService: IngredientService
-    private let service: RequestService
+    private let service: RequestTestService
     private var ingredients = [String]() {
         didSet {
             self.ingredientsList?(ingredients.map{ "- \($0)" })
