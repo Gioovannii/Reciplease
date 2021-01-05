@@ -27,6 +27,7 @@
 		7B49A343255BF0DD0082ED36 /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49A342255BF0DD0082ED36 /* MockCoreDataStack.swift */; };
 		7B51EC282504C14500D9AED0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B51EC272504C14500D9AED0 /* NetworkError.swift */; };
 		7B526542254AB4D200F97AAD /* String+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B526541254AB4D200F97AAD /* String+Data.swift */; };
+		7B58815B25A30C3100728134 /* StubRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B58815A25A30C3100728134 /* StubRequestService.swift */; };
 		7B59A68E24FBB16C00839A3B /* EdanamJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */; };
 		7B59A69024FBE68E00839A3B /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59A68F24FBE68E00839A3B /* IngredientService.swift */; };
 		7B5A881124F8A9A0003B3892 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A881024F8A9A0003B3892 /* Constant.swift */; };
@@ -90,6 +91,7 @@
 		7B49A342255BF0DD0082ED36 /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		7B51EC272504C14500D9AED0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7B526541254AB4D200F97AAD /* String+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Data.swift"; sourceTree = "<group>"; };
+		7B58815A25A30C3100728134 /* StubRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRequestService.swift; sourceTree = "<group>"; };
 		7B59A68D24FBB16C00839A3B /* EdanamJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamJSON.swift; sourceTree = "<group>"; };
 		7B59A68F24FBE68E00839A3B /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		7B5A881024F8A9A0003B3892 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				7B47603424F35B7800B51168 /* IngrdientServiceTests.swift */,
 				7BC1B7F625889EC500E6FEDA /* AddIngredientViewModelTestCase.swift */,
+				7B58815A25A30C3100728134 /* StubRequestService.swift */,
 			);
 			path = IngredientTestCase;
 			sourceTree = "<group>";
@@ -207,10 +210,12 @@
 		7B47601924F35B7700B51168 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				7B47603F24F35D8E00B51168 /* Supported Files */,
-				7BA18C962500B62300B6F717 /* Extension */,
+				7B47601C24F35B7700B51168 /* SceneDelegate.swift */,
+				7B47601A24F35B7700B51168 /* AppDelegate.swift */,
+				7B47602B24F35B7800B51168 /* Info.plist */,
+				7B887BC225A307F700FDAF07 /* Ressources */,
+				7BA18C962500B62300B6F717 /* Helpers */,
 				7B5EC18724F4B0730095BAA8 /* Model */,
-				7B47604124F35DBD00B51168 /* View */,
 				7B47604024F35DB000B51168 /* Controller */,
 				7B5A881024F8A9A0003B3892 /* Constant.swift */,
 			);
@@ -231,17 +236,6 @@
 			path = RecipleaseTests;
 			sourceTree = "<group>";
 		};
-		7B47603F24F35D8E00B51168 /* Supported Files */ = {
-			isa = PBXGroup;
-			children = (
-				7B47602B24F35B7800B51168 /* Info.plist */,
-				7B47601A24F35B7700B51168 /* AppDelegate.swift */,
-				7B47601C24F35B7700B51168 /* SceneDelegate.swift */,
-				7B47602624F35B7800B51168 /* Assets.xcassets */,
-			);
-			path = "Supported Files";
-			sourceTree = "<group>";
-		};
 		7B47604024F35DB000B51168 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,15 +247,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7B47604124F35DBD00B51168 /* View */ = {
+		7B58815925A3098C00728134 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7B47602824F35B7800B51168 /* LaunchScreen.storyboard */,
-				7B47602024F35B7700B51168 /* Main.storyboard */,
-				7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */,
-				7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */,
+				7B526541254AB4D200F97AAD /* String+Data.swift */,
+				7B347DC7254BF34C0037D36B /* Double+String.swift */,
 			);
-			path = View;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7B5EC18724F4B0730095BAA8 /* Model */ = {
@@ -317,13 +309,24 @@
 			path = Description;
 			sourceTree = "<group>";
 		};
-		7BA18C962500B62300B6F717 /* Extension */ = {
+		7B887BC225A307F700FDAF07 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				7B526541254AB4D200F97AAD /* String+Data.swift */,
-				7B347DC7254BF34C0037D36B /* Double+String.swift */,
+				7B47602824F35B7800B51168 /* LaunchScreen.storyboard */,
+				7B47602024F35B7700B51168 /* Main.storyboard */,
+				7B43982524FCE92A003753A6 /* RecipeTableViewCell.swift */,
+				7B43982624FCE92A003753A6 /* RecipeTableViewCell.xib */,
+				7B47602624F35B7800B51168 /* Assets.xcassets */,
 			);
-			path = Extension;
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		7BA18C962500B62300B6F717 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7B58815925A3098C00728134 /* Extensions */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7BC1B7EF2588998F00E6FEDA /* RecipesTestCase */ = {
@@ -570,6 +573,7 @@
 			files = (
 				7B47603524F35B7800B51168 /* IngrdientServiceTests.swift in Sources */,
 				7B49A343255BF0DD0082ED36 /* MockCoreDataStack.swift in Sources */,
+				7B58815B25A30C3100728134 /* StubRequestService.swift in Sources */,
 				7BC1B8072588B9C300E6FEDA /* FavoriteViewModelTestCase.swift in Sources */,
 				7B71BE3424FFE9C8001EB897 /* RequestServiceTestCase.swift in Sources */,
 				7BC1B8032588B9AA00E6FEDA /* DescriptionViewModelTestCase.swift in Sources */,
@@ -735,7 +739,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = "Reciplease/Supported Files/Info.plist";
+				INFOPLIST_FILE = Reciplease/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -757,7 +761,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = "Reciplease/Supported Files/Info.plist";
+				INFOPLIST_FILE = Reciplease/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
