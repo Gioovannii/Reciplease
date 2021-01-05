@@ -9,27 +9,29 @@
 import Foundation
 
 protocol RequestTestService {
-    func getDataForTest(isSuccess: Bool, callback: @escaping (Result<[Hit], NetworkError>) -> Void)
+    func getData(ingredients: String, callback: @escaping (Result<EdanamJSON, NetworkError>) -> Void) 
 }
 
 final class RequestService: RequestTestService {
-    func getDataForTest(isSuccess: Bool, callback: @escaping (Result<[Hit], NetworkError>) -> Void) {
-       let recipe = [
-                       Hit(recipe: Recipe(label: "Lemon Confit", image: "https://www.edamam.com/web-img/d32/d32b4dc2e7bd9d4d1a24bbced0c89143.jpg", url: "http://ruhlman.com/2011/03/lemon-confit/", healthLabels: [
-                        "Vegan",
-                        "Vegetarian",
-                        "Peanut-Free",
-                        "Tree-Nut-Free",
-                        "Alcohol-Free",
-                        "Immuno-Supportive"
-                    ], ingredientLines: [
-                        "Kosher salt to cover (about 2 pounds/900 grams)",
-                        "1/2 to 1 cup water or lemon juice (125 to 250 ml)",
-                        "6 lemons, scrubbed and halved crosswise"
-                    ], totalTime: 0, shareAs: "http://www.edamam.com/recipe/lemon-confit-2fb391cceeec3d82920a2035f1849d72/lemon"))
-       ]
-        callback(.success(recipe))
-    }
+    
+    
+//    func getDataForTest(isSuccess: Bool, callback: @escaping (Result<[Hit], NetworkError>) -> Void) {
+//       let recipe = [
+//                       Hit(recipe: Recipe(label: "Lemon Confit", image: "https://www.edamam.com/web-img/d32/d32b4dc2e7bd9d4d1a24bbced0c89143.jpg", url: "http://ruhlman.com/2011/03/lemon-confit/", healthLabels: [
+//                        "Vegan",
+//                        "Vegetarian",
+//                        "Peanut-Free",
+//                        "Tree-Nut-Free",
+//                        "Alcohol-Free",
+//                        "Immuno-Supportive"
+//                    ], ingredientLines: [
+//                        "Kosher salt to cover (about 2 pounds/900 grams)",
+//                        "1/2 to 1 cup water or lemon juice (125 to 250 ml)",
+//                        "6 lemons, scrubbed and halved crosswise"
+//                    ], totalTime: 0, shareAs: "http://www.edamam.com/recipe/lemon-confit-2fb391cceeec3d82920a2035f1849d72/lemon"))
+//       ]
+//        callback(.success(recipe))
+//    }
     
     private let session: AlamoSession
     private let service = IngredientService()
