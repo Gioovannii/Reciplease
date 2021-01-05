@@ -20,7 +20,7 @@ final class AddIngredientsViewModel {
     
     // MARK: - Initializer
     
-    init(service: RequestService = RequestService(), ingredientService: IngredientService = IngredientService()) {
+    init(service: RequestTestService = RequestService(), ingredientService: IngredientService = IngredientService()) {
         self.service = service
         self.ingredientService = ingredientService
     }
@@ -60,6 +60,8 @@ final class AddIngredientsViewModel {
                 
             case .failure(let error):
                 print(error.localizedDescription)
+            // TODO: - Mettre alert
+
             }
         }
     }
