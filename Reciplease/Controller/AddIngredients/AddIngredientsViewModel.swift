@@ -30,6 +30,7 @@ final class AddIngredientsViewModel {
     var recipes: (([Hit]) -> Void)?
     var isSearching: ((Bool) -> (Void))?
     var ingredientsList: (([String]) -> ())?
+    var messageAlert: ((String) -> (Void))?
     
     // MARK: - Methods
     
