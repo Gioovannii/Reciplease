@@ -80,4 +80,21 @@ class AddIngredientViewModelTestCase: XCTestCase {
         viewModel.searchRecipes()
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testIsSearching_WhenSearchIsPressed_ThenIsSearchingShouldBeFalse() {
+
+        let requestService = StubRequestService(isSuccess: false)
+        let viewModel = AddIngredientsViewModel(service: requestService)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        
+        let expectedResult = false
+        viewModel.isSearching = { isSearching in
+            XCTAssert(expectedResult == isSearching)
+            expectation.fulfill()
+        }
+        
+        viewModel.searchRecipes()
+        wait(for: [expectation], timeout: 0.01)
+    }    
 }
