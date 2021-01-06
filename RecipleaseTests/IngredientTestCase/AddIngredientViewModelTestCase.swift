@@ -96,5 +96,23 @@ class AddIngredientViewModelTestCase: XCTestCase {
         
         viewModel.searchRecipes()
         wait(for: [expectation], timeout: 0.01)
-    }    
+    }
+    
+    func testMessageAlert_WhenThereIsAProblem_ThenMessageShouldBePersonalize() {
+        
+        let requestService = StubRequestService(isSuccess: false)
+        let viewModel = AddIngredientsViewModel(service: requestService)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        
+        let expectedResult = "There is no response"
+        
+        viewModel.messageAlert = { message in
+            XCTAssert(expectedResult == message)
+            expectation.fulfill()
+        }
+        
+        viewModel.searchRecipes()
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
