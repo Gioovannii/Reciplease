@@ -55,13 +55,14 @@ final class AddIngredientsViewModel {
             
             switch result {
             case .success(let data):
-                print(data)
+                if data.q.isEmpty { messageAlert?("Please enter something") } else if data.hits.isEmpty {
+                    messageAlert?("Please enter ingredient in english")}
                 isSearching?(true)
                 self.recipes?(data.hits)
                 
             case .failure(let error):
-                print(error.localizedDescription)
-            // TODO: - Mettre alert
+                print(error.description)
+                messageAlert?(error.description)
 
             }
         }
