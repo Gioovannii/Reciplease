@@ -77,8 +77,7 @@ class AddIngredientViewModelTestCase: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.addIngredient(name: "Lemon")
         viewModel.searchRecipes()
-        wait(for: [expectation], timeout: 15)
+        wait(for: [expectation], timeout: 0.01)
     }
 }
