@@ -88,10 +88,14 @@ final class AddIngredientsController: UIViewController {
         case true:
             activityIndicator.isHidden = true
             searchForRecipesButton.isHidden = false
+            
         case false:
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
             searchForRecipesButton.isHidden = true
+            viewModel?.messageAlert = { message in
+                self.presentAlert(title: "", message: message)
+            }
         }
     }
 }
