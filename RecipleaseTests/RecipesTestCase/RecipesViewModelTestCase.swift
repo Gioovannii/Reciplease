@@ -59,5 +59,19 @@ class RecipesViewModelTestCase: XCTestCase {
         
     }
     
-    
+    func testDidSetRecipe_WhenWeSetAnUniqueRecipeAsAPartOfARecipeRepresentable_ThenWeShouldPassedThroughDidSetRecipe() {
+        let viewModel = RecipesViewModel(recipes: recipes)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        let recipeRepresentable = RecipeRepresentable(label: recipes[0].recipe.label, imageData: recipes[0].recipe.image.data, healthLabels: recipes[0].recipe.healthLabels.first!, ingredientLines: recipes[0].recipe.ingredientLines, totalTime: "\(recipes[0].recipe.totalTime)", shareAs: recipes[0].recipe.shareAs)
+        
+        let expectedResult = recipeRepresentable.label
+        
+        viewModel.recipeOutput = { recipe in
+            XCTAssert(expectedResult == viewModel.recipe?.label)
+            expectation.fulfill()
+        }
+        viewModel.recipe = recipes[0].recipe
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
