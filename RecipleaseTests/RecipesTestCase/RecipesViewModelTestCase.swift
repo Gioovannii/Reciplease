@@ -89,4 +89,13 @@ class RecipesViewModelTestCase: XCTestCase {
         viewModel.viewDidLoad()
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testWhenRecipesChange() {
+        let viewModel = RecipesViewModel(recipes: recipes)
+        let expectedResult = "Baking with Dorie: Lemon-Lemon Lemon Cream Recipe"
+
+        viewModel.didSelectRecipe(at: 3)
+        
+        XCTAssert(expectedResult == viewModel.recipe?.label)
+    }
 }
