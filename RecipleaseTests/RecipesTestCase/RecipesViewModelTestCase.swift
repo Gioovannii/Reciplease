@@ -44,7 +44,6 @@ class RecipesViewModelTestCase: XCTestCase {
         let viewModel = RecipesViewModel(recipes: recipes)
         
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        
         let expectedResult = "Lemon Confit"
         
         viewModel.recipesOutput = { recipes in
@@ -53,10 +52,6 @@ class RecipesViewModelTestCase: XCTestCase {
         }
         viewModel.recipesOutput?(recipes)
         wait(for: [expectation], timeout: 0.01)
-    }
-    
-    func testDidSetRecipes_WhenRecipesArrayIsUse_ThenPassedThroughDidSet() {
-        
     }
     
     func testDidSetRecipe_WhenWeSetAnUniqueRecipeAsAPartOfARecipeRepresentable_ThenWeShouldPassedThroughDidSetRecipe() {
@@ -79,7 +74,6 @@ class RecipesViewModelTestCase: XCTestCase {
         let viewModel = RecipesViewModel(recipes: recipes)
         
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        
         let expectedResult = "Lemon Icey"
         
         viewModel.recipesOutput = { recipes in
