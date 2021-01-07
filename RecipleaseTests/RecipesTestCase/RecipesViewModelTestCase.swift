@@ -54,4 +54,10 @@ class RecipesViewModelTestCase: XCTestCase {
         viewModel.recipesOutput?(recipes)
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testDidSetRecipes_WhenRecipesArrayIsUse_ThenPassedThroughDidSet() {
+        
+    }
+    
+    
 }
