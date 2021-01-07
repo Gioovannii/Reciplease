@@ -74,4 +74,19 @@ class RecipesViewModelTestCase: XCTestCase {
         viewModel.recipe = recipes[0].recipe
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testViewDidLoad_WhenViewDidLoadIsCall_ThenWeShouldAssertOneOfIsProperties() {
+        let viewModel = RecipesViewModel(recipes: recipes)
+        
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        
+        let expectedResult = "Lemon Icey"
+        
+        viewModel.recipesOutput = { recipes in
+            XCTAssert(expectedResult == recipes[2].recipe.label)
+            expectation.fulfill()
+        }
+        viewModel.viewDidLoad()
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
