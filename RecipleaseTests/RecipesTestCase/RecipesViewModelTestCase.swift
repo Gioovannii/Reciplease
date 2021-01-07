@@ -33,7 +33,7 @@ class RecipesViewModelTestCase: XCTestCase {
                            ingredientLines: ["1 cup lemon juice (from 5-6 lemons)", "1 cup simple syrup"],
                            totalTime: 0, shareAs: "http://www.edamam.com/recipe/lemon-icey-2a04bbc6d5ae6a8c4a02368a79ffc2e5/lemon")),
         
-        Hit(recipe: Recipe(label: "Baking with Dorie: Lemon-Lemon Lemon Cream Recipe", image: "https://www.edamam.com/web-img/fdb/fdbace4ccbbfc9b571035f0e3882f300.jpg",
+        Hit(recipe: Recipe(label: "Baking with Dorie: Lemon-Lemon Lemon Cream Recipe", image:                                                  "https://www.edamam.com/web-img/fdb/fdbace4ccbbfc9b571035f0e3882f300.jpg",
                            url: "http://www.seriouseats.com/recipes/2008/04/lemon-lemon-lemon-cream-recipe.html",
                            healthLabels: ["Vegetarian", "Peanut-Free", "Tree-Nut-Free", "Alcohol-Free"],
                            ingredientLines: ["1 cup sugar", "Finely grated zest of 3 lemons", "4 large eggs", "3/4 cup freshly squeezed lemon juice (from 4 to 5 lemons)", "2 sticks plus 5 tablespoons (21 tablespoons; 10 1/2 ounces) unsalted butter, at room temperature and cut into tablespoon-sized pieces", "1 fully-baked 9-inch tart shell"],
