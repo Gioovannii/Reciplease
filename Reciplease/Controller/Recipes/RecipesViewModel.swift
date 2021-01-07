@@ -12,6 +12,8 @@ final class RecipesViewModel {
     
     // MARK: - Properties
     
+    var recipes = [Hit]()
+    
     var recipe: Recipe? {
         didSet {
             if let recipe = recipe {
@@ -21,12 +23,6 @@ final class RecipesViewModel {
                 
                 recipeOutput?(recipeRepresentable)
             }
-        }
-    }
-    
-    var recipes = [Hit]() {
-        didSet {
-            recipesOutput?(recipes)
         }
     }
     
