@@ -11,7 +11,8 @@ import XCTest
 
 class RecipesViewModelTestCase: XCTestCase {
     
-    
+    // MARK: - Set Array with some recipes
+
     var recipes = [
         Hit(recipe: Recipe(label: "Lemon Confit", image: "https://www.edamam.com/web-img/d32/d32b4dc2e7bd9d4d1a24bbced0c89143.jpg", url: "http://ruhlman.com/2011/03/lemon-confit/",
                            healthLabels: ["Vegan", "Vegetarian", "Peanut-Free", "Tree-Nut-Free", "Alcohol-Free", "Immuno-Supportive"],
