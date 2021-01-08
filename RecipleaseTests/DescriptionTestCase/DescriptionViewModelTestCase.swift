@@ -20,5 +20,17 @@ class DescriptionViewModelTestCase: XCTestCase {
     var coreDataManager: CoreDataManager!
 
   
+    override func setUp() {
+        super.setUp()
+        coreDataStack = MockCoreDataStack()
+        coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        coreDataStack = nil
+        coreDataManager = nil
+    }
+    
     
 }
