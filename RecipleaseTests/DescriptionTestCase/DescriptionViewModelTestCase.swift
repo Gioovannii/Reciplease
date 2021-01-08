@@ -41,5 +41,19 @@ class DescriptionViewModelTestCase: XCTestCase {
         XCTAssert(expectedResult == recipeRepresentable.label)
     }
     
-   
+    func testViewDidLoad_WhenViewDidLoadIsCall_ThenWeShouldAssertOneOfIsProperties() {
+        let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        
+        let expectedResult = "Lemon Confit"
+       
+        viewModel.recipeOutput = { recipe in
+            XCTAssert(expectedResult == recipe.label)
+            expectation.fulfill()
+        }
+        viewModel.viewDidLoad()
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    
 }
