@@ -32,5 +32,14 @@ class DescriptionViewModelTestCase: XCTestCase {
         coreDataManager = nil
     }
     
+    func testDidSetRecipe_WhenWeChangeValue_ThenWeEnterInside() {
+        
+        let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
+        
+        viewModel.recipe = recipeRepresentable
+        let expectedResult = "Lemon Confit"
+        XCTAssert(expectedResult == recipeRepresentable.label)
+    }
     
+   
 }
