@@ -74,5 +74,15 @@ class DescriptionViewModelTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-   
+    func testIsRecipeRegistered() {
+        let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        
+        viewModel.isFavoriteOutput = { isFavorite in
+                XCTAssertTrue(isFavorite)
+                expectation.fulfill()
+        }
+        viewModel.tapFavorite()
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
