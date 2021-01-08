@@ -31,14 +31,12 @@ final class DescriptionViewModel {
     var isFavoriteOutput: ((Bool) -> Void)?
     
     // MARK: - Inputs
-    
     func viewDidLoad() {
         recipeOutput?(recipe)
         favoriteLoad()
     }
     
     // MARK: - Methods
-    
     func favoriteLoad() {
         switch coreDataManager.isRecipeRegistered(for: recipe.label) {
         case false:
