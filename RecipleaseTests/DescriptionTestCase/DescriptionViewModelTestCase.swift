@@ -56,6 +56,7 @@ class DescriptionViewModelTestCase: XCTestCase {
             XCTAssert(expectedResult == recipe.label)
             expectation.fulfill()
         }
+        
         viewModel.viewDidLoad()
         wait(for: [expectation], timeout: 0.01)
     }
@@ -65,6 +66,7 @@ class DescriptionViewModelTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change")
         
         viewModel.isFavoriteOutput = { isFavorite in
+            
             switch viewModel.coreDataManager.isRecipeRegistered(for: self.recipeRepresentable.label) {
             case true:
                 XCTAssertTrue(isFavorite)
