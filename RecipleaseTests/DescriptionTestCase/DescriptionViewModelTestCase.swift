@@ -48,8 +48,8 @@ class DescriptionViewModelTestCase: XCTestCase {
     
     func testViewDidLoad_WhenViewDidLoadIsCall_ThenWeShouldAssertOneOfIsProperties() {
         let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
-        let expectation = XCTestExpectation(description: "Wait for queue change")
         
+        let expectation = XCTestExpectation(description: "Wait for queue change")
         let expectedResult = "Lemon Confit"
        
         viewModel.recipeOutput = { recipe in
