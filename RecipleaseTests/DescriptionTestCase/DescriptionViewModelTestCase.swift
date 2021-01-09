@@ -78,6 +78,7 @@ class DescriptionViewModelTestCase: XCTestCase {
       
         createRecipe()
         viewModel.favoriteLoad()
+        
         wait(for: [expectation], timeout: 0.01)
     }
     
@@ -89,6 +90,19 @@ class DescriptionViewModelTestCase: XCTestCase {
                 XCTAssertTrue(isFavorite)
                 expectation.fulfill()
         }
+        viewModel.tapFavorite()
+        wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func testDeleteRecipe_WhenTapFavoriteButRecipeIsAlreadyRegistered_ThenShouldDeleteRecipe() {
+        let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        
+        viewModel.isFavoriteOutput = { isFavorite in
+                XCTAssertFalse(isFavorite)
+                expectation.fulfill()
+        }
+        createRecipe()
         viewModel.tapFavorite()
         wait(for: [expectation], timeout: 0.01)
     }
