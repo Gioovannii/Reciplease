@@ -42,6 +42,7 @@ class DescriptionViewModelTestCase: XCTestCase {
         
         viewModel.recipe = recipeRepresentable
         let expectedResult = "Lemon Confit"
+        
         XCTAssert(expectedResult == recipeRepresentable.label)
     }
     
