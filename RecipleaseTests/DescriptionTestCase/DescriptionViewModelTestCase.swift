@@ -38,7 +38,6 @@ class DescriptionViewModelTestCase: XCTestCase {
     }
     
     func testDidSetRecipe_WhenWeChangeValue_ThenWeEnterInside() {
-        
         let viewModel = DescriptionViewModel(recipe: recipeRepresentable, coreDataManager: coreDataManager)
         
         viewModel.recipe = recipeRepresentable
