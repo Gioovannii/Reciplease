@@ -14,3 +14,4 @@
 
 
 [![Favorite-List.png](https://i.postimg.cc/1t71MKLk/Favorite-List.png)](https://postimg.cc/sQWLg5fm)
+[![Remove-Recipe.png](https://i.postimg.cc/W4jV4zGH/Remove-Recipe.png)](https://postimg.cc/JsTv61dN)
