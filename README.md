@@ -1,5 +1,27 @@
 
 # Reciplease
+## Goals
+For this project I learn how to :
+ add some list and data persistence which is very usefull if we want to keep customers in our apps.
+ So here is a list to the main points.
+ 
+- [x] Table views
+- [x] custom table views
+- [x] images in cells
+- [x] Core Data
+- [x] User Default
+- [x] Install Pods
+- [x] Pods
+
+But I'd like to go beyond my scholarship 
+
+So i learn how to :
+- [x] MVVM design pattern
+- [x] Use views Model
+- [x] Closures is the main way to pass data between controller
+
+## Here is what we have so far ##
+
 
 [![Home-Menu.png](https://i.postimg.cc/SsxpWPtL/Home-Menu.png)](https://postimg.cc/R3y8mgmq)
 
