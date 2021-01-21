@@ -22,10 +22,7 @@ So i learn how to :
 
 ## Here is what we have so far ##
 
-
-[![Home-Menu.png](https://i.postimg.cc/SsxpWPtL/Home-Menu.png)](https://postimg.cc/R3y8mgmq)
-We launch in here where we follow guideline provide by the project.
-Waiting on ingredients to come.
+[![Home-Menu.png](https://i.postimg.cc/SsxpWPtL/Home-Menu.png)](https://postimg.cc/R3y8mgmq) 
 
 [![Error-ingredients.png](https://i.postimg.cc/wjDHHLmN/Error-ingredients.png)](https://postimg.cc/sMfb4BKf)
 [![Error-miss-language.png](https://i.postimg.cc/1zHQVSM5/Error-miss-language.png)](https://postimg.cc/2qVJgPPP)
