@@ -33,6 +33,10 @@ final class AddIngredientsController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let buttonArray = [addIngredientsButton, clearIngredientButton, searchForRecipesButton]
+        buttonArray.forEach {
+            $0?.layer.cornerRadius = 10
+        }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
