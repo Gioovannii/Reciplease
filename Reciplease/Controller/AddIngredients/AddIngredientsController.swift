@@ -19,6 +19,9 @@ final class AddIngredientsController: UIViewController {
     private var recipes = [Hit]()
     private let dataSource = AddIngredientDataSource()
     
+    @IBOutlet weak var addIngredientsButton: UIButton!
+    @IBOutlet weak var clearIngredientButton: UIButton!
+    
     @IBOutlet private weak var ingredientTextField: UITextField!
     @IBOutlet private weak var ingredientsTableView: UITableView!
     @IBOutlet private weak var searchForRecipesButton: UIButton!
