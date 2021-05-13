@@ -37,6 +37,11 @@ final class DescriptionController: UIViewController {
     }
     
     func bind() {
+        recipeImageView.layer.borderWidth = 1
+        recipeImageView.layer.borderColor = UIColor.black.cgColor
+        recipeImageView.layer.masksToBounds = true
+        recipeImageView.layer.cornerRadius = 10
+        
         viewModel?.isFavoriteOutput = { [weak self] favorite in
             DispatchQueue.main.async {
                 switch favorite {
