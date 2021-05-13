@@ -11,19 +11,16 @@ import UIKit
 final class DescriptionController: UIViewController {
     
     // MARK: - Properties
-    
     private let dataSource = DescriptionDataSource()
     var viewModel: DescriptionViewModel?
 
     
     // MARK: - Outlets
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     // MARK: - Life cycle
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.viewDidLoad()
