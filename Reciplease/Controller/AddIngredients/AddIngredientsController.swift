@@ -48,6 +48,11 @@ final class AddIngredientsController: UIViewController {
         bind()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func bind() {
         viewModel?.ingredientsList = { ingredients in
             self.dataSource.update(with: ingredients)
