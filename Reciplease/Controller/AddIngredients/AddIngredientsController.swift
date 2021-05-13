@@ -27,7 +27,10 @@ final class AddIngredientsController: UIViewController {
     @IBOutlet private weak var searchForRecipesButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
