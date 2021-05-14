@@ -15,7 +15,6 @@ final class AddIngredientDataSource: NSObject {
     var deleteIngredientWithIndex: ((Int) -> Void)?
     
     // MARK: - Methods
-    
     func update(with ingredients: [String]) {
         self.ingredients = ingredients
     }
