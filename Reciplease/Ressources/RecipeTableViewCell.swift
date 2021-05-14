@@ -23,7 +23,8 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var timeRecipeLabel: UILabel!
     @IBOutlet weak var healthLabel: UILabel!
-
+    @IBOutlet weak var informationView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         recipeView.layer.borderWidth = 3
