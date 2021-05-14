@@ -19,7 +19,6 @@ final class AddIngredientsViewModel {
     }
     
     // MARK: - Initializer
-    
     init(service: RequestTestService = RequestService(), ingredientService: IngredientService = IngredientService()) {
         self.service = service
         self.ingredientService = ingredientService
