@@ -33,6 +33,7 @@ extension AddIngredientDataSource: UITableViewDataSource {
         ingredientCell.textLabel?.text = ingredients[indexPath.row]
         ingredientCell.textLabel?.textColor = UIColor.black
         ingredientCell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 20)
+        
         return ingredientCell
     }
 }
