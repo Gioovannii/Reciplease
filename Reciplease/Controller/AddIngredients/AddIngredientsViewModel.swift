@@ -31,7 +31,6 @@ final class AddIngredientsViewModel {
     var messageAlert: ((String) -> (Void))?
     
     // MARK: - Methods
-    
     func addIngredient(name: String) {
         ingredientService.addIngredients(name: name)
         ingredients = ingredientService.ingredients
