@@ -27,8 +27,8 @@ class RecipeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        recipeView.layer.borderWidth = 3
-        recipeImageView.layer.borderWidth = 3
+        
+        recipeView.layer.borderWidth = 1
         recipeView.layer.borderColor = UIColor.black.cgColor
         recipeView.layer.cornerRadius = 10
         
