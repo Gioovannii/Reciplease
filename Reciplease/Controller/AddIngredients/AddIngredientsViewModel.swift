@@ -25,7 +25,6 @@ final class AddIngredientsViewModel {
     }
     
     // MARK: - Outputs
-    
     var recipes: (([Hit]) -> Void)?
     var isSearching: ((Bool) -> (Void))?
     var ingredientsList: (([String]) -> ())?
