@@ -31,6 +31,7 @@ class RecipeTableViewCell: UITableViewCell {
         recipeView.layer.borderWidth = 1
         recipeView.layer.borderColor = UIColor.black.cgColor
         recipeView.layer.cornerRadius = 10
+        recipeView.layer.masksToBounds = true
         
         layer.borderWidth = 1
         layer.borderColor = UIColor.white.cgColor
