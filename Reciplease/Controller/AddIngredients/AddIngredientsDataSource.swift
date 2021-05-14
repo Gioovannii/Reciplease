@@ -31,7 +31,7 @@ extension AddIngredientDataSource: UITableViewDataSource {
         let ingredientCell = tableView.dequeueReusableCell(withIdentifier: Constant.ingredient, for: indexPath)
         
         ingredientCell.textLabel?.text = ingredients[indexPath.row]
-        ingredientCell.textLabel?.textColor = UIColor.white
+        ingredientCell.textLabel?.textColor = UIColor.black
         ingredientCell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 20)
         return ingredientCell
     }
