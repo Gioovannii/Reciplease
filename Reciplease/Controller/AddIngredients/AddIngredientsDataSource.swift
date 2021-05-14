@@ -21,7 +21,6 @@ final class AddIngredientDataSource: NSObject {
 }
 
 // MARK: - UITableViewDataSource
-
 extension AddIngredientDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
