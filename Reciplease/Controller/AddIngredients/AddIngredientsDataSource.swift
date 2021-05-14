@@ -11,7 +11,6 @@ import UIKit
 final class AddIngredientDataSource: NSObject {
     
     // MARK: - Properties
-    
     private var ingredients = [String]()
     var deleteIngredientWithIndex: ((Int) -> Void)?
     
