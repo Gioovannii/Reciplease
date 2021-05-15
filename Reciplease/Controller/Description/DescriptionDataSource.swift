@@ -35,7 +35,7 @@ extension DescriptionDataSource: UITableViewDataSource {
         
         cell.textLabel?.text = ingredients[(indexPath.row)]
         cell.textLabel?.font = UIFont(name: Constant.papyrusFont, size: 17)
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .black
         return cell
     }
 
