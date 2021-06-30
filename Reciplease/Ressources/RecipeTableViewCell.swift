@@ -11,10 +11,6 @@ import SDWebImage
 
 class RecipeTableViewCell: UITableViewCell {
     
-    // MARK: - Property
-
-    var coreDataManager: CoreDataManager?
-    
     // MARK: - Outlet
 
     @IBOutlet weak var recipeView: UIView!
