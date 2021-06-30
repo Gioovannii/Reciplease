@@ -9,8 +9,7 @@
 import UIKit
 
 final class AddIngredientsController: UIViewController {
-    
-    
+  
     var viewModel: AddIngredientsViewModel?
     
     // MARK: - Properties
