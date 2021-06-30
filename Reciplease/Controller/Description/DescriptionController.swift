@@ -39,6 +39,12 @@ final class DescriptionController: UIViewController {
         recipeImageView.layer.masksToBounds = true
         recipeImageView.layer.cornerRadius = 10
         
+        getDirectionButton.layer.borderWidth = 0.2
+        getDirectionButton.layer.masksToBounds = true
+        getDirectionButton.layer.cornerRadius = 10
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.973, green: 0.761, blue: 0.569, alpha: 1)
+
         viewModel?.isFavoriteOutput = { [weak self] favorite in
             DispatchQueue.main.async {
                 switch favorite {
