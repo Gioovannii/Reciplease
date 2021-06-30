@@ -19,6 +19,7 @@ final class DescriptionController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
+    @IBOutlet weak var getDirectionButton: UIButton!
     
     // MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +29,6 @@ final class DescriptionController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = dataSource
         bind()
     }
