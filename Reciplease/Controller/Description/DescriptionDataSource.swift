@@ -43,7 +43,3 @@ extension DescriptionDataSource: UITableViewDataSource {
         return  title
     }
 }
-
-
-
-
